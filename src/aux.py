@@ -89,6 +89,9 @@ def read_args(dir, csv_def, output_folder, model, properties):
     parser.add_argument(
         "--properties", type=str, default=properties, help="Path to the EvoChecker properties file"
     )
+    parser.add_argument(
+        "--output", type=str, default=output_folder, help="Path to the output folder"
+    )
     
     # Save the arguments
     args = parser.parse_args()
@@ -98,6 +101,9 @@ def read_args(dir, csv_def, output_folder, model, properties):
     # -- csv file
     if not args.csv is None:
         csv_def = args.csv
+    # -- out folder
+    if not args.output is None:
+        output_folder = args.output
     # -- evo files
     if not args.model is None:
         model = args.model
