@@ -21,3 +21,10 @@ Experiments to run EvoChecker with different seeding configurations.
 
 - In viking, it requires to install python libraries:
  ```pip3 install --user pandas```
+ 
+ 
+ 
+ # Developers notes
+ 
+- Evochecker is uploaded as a git submodule from the EvoChecker repository, branch seedResultsjar:
+```git submodule add -b seedResultsjar https://github.com/gerasimou/EvoChecker.git```

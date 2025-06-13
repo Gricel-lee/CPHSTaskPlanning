@@ -1,0 +1,4 @@
+[submodule "EvoChecker"]
+	path = EvoChecker
+	url = https://github.com/gerasimou/EvoChecker.git
+	branch = seedResultsjar
