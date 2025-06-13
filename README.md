@@ -26,5 +26,13 @@ Experiments to run EvoChecker with different seeding configurations.
  
  # Developers notes
  
-- Evochecker is uploaded as a git submodule from the EvoChecker repository, branch seedResultsjar:
-```git submodule add -b seedResultsjar https://github.com/gerasimou/EvoChecker.git```
+- Evochecker was uploaded as a git submodule from the EvoChecker repository, seedResultsjar branch:
+```
+git submodule add -b seedResultsjar https://github.com/gerasimou/EvoChecker.git
+```
+
+To clone this repository run:
+```
+git submodule update --init --recursive
+```
+this must download the files inside the EvoChecker folder.
