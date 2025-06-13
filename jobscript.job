@@ -29,7 +29,8 @@ echo "$LD_LIBRARY_PATH"
 
 # Commands to run
 pip3 install pandas
-python3 ./src/run.py
+python3 ./src/run.py --csv "input/experiments.csv" --model "input/evomodel/FX/fxLarge.pm" --properties "input/evomodel/FX/fxLarge.pctl" --output "output/fxlarge"
+
 
 #java -jar EvoChecker-1.1.1.jar 
 #python my_script.py
