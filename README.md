@@ -44,13 +44,4 @@ git checkout -b seedResultsjar origin/seedResultsjar
  
  # Developers notes
  
-- Evochecker was uploaded as a git submodule from the EvoChecker repository, seedResultsjar branch:
-```
-git submodule add -b seedResultsjar https://github.com/gerasimou/EvoChecker.git
-```
-
-To clone this repository run:
-```
-git submodule update --init --recursive
-```
-this must download the files inside the EvoChecker folder.
+- Evochecker was uploaded as a git submodule from the EvoChecker repository, seedResultsjar branch: ```git submodule add -b seedResultsjar https://github.com/gerasimou/EvoChecker.git```. To clone this repository run: ```git submodule update --init --recursive```. This must download the files inside the EvoChecker folder.
