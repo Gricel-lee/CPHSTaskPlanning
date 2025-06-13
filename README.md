@@ -44,10 +44,10 @@ git checkout -b seedResultsjar origin/seedResultsjar
  
  # Developers notes
  
-- Evochecker was uploaded as a git submodule from the EvoChecker repository, seedResultsjar branch: ```git submodule add -b seedResultsjar https://github.com/gerasimou/EvoChecker.git```. To clone this repository run: ```git submodule update --init --recursive```. This must download the files inside the EvoChecker folder.
-
-Other usefull commands:
+Evochecker was uploaded as a github **submodule** (from the EvoChecker repository, _seedResultsjar_ branch by running ```git submodule add -b seedResultsjar https://github.com/gerasimou/EvoChecker.git```).
+Hence, some useful commands to interact with this repo are:
 | Task                                                                 | Command                                           |
 |----------------------------------------------------------------------|---------------------------------------------------|
-| Pull everything including submodules (as currently configured)       | `git pull --recurse-submodules`                  |
-| Update submodules to latest commits on their remote branches         | `git submodule update --remote --merge`          |
+| Only after cloning, initialise submodules. This must download the files inside the EvoChecker folder.        | `git submodule update --init --recursive`         |
+| Pull everything including submodules       | `git pull --recurse-submodules`                 |
+| Update submodules to latest commits on their remote branches         | `git submodule update --remote --merge`           |
