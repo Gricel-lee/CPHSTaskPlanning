@@ -1,20 +1,28 @@
 # CPHSTaskPlanning
-
-
-Experiments to run EvoChecker with different seeding configurations.
-
+This repository runs experiments in EvoChecker with different seeding configurations.
 
 ### Inputs
-- input folder with **experiments.csv**:
-    - the first experiment must have 0% seeding, as the result of this run is used to seed the following experiments.
-    - 
-    - all experiments must belong to the same case name
-- reported in config.properties.
+An **input** folder must exist with the following content:
+- file **experiments.csv**, containing the set of experiments to run. The csv file follows the rows as in the figure below, with rows:
+    - first row with 0% seeding experiment. The result of this experiment is used to seed the following ones.
+    - n following rows with different configurations of seedings. Each with their respective parameters (example, 
+![image](https://github.com/user-attachments/assets/320a0654-b930-4a45-9907-5854240a948a)
+Note: all experiments must belong to the same case name. The name is used to create an output folder
+- a **.pm** file with the EvoChecker model
+- a **.prop** file with the EvoChecker objectives
 
 ### Output
-- output folder is automatically generated with subfolders named:
+An output folder is automatically generated with the following content:
     - **nameProblem and configuration params**: 
     - **previousPopulation**: a copy of the results obtained with no seeding, used for seeding other experiments.
+
+
+### Run
+To run the experiments, clone this repository, go the the project's folder and from there run src/run.py: 
+```
+cd CPHSTaskPlanning
+python3 src/run.py
+```
 
 
 # Troubleshooting
