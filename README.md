@@ -18,7 +18,14 @@ An output folder is automatically generated with the following content:
 
 
 ### Run
-To run the experiments, clone this repository, go the the project's folder and from there run src/run.py: 
+To run the experiments, clone this repository and dependencies:
+```
+git clone https://github.com/Gricel-lee/CPHSTaskPlanning.git
+cd CPHSTaskPlanning/EvoChecker
+git submodule update --init --recursive 
+```
+
+Then go the the project's folder and from there run src/run.py: 
 ```
 cd CPHSTaskPlanning
 python3 src/run.py
