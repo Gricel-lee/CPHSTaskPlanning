@@ -17,7 +17,9 @@ An output folder is automatically generated with the following content:
     - **previousPopulation**: a copy of the results obtained with no seeding, used for seeding other experiments.
 
 
-### Run
+## Run
+
+#### In local laptop
 To run the experiments, clone this repository and dependencies:
 ```
 git clone https://github.com/Gricel-lee/CPHSTaskPlanning.git
@@ -31,6 +33,11 @@ cd CPHSTaskPlanning
 python3 src/run.py
 ```
 
+#### In UoY Viking server
+Sign into viking and lauch the jobscript.job file:
+```
+sbatch jobscript.job
+```
 
 # Troubleshooting
 
