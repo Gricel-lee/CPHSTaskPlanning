@@ -124,7 +124,7 @@ def read_args(dir, csv_def, output_folder, model, properties):
     noSeedingBackup = os.path.join(dir, output_folder+"/previousPopulation")
     aux.make_folder(noSeedingBackup)
     
-    if False:
+    if True:
         print(f"[ARGS] Directory: {dir}")
         print(f"[ARGS] CSV default file: {csv_def}")
         print(f"[ARGS] Output folder: {output_folder}")
