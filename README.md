@@ -34,9 +34,12 @@ python3 src/run.py
 
 # Troubleshooting
 
-- In viking, it requires to install python libraries:
- ```pip3 install --user pandas```
- 
+- If the EvoChecker file does not load normally after  ```git submodule update --init --recursive```, try:
+```
+cd EvoChecker
+git checkout -b seedResultsjar origin/seedResultsjar
+```
+
  
  
  # Developers notes
