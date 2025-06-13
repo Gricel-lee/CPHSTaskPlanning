@@ -29,7 +29,7 @@ def run_experiments(experiments):
         experiments.get(i).create_folder_and_files(experiments)
         
         # b) Create EvoChecker instance
-        evo = os.path.join(experiments.dir, "EvoCheckerInJAR/target")
+        evo = os.path.join(experiments.dir, "EvoChecker/target")
         temp = experiments.get(i).temp_folder
         print(f"[CP] Copying EvoChecker {evo} folder to {temp}")
         aux.copy_folder_recursive(evo,temp)  
