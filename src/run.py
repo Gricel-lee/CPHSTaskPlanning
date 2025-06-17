@@ -1,6 +1,6 @@
 import os
 from experiments.experimentSet import ExperimentSet
-import aux
+import experiments.aux as aux
 import experiments.workflow as workflow
 
 def main():

@@ -1,13 +1,21 @@
-import aux
+import experiments.aux as aux
 import os
 import subprocess
+from experiments.experimentsResults import ExperimentResults
 
 
 def run_experiments(experiments):
+    f = run_exp_workflow(experiments)
+    save_all_data_df(f)
+
+def save_all_data_df(f):
+        ex = ExperimentResults(f)
+
+
+def run_exp_workflow(experiments):
     """
     Run the experiment workflow.
-    """
-    
+    """    
     for (i, experiment) in enumerate(experiments.experiment_list):    
         print(f"[EXP] Experiment {i}: {experiments.get(i)}")
         # a) create new folder and config.props file
@@ -79,12 +87,14 @@ def run_experiments(experiments):
         # aux.delete_folder(temp)
         
         # i) get all result file paths as a single file
-        paretoFronts_ordered = get_sorted_front_files(results)
-        for f in paretoFronts_ordered:
-            file_all_paths = os.path.join(experiments.output_folder, "resPaths.txt")
-            aux.append_to_file(file_all_paths,f+"\n")
+        files_pareto_fronts = get_sorted_front_files(results)
+        file_res_paths = os.path.join(experiments.output_folder, "resPaths.txt")
+        for f in files_pareto_fronts:
+            aux.append_to_file(file_res_paths,f+"\n")
         
-        
+    return file_res_paths
+
+
 
 def get_sorted_front_files(folder_path):
     """
@@ -107,3 +117,5 @@ def get_sorted_front_files(folder_path):
             files_front_ordered.append(file_i)
             i+=1
     return files_front_ordered
+
+

@@ -2,8 +2,8 @@ import os
 from pathlib import Path
 import csv
 from typing import List, Optional
-from aux import read_csv_file
-import aux
+from experiments.aux import read_csv_file
+import experiments.aux as aux
 
 # from experiment import Experiment
 
