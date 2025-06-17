@@ -18,7 +18,7 @@ def main():
     
     
     # b) remove previous initial seeding backup folder
-    aux.delete_folder(noSeedingBackup)
+    aux.delete_folder(output_folder)
     
     
     # 2) Load experiments from CSV---------------------------

@@ -1,21 +1,6 @@
 import aux
 import os
-
-# def run_experiments(experiments):
-    
-    # Load initial population (first experiment)
-    # load_init_pop(experiments)
-
-    # # Run the experiment
-    # experiment.run()
-
-    # # Save the results
-    # experiment.save_results()
-
-    # # Print the results
-    # experiment.print_results()
-
-
+import subprocess
 
 
 def run_experiments(experiments):
@@ -57,8 +42,6 @@ def run_experiments(experiments):
         print(f"[CP] Copying EvoChecker config {conf} to {tempC}")
         
         # e) run EvoChecker
-        import subprocess
-        
         env = os.environ.copy()
         env["LD_LIBRARY_PATH"] = "libs/runtime"
         # Run the Java JAR and wait for it to complete
@@ -91,7 +74,36 @@ def run_experiments(experiments):
             aux.copy_folder_recursive(results, backup)
             aux.rename_files_with_prefix(backup, "prev_")
         
-        # g) delete temp folder
+        # h) delete temp folder (or some large files)
         # temp = experiments.get(i).temp_folder
         # aux.delete_folder(temp)
         
+        # i) get all result file paths as a single file
+        paretoFronts_ordered = get_sorted_front_files(results)
+        for f in paretoFronts_ordered:
+            file_all_paths = os.path.join(experiments.output_folder, "resPaths.txt")
+            aux.append_to_file(file_all_paths,f+"\n")
+        
+        
+
+def get_sorted_front_files(folder_path):
+    """
+    Reads all files ending in 'Front' in the given folder,
+    and returns them sorted by creation time (oldest to newest).
+    """
+    files = aux.get_files_in_folder(folder_path)
+    files_front_ordered = []
+    exists = True;
+    i = 1;
+    while exists:
+        file_i = ""
+        for f in files:
+            if f.endswith(f"_{i}_Front"):
+                file_i = f
+        if file_i=="":
+            exists=False
+            break
+        else:
+            files_front_ordered.append(file_i)
+            i+=1
+    return files_front_ordered

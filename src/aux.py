@@ -128,6 +128,7 @@ def read_args(dir, csv_def, output_folder, model, properties):
         print(f"[ARGS] Directory: {dir}")
         print(f"[ARGS] CSV default file: {csv_def}")
         print(f"[ARGS] Output folder: {output_folder}")
+        print(f"[ARGS] Seeding folder: {noSeedingBackup}")
         
     return dir, csv_def, output_folder, noSeedingBackup
 
@@ -177,9 +178,9 @@ def copy_folder_recursive_ignoreSome(src, dst, ignore_files_with_prefix="prev_")
     os.makedirs(dst, exist_ok=True)
 
     for item in os.listdir(src):
-        print(f"Item>>: {item}")
+        # print(f"Item>>: {item}")
         if not item.startswith(ignore_files_with_prefix):
-            print(f"yes >>: {item}")
+            # print(f"yes >>: {item}")
             s_item = os.path.join(src, item)
             d_item = os.path.join(dst, item)
             # print(f"Copying {s_item} to {d_item}")
@@ -238,4 +239,19 @@ def copy_file(src, dst):
     shutil.copy2(src, dst)  # copy file with metadata
     # print(f"Copied {src} to {dst}")
     
-    
+
+def append_to_file(filePath, appendString):
+    '''Append to file or create it if missing'''
+    print("filePath", filePath)
+    with open(filePath, 'a') as f:
+        f.write(appendString)
+        
+        
+        
+def get_files_in_folder(folderPath):
+    front_files = []
+    for filename in os.listdir(folderPath):
+        full_path = os.path.join(folderPath, filename)
+        if os.path.isfile(full_path):  # optional: only include files
+            front_files.append(full_path)
+    return front_files
