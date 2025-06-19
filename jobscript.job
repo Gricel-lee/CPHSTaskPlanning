@@ -29,6 +29,7 @@ echo "$LD_LIBRARY_PATH"
 
 # Commands to run
 pip3 install pandas
+pip3 install pymoo
 python3 ./src/run.py --csv "input/experiments.csv" --model "input/evomodel/FX/fxLarge.pm" --properties "input/evomodel/FX/fxLarge.pctl" --output "output/fxlarge"
 
 

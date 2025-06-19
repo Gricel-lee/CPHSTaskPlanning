@@ -61,29 +61,29 @@ class ExperimentResults:
         
     
 # --- For tests  ---
-def _read_args(filePath):
-    """
-    Reads command line arguments for the file path.
-    """
-    import argparse
-    parser = argparse.ArgumentParser(description="Read experiments.")
-    parser.add_argument(
-        "--file", type=str, default=filePath, help="Path to the file containing experiment paths"
-    )
+# def _read_args(filePath):
+#     """
+#     Reads command line arguments for the file path.
+#     """
+#     import argparse
+#     parser = argparse.ArgumentParser(description="Read experiments.")
+#     parser.add_argument(
+#         "--file", type=str, default=filePath, help="Path to the file containing experiment paths"
+#     )
 
-    args = parser.parse_args()
-    # --file
-    if args.file is not None:
-        filePath = args.file
+#     args = parser.parse_args()
+#     # --file
+#     if args.file is not None:
+#         filePath = args.file
     
-    return filePath
+#     return filePath
     
 
-if __name__ == "__main__":
-    filePath="/home/gnvf500/Gricel-Documents/GithubGris/CPHSTaskPlanning/output/experiments/resPaths.txt"
+# if __name__ == "__main__":
+#     filePath="/home/gnvf500/Gricel-Documents/GithubGris/CPHSTaskPlanning/output/experiments/resPaths.txt"
     
-    # read --file
-    filePath = _read_args(filePath)
+#     # read --file
+#     filePath = _read_args(filePath)
     
-    exp = ExperimentResults(filePath)
+#     exp = ExperimentResults(filePath)
 # ----------------------
