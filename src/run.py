@@ -18,6 +18,9 @@ def main():
     # override args from command line
     dir, csv_def, output_folder, noSeedingBackup, optimisation_list = aux.read_args(dir, csv_def, output_folder, optimisation_list, model, properties)
     
+    # check files exist
+    aux.check_files_exist(csv_def, model, properties, optimisation_list)
+
     
     # b) remove previous initial seeding backup folder
     aux.delete_folder(output_folder)

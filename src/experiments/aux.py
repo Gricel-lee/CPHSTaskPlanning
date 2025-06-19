@@ -16,6 +16,21 @@ def read_csv_file(file_path):
     return data
 
 
+def check_files_exist(csv_def, model, properties, optimisation_list):
+    # check that files exists csv_def, model, properties, optimisation_list
+    if not os.path.isfile(csv_def):
+        print(f"[ARGS] CSV file {csv_def} does not exist. Exiting.")
+        exit(1)
+    if not os.path.isfile(model):
+        print(f"[ARGS] EvoChecker model file {model} does not exist. Exiting.")
+        exit(1)
+    if not os.path.isfile(properties):
+        print(f"[ARGS] EvoChecker properties file {properties} does not exist. Exiting.")
+        exit(1)
+    if not os.path.isfile(optimisation_list):
+        print(f"[ARGS] Optimisation list file {optimisation_list} does not exist. Exiting.")
+        exit(1)
+
 
 def create_config_props_file(experiment:'Experiment',experiments:'ExperimentSet'):
     s = ""
