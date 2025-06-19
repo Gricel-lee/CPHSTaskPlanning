@@ -3,7 +3,7 @@ from pymoo.indicators.igd import IGD
 from pymoo.indicators.hv import HV
 import numpy as np
 import pandas as pd
-from readexperiments.auxread import minimise_if_maximise
+from readexperiments.aux.auxread import minimise_if_maximise
 
 """
 Calculate IGD, GD, and Hypervolume metrics for a set of experiments.

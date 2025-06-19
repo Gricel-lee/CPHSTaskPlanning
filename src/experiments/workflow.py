@@ -86,7 +86,7 @@ def run_exp_workflow(experiments):
         # temp = experiments.get(i).temp_folder
         # aux.delete_folder(temp)
         
-        # i) get all result file paths as a single file
+        # i) Save all result file paths as a single file
         files_pareto_fronts = get_sorted_front_files(results)
         file_res_paths = os.path.join(experiments.output_folder, "resPaths.txt")
         for f in files_pareto_fronts:
