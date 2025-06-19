@@ -52,7 +52,7 @@ def evaluate_IGD_GD_HV(df, pareto_reference, nadir_point, optimise):
     print("Pareto reference points:", len(pareto_ref_np))
     
     # Create df with columns for IGD, GD, and Hypervolume and experiment name
-    metrics_df = pd.DataFrame(columns=['IGD', 'GD', 'HV','experiment'])
+    metrics_df = pd.DataFrame(columns=['IGD', 'GD', 'HV', 'pareto_front_size','experiment'])
     
     # Iterate through each experiment and compute metrics
     for experiment in experiments:
@@ -64,10 +64,12 @@ def evaluate_IGD_GD_HV(df, pareto_reference, nadir_point, optimise):
         igd_value = compute_igd(exp_i_np, pareto_ref_np)
         gd_value = compute_gd(exp_i_np, pareto_ref_np)
         hv_value = compute_hypervolume(exp_i_np, nadir_point)
+        # size of exp_i_np
+        pareto_front_i_size = exp_i_np.shape[0]
         
         # Store results in df
         new_row = pd.DataFrame([{
-            'IGD': igd_value, 'GD': gd_value, 'HV': hv_value, 'experiment': experiment
+            'IGD': igd_value, 'GD': gd_value, 'HV': hv_value, 'pareto_front_size': pareto_front_i_size, 'experiment': experiment
         }])
         metrics_df = pd.concat([metrics_df, new_row], ignore_index=True)
     return metrics_df
