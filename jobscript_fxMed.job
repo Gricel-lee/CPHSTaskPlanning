@@ -30,8 +30,7 @@ echo "$LD_LIBRARY_PATH"
 # Commands to run
 pip3 install pandas
 pip3 install pymoo
-python3 ./src/run.py --csv "input/experiments.csv" --model "input/evomodel/FX/fxLarge.pm" --properties "input/evomodel/FX/fxLarge.pctl" --output "output/fxlarge"
-
+python3 ./src/run.py --csv "input/experimentsfxMedium.csv" --model "input/evomodel/FX/fxMedium.pm" --properties "input/evomodel/FX/fxMedium.pctl" --output "output/fxmedium" --optimisation "input/optimisationList_fxMed.txt"
 
 #java -jar EvoChecker-1.1.1.jar 
 #python my_script.py

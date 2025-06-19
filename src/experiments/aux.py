@@ -74,14 +74,14 @@ def create_config_props_file(experiment:'Experiment',experiments:'ExperimentSet'
 
 
 
-def read_args(dir, csv_def, output_folder, model, properties):    
+def read_args(dir, csv_def, output_folder, optimisation_list, model, properties):    
     # Read command line arguments
     parser = argparse.ArgumentParser(description="Run experiment.")
     parser.add_argument(
         "--dir", type=str, default=dir, help="Path to directory"
     )
     parser.add_argument(
-        "--csv", type=str, default=None, help="Path to the experiments CSV file"
+        "--csv", type=str, default=csv_def, help="Path to the experiments CSV file"
     )
     parser.add_argument(
         "--model", type=str, default=model, help="Path to the EvoChecker model file"
@@ -92,24 +92,29 @@ def read_args(dir, csv_def, output_folder, model, properties):
     parser.add_argument(
         "--output", type=str, default=output_folder, help="Path to the output folder"
     )
+    parser.add_argument(
+        "--optimisation", type=str, default=optimisation_list, help="Path to the optimisation list file"
+    )
     
     # Save the arguments
     args = parser.parse_args()
     # --dir
-    if not args.dir is None:
+    if args.dir is not None:
         dir = args.dir
     # -- csv file
-    if not args.csv is None:
+    if args.csv is not None:
         csv_def = args.csv
     # -- out folder
-    if not args.output is None:
+    if args.output is not None:
         output_folder = args.output
     # -- evo files
-    if not args.model is None:
+    if args.model is not None:
         model = args.model
-    if not args.properties is None:
+    if args.properties is not None:
         properties = args.properties
-        
+    if args.optimisation is not None:
+        optimisation_list = args.optimisation
+    
     # Get paths
     # -- csv file
     csv_def = os.path.join(dir, csv_def)
@@ -130,7 +135,7 @@ def read_args(dir, csv_def, output_folder, model, properties):
         print(f"[ARGS] Output folder: {output_folder}")
         print(f"[ARGS] Seeding folder: {noSeedingBackup}")
         
-    return dir, csv_def, output_folder, noSeedingBackup
+    return dir, csv_def, output_folder, noSeedingBackup, optimisation_list
 
 
 def delete_folder(folder):

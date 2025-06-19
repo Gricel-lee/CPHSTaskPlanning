@@ -9,14 +9,14 @@ def main():
     # a) set up paths
     # default paths
     dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    csv_def = "input/experiments.csv"
+    csv_def = "input/experimentsfxLarge.csv"
     model = "input/evomodel/FX/fxLarge.pm"
     properties = "input/evomodel/FX/fxLarge.pctl"
-    output_folder = "output/experiments"
-    optimisation_list = "input/optimisationList.txt"
+    output_folder = "output/fxlarge"
+    optimisation_list = "input/optimisationList_fxLarge.txt"
     
     # override args from command line
-    dir, csv_def, output_folder, noSeedingBackup = aux.read_args(dir, csv_def, output_folder, model, properties)
+    dir, csv_def, output_folder, noSeedingBackup, optimisation_list = aux.read_args(dir, csv_def, output_folder, optimisation_list, model, properties)
     
     
     # b) remove previous initial seeding backup folder
