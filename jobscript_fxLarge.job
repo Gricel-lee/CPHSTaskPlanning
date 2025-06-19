@@ -30,7 +30,13 @@ echo "$LD_LIBRARY_PATH"
 # Commands to run
 pip3 install pandas
 pip3 install pymoo
-python3 ./src/run.py --csv "input/experimentsfxLarge.csv" --model "input/evomodel/FX/fxLarge.pm" --properties "input/evomodel/FX/fxLarge.pctl" --output "output/fxlarge" --optimisation "input/optimisationList_fxLarge.txt"
+# python3 ./src/run.py --csv "input/experimentsfxLarge.csv" --model "input/evomodel/FX/fxLarge.pm" --properties "input/evomodel/FX/fxLarge.pctl" --output "output/fxlarge" --optimisation "input/optimisationList_fxLarge.txt"
 
-#java -jar EvoChecker-1.1.1.jar 
-#python my_script.py
+# Run and save python output to a log file
+python3 ./src/run.py \
+    --csv "input/experimentsfxLarge.csv" \
+    --model "input/evomodel/FX/fxLarge.pm" \
+    --properties "input/evomodel/FX/fxLarge.pctl" \
+    --output "output/fxlarge" \
+    --optimisation "input/optimisationList_fxLarge.txt" \
+    > output/fxlarge/job_output.log 2>&1
