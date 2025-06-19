@@ -37,7 +37,7 @@ class Experiment:
         rowString = "|".join(str(value) for value in row.values())
         return rowString
         
-    def create_folder_and_files(self,experiments):
+    def create_folder_and_config_file(self,experiments):
         # - create EvoChecker config file
         self.configFile = aux.create_config_props_file(self,experiments)
         

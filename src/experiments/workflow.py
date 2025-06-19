@@ -18,8 +18,9 @@ def run_exp_workflow(experiments):
     """    
     for (i, experiment) in enumerate(experiments.experiment_list):    
         print(f"[EXP] Experiment {i}: {experiments.get(i)}")
-        # a) create new folder and config.props file
-        experiments.get(i).create_folder_and_files(experiments)
+        
+        # a) create config.props file and output folder
+        experiments.get(i).create_folder_and_config_file(experiments)
         
         # b) Create EvoChecker instance
         evo = os.path.join(experiments.dir, "EvoChecker/target")

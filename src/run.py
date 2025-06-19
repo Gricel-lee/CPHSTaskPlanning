@@ -6,28 +6,36 @@ from readexperiments.readResultsExperiments import read_experiment_results_and_s
 
 def main():
     # 1) Set up ---------------------------
-    # a) set up paths
-    # default paths
-    dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # a) default paths
+    dirr = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    
+    # FXLarge example paths
     csv_def = "input/experimentsfxLarge.csv"
     model = "input/evomodel/FX/fxLarge.pm"
     properties = "input/evomodel/FX/fxLarge.pctl"
     output_folder = "output/fxlarge"
     optimisation_list = "input/optimisationList_fxLarge.txt"
     
+    # Agricultural example paths
+    csv_def = "input/experimentsAgricultural.csv"
+    model = "input/evomodel/AG/agricultural.pm"
+    properties = "input/evomodel/AG/agricultural.pctl"
+    output_folder = "output/agricultural"
+    optimisation_list = "input/optimisationList_agricultural.txt"
+    
+    
     # override args from command line
-    dir, csv_def, output_folder, noSeedingBackup, optimisation_list = aux.read_args(dir, csv_def, output_folder, optimisation_list, model, properties)
+    dirr, csv_def, output_folder, noSeedingBackup, optimisation_list = aux.read_args(dirr, csv_def, output_folder, optimisation_list, model, properties)
     
     # check files exist
     aux.check_files_exist(csv_def, model, properties, optimisation_list)
-
     
     # b) remove previous initial seeding backup folder
     aux.delete_folder(output_folder)
     
     
     # 2) Load experiments from CSV---------------------------
-    experiments = ExperimentSet(dir, csv_def, output_folder, noSeedingBackup, model, properties)
+    experiments = ExperimentSet(dirr, csv_def, output_folder, noSeedingBackup, model, properties)
     
     
     # ===============================================================
@@ -35,7 +43,7 @@ def main():
     workflow.run_experiments(experiments)
     
     # 4) Read experiment results and save metrics ---------------------------
-    read_experiment_results_and_save_metrics(dir, output_folder, optimisation_list)
+    read_experiment_results_and_save_metrics(dirr, output_folder, optimisation_list)
 
 if __name__ == "__main__":
     main()

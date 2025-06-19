@@ -89,11 +89,11 @@ def create_config_props_file(experiment:'Experiment',experiments:'ExperimentSet'
 
 
 
-def read_args(dir, csv_def, output_folder, optimisation_list, model, properties):    
+def read_args(directory, csv_def, output_folder, optimisation_list, model, properties):    
     # Read command line arguments
     parser = argparse.ArgumentParser(description="Run experiment.")
     parser.add_argument(
-        "--dir", type=str, default=dir, help="Path to directory"
+        "--dir", type=str, default=directory, help="Path to directory"
     )
     parser.add_argument(
         "--csv", type=str, default=csv_def, help="Path to the experiments CSV file"
@@ -115,7 +115,7 @@ def read_args(dir, csv_def, output_folder, optimisation_list, model, properties)
     args = parser.parse_args()
     # --dir
     if args.dir is not None:
-        dir = args.dir
+        directory = args.dir
     # -- csv file
     if args.csv is not None:
         csv_def = args.csv
@@ -132,25 +132,25 @@ def read_args(dir, csv_def, output_folder, optimisation_list, model, properties)
     
     # Get paths
     # -- csv file
-    csv_def = os.path.join(dir, csv_def)
+    csv_def = os.path.join(directory, csv_def)
     # check if the file exists
     if not os.path.isfile(csv_def):
         print(f"[ARGS] CSV file {csv_def} does not exist. Exiting.")
         sys.exit(1)
     # -- output folder
-    output_folder = os.path.join(dir, output_folder)
+    output_folder = os.path.join(directory, output_folder)
     aux.make_folder(output_folder)
     # -- no seeding backup folder
-    noSeedingBackup = os.path.join(dir, output_folder+"/previousPopulation")
+    noSeedingBackup = os.path.join(directory, output_folder+"/previousPopulation")
     aux.make_folder(noSeedingBackup)
     
     if True:
-        print(f"[ARGS] Directory: {dir}")
+        print(f"[ARGS] Directory: {directory}")
         print(f"[ARGS] CSV default file: {csv_def}")
         print(f"[ARGS] Output folder: {output_folder}")
         print(f"[ARGS] Seeding folder: {noSeedingBackup}")
         
-    return dir, csv_def, output_folder, noSeedingBackup, optimisation_list
+    return directory, csv_def, output_folder, noSeedingBackup, optimisation_list
 
 
 def delete_folder(folder):
