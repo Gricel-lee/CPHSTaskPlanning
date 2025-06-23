@@ -71,9 +71,9 @@ def plot_s_shape_learning_curve_steepness(N_min=0, N_max=10, num_points=200):
     steepness_values = [0,0.1,0.3, 0.5, 1, 1.5,3]
 
     plt.figure(figsize=(5, 3))
-    for s in steepness_values:
-        y = 2 * (1 - p) * (1 / (1 + np.exp(-(N * s)))) + (2 * p - 1)
-        label = f"steepness = {s}"
+    for steepness in steepness_values:
+        y = 2 * (1 - p) * (1 / (1 + np.exp(-(N * steepness)))) + (2 * p - 1)
+        label = f"steepness = {steepness}"
         plt.plot(N, y, label=label)
     plt.title('S-Shaped Learning Curves for Different Steepness Values')
     plt.xlabel('Number of Attempts (N)')
