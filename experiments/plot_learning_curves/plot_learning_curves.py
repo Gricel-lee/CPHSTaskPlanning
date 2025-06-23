@@ -3,7 +3,10 @@ import matplotlib.pyplot as plt
 
 # Tried functions to model probability of success with a task as a function of the number of attempts: power law, log power law, and S-shape.
 # The S-shape (plot_s_shape_learning_curve) is selected as it converges on 1. The modified version varies between the initial probability "p" of an agent succeeding with a task, and 1.
-# The S-shape function is parametrised by the steepness of the curve.
+# The S-shape function is parametrised by the steepness of the curve, we selected a value of 0.5, for a moderate steepness.
+# Finally, we define a human learning curve, based on the S-shape function, defined as:
+# y = 2 * (1 - p) * (1 / (1 + np.exp(-(N * 0.5)))) + (2 * p - 1)
+# where p is the initial probability of success, and N is the number of attempts.
 
 
 def plot_power_law(a, b, N_min=1, N_max=10, num_points=100):
