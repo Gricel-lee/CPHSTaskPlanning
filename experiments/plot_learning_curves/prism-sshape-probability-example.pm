@@ -1,38 +1,51 @@
 dtmc
-const int worker2_maxRetry_t1l4 = 3;//[1..5];
-const int worker2_maxRetry_t3l4 =5;//[1..5];
-const int worker2_maxRetry_t1l7 =3;//[1..5];
-const int worker2_maxRetry_t3l7 =3;//[1..5];
-const int worker2_maxRetry_t3l9 =3;//[1..5];
-const int worker2_maxRetry_t1l6b= 3;//[1..5];
-const int worker2_maxRetry_t1l6a= 3;//[1..5];
-const int r1_maxRetry_t2l5 =3;//[1..10];
-const int r1_maxRetry_t2l8a =3;//[1..10];
-const int r1_maxRetry_t2l8b=3;// [1..10];
+// evolve int worker2_maxRetry_t1l4 [1..5];
+// evolve int worker2_maxRetry_t3l4 [1..5];
+// evolve int worker2_maxRetry_t1l7 [1..5];
+// evolve int worker2_maxRetry_t3l7 [1..5];
+// evolve int worker2_maxRetry_t3l9 [1..5];
+// evolve int worker2_maxRetry_t1l6b [1..5];
+// evolve int worker2_maxRetry_t1l6a [1..5];
+// evolve int r1_maxRetry_t2l5 [1..10];
+// evolve int r1_maxRetry_t2l8a [1..10];
+// evolve int r1_maxRetry_t2l8b [1..10];
 
-const double p_worker2_t1l4_ORIGINAL= 1.0;
-const double p_worker2_t3l4_ORIGINAL=0.7;
-const double p_worker2_t1l7_ORIGINAL=1.0;
-const double p_worker2_t3l7_ORIGINAL=0.99;
-const double p_worker2_t3l9_ORIGINAL=0.99;
-const double p_worker2_t1l6b_ORIGINAL=1.0;
-const double p_worker2_t1l6a_ORIGINAL=1.0;
-const double p_r1_t2l5_ORIGINAL=0.99;
-const double p_r1_t2l8a_ORIGINAL=0.99;
-const double p_r1_t2l8b_ORIGINAL=0.99;
+
+const int worker2_maxRetry_t1l4 = 5;//[1..5];
+const int worker2_maxRetry_t3l4 =5;//[1..5];
+const int worker2_maxRetry_t1l7 =5;//[1..5];
+const int worker2_maxRetry_t3l7 =5;//[1..5];
+const int worker2_maxRetry_t3l9 =5;//[1..5];
+const int worker2_maxRetry_t1l6b= 5;//[1..5];
+const int worker2_maxRetry_t1l6a= 5;//[1..5];
+const int r1_maxRetry_t2l5 =10;//[1..10];
+const int r1_maxRetry_t2l8a =10;//[1..10];
+const int r1_maxRetry_t2l8b=10;// [1..10];
+
+const double p_worker2_t1l4_ORIGINAL= 0.85;
+const double p_worker2_t3l4_ORIGINAL=0.8;
+const double p_worker2_t1l7_ORIGINAL=0.85;
+const double p_worker2_t3l7_ORIGINAL=0.89;
+const double p_worker2_t3l9_ORIGINAL=0.92;
+const double p_worker2_t1l6b_ORIGINAL=0.86;
+const double p_worker2_t1l6a_ORIGINAL=0.85;
+const double p_r1_t2l5_ORIGINAL=0.9;
+const double p_r1_t2l8a_ORIGINAL=0.92;
+const double p_r1_t2l8b_ORIGINAL=0.94;
 
 const double e = 2.718281828459045;
 const double steepness = 1.5;
-formula p_worker2_t1l4 = 2 * (1 - p_worker2_t1l4_ORIGINAL) * (1 / (1 + pow(e,-(worker2retry_t1l4 * steepness)))) + (2 * p_worker2_t1l4_ORIGINAL - 1);
-formula p_worker2_t3l4 = 2 * (1 - p_worker2_t3l4_ORIGINAL) * (1 / (1 + pow(e,-(worker2retry_t3l4 * steepness)))) + (2 * p_worker2_t3l4_ORIGINAL -1);
-formula p_worker2_t1l7 = 2 * (1 - p_worker2_t1l7_ORIGINAL) * (1 / (1 + pow(e,-(worker2retry_t1l7 * steepness)))) + (2 * p_worker2_t1l7_ORIGINAL -1);
-formula p_worker2_t3l7 = 2 * (1 - p_worker2_t3l7_ORIGINAL) * (1 / (1 + pow(e,-(worker2retry_t3l7 * steepness)))) + (2 * p_worker2_t3l7_ORIGINAL -1);
-formula p_worker2_t3l9 = 2 * (1 - p_worker2_t3l9_ORIGINAL) * (1 / (1 + pow(e,-(worker2retry_t3l9 * steepness)))) + (2 * p_worker2_t3l9_ORIGINAL -1);
-formula p_worker2_t1l6b = 2 * (1 - p_worker2_t1l6b_ORIGINAL) * (1 / (1 + pow(e,-(worker2retry_t1l6b * steepness)))) + (2 * p_worker2_t1l6b_ORIGINAL -1);
-formula p_worker2_t1l6a = 2 * (1 - p_worker2_t1l6a_ORIGINAL) * (1 / (1 + pow(e,-(worker2retry_t1l6a * steepness)))) + (2 * p_worker2_t1l6a_ORIGINAL -1);
-formula p_r1_t2l5       = 2 * (1 - p_r1_t2l5_ORIGINAL) * (1 / (1 + pow(e,-(r1retry_t2l5 * steepness))))       + (2 * p_r1_t2l5_ORIGINAL -1);
-formula p_r1_t2l8a      = 2 * (1 - p_r1_t2l8a_ORIGINAL) * (1 / (1 + pow(e,-(r1retry_t2l8a * steepness))))      + (2 * p_r1_t2l8a_ORIGINAL -1);
-formula p_r1_t2l8b      = 2 * (1 - p_r1_t2l8b_ORIGINAL) * (1 / (1 + pow(e,-(r1retry_t2l8b * steepness))))      + (2 * p_r1_t2l8b_ORIGINAL -1);
+formula p_worker2_t1l4 = 2 * (1 - p_worker2_t1l4_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l4 * steepness)))) + (2 * p_worker2_t1l4_ORIGINAL - 1);
+formula p_worker2_t3l4 = 2 * (1 - p_worker2_t3l4_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t3l4 * steepness)))) + (2 * p_worker2_t3l4_ORIGINAL -1);
+formula p_worker2_t1l7 = 2 * (1 - p_worker2_t1l7_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l7 * steepness)))) + (2 * p_worker2_t1l7_ORIGINAL -1);
+formula p_worker2_t3l7 = 2 * (1 - p_worker2_t3l7_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t3l7 * steepness)))) + (2 * p_worker2_t3l7_ORIGINAL -1);
+formula p_worker2_t3l9 = 2 * (1 - p_worker2_t3l9_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t3l9 * steepness)))) + (2 * p_worker2_t3l9_ORIGINAL -1);
+formula p_worker2_t1l6b = 2 * (1 - p_worker2_t1l6b_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l6b * steepness)))) + (2 * p_worker2_t1l6b_ORIGINAL -1);
+formula p_worker2_t1l6a = 2 * (1 - p_worker2_t1l6a_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l6a * steepness)))) + (2 * p_worker2_t1l6a_ORIGINAL -1);
+formula p_r1_t2l5       = 2 * (1 - p_r1_t2l5_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l5 * steepness))))       + (2 * p_r1_t2l5_ORIGINAL -1);
+formula p_r1_t2l8a      = 2 * (1 - p_r1_t2l8a_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l8a * steepness))))      + (2 * p_r1_t2l8a_ORIGINAL -1);
+formula p_r1_t2l8b      = 2 * (1 - p_r1_t2l8b_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l8b * steepness))))      + (2 * p_r1_t2l8b_ORIGINAL -1);
+
 
 
 const int worker2Final = 12;

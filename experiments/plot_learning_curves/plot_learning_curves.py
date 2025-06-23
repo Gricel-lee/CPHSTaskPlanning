@@ -73,6 +73,7 @@ def plot_s_shape_learning_curve_steepness(N_min=0, N_max=10, num_points=200):
     plt.figure(figsize=(5, 3))
     for steepness in steepness_values:
         y = 2 * (1 - p) * (1 / (1 + np.exp(-(N * steepness)))) + (2 * p - 1)
+        y = 2 * (1 - p) * (1 / (1 + 1/np.exp((N * steepness)))) + (2 * p - 1) # Change to 1/exp as EvoChecker parser does not like negative exponent
         label = f"steepness = {steepness}"
         plt.plot(N, y, label=label)
     plt.title('S-Shaped Learning Curves for Different Steepness Values')
