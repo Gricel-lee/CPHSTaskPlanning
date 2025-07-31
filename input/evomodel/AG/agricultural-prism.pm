@@ -1,16 +1,16 @@
 dtmc
 
 
-evolve int worker2_maxRetry_t1l4 [1..5];
-evolve int worker2_maxRetry_t3l4 [1..5];
-evolve int worker2_maxRetry_t1l7 [1..5];
-evolve int worker2_maxRetry_t3l7 [1..5];
-evolve int worker2_maxRetry_t3l9 [1..5];
-evolve int worker2_maxRetry_t1l6b [1..5];
-evolve int worker2_maxRetry_t1l6a [1..5];
-evolve int r1_maxRetry_t2l5 [1..10];
-evolve int r1_maxRetry_t2l8a [1..10];
-evolve int r1_maxRetry_t2l8b [1..10];
+const int worker2_maxRetry_t1l4=5;
+const int worker2_maxRetry_t3l4=5;
+const int worker2_maxRetry_t1l7=5;
+const int worker2_maxRetry_t3l7=5;
+const int worker2_maxRetry_t3l9=5;
+const int worker2_maxRetry_t1l6b=5;
+const int worker2_maxRetry_t1l6a=5;
+const int r1_maxRetry_t2l5=10;
+const int r1_maxRetry_t2l8a=10;
+const int r1_maxRetry_t2l8b=10;
 
 const double p_worker2_t1l4_ORIGINAL=1.0;
 const double p_worker2_t3l4_ORIGINAL=0.99;

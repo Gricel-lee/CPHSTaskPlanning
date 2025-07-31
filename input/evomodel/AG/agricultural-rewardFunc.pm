@@ -91,33 +91,58 @@ module _r1
   [r1dot2l8b] r1=5 & r1retry_t2l8b >= r1_maxRetry_t2l8b -> 1:(r1'=r1Fail);
 endmodule
 
+
+formula r_worker2_t1l4_ORIGINAL = 3;
+formula r_worker2_t3l4_ORIGINAL = 5;
+formula r_worker2_t1l7_ORIGINAL = 3;
+formula r_worker2_t3l7_ORIGINAL = 5;
+formula r_worker2_t3l9_ORIGINAL = 5;
+formula r_worker2_t1l6b_ORIGINAL = 1;
+formula r_worker2_t1l6a_ORIGINAL = 1;
+formula r_r1_t2l5_ORIGINAL = 1;
+formula r_r1_t2l8a_ORIGINAL = 1;
+formula r_r1_t2l8b_ORIGINAL = 1;
+
+
+formula r_worker2_t1l4 = 2 * (1 - r_worker2_t1l4_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l4 * steepness)))) + (2 * r_worker2_t1l4_ORIGINAL - 1);
+formula r_worker2_t3l4 = 2 * (1 - r_worker2_t3l4_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t3l4 * steepness)))) + (2 * r_worker2_t3l4_ORIGINAL -1);
+formula r_worker2_t1l7 = 2 * (1 - r_worker2_t1l7_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l7 * steepness)))) + (2 * r_worker2_t1l7_ORIGINAL -1);
+formula r_worker2_t3l7 = 2 * (1 - r_worker2_t3l7_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t3l7 * steepness)))) + (2 * r_worker2_t3l7_ORIGINAL -1);
+formula r_worker2_t3l9 = 2 * (1 - r_worker2_t3l9_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t3l9 * steepness)))) + (2 * r_worker2_t3l9_ORIGINAL -1);
+formula r_worker2_t1l6b = 2 * (1 - r_worker2_t1l6b_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l6b * steepness)))) + (2 * r_worker2_t1l6b_ORIGINAL -1);
+formula r_worker2_t1l6a = 2 * (1 - r_worker2_t1l6a_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l6a * steepness)))) + (2 * r_worker2_t1l6a_ORIGINAL -1);
+formula r_r1_t2l5       = 2 * (1 - r_r1_t2l5_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l5 * steepness))))       + (2 * r_r1_t2l5_ORIGINAL -1);
+formula r_r1_t2l8a      = 2 * (1 - r_r1_t2l8a_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l8a * steepness))))      + (2 * r_r1_t2l8a_ORIGINAL -1);
+formula r_r1_t2l8b      = 2 * (1 - r_r1_t2l8b_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l8b * steepness))))      + (2 * r_r1_t2l8b_ORIGINAL -1);
+
+
 rewards "cost"
   [worker2movel4] true:1;
-  [worker2dot1l4] true:3;
-  [worker2dot1l4Retry] true:3;
-  [worker2dot3l4] true:5;
-  [worker2dot3l4Retry] true:5;
+  [worker2dot1l4] true:r_worker2_t1l4;
+  [worker2dot1l4Retry] true:r_worker2_t1l4;
+  [worker2dot3l4] true:r_worker2_t3l4;
+  [worker2dot3l4Retry] true:r_worker2_t3l4;
   [worker2movel7] true:1;
-  [worker2dot1l7] true:3;
-  [worker2dot1l7Retry] true:3;
-  [worker2dot3l7] true:5;
-  [worker2dot3l7Retry] true:5;
+  [worker2dot1l7] true:r_worker2_t1l7;
+  [worker2dot1l7Retry] true:r_worker2_t1l7;
+  [worker2dot3l7] true:r_worker2_t3l7;
+  [worker2dot3l7Retry] true:r_worker2_t3l7;
   [worker2movel8] true:1;
   [worker2movel9] true:1;
-  [worker2dot3l9] true:5;
-  [worker2dot3l9Retry] true:5;
+  [worker2dot3l9] true:r_worker2_t3l9;
+  [worker2dot3l9Retry] true:r_worker2_t3l9;
   [worker2movel6] true:1;
-  [worker2dot1l6b] true:3;
-  [worker2dot1l6bRetry] true:3;
-  [worker2dot1l6a] true:3;
-  [worker2dot1l6aRetry] true:3;
+  [worker2dot1l6b] true:r_worker2_t1l6b;
+  [worker2dot1l6bRetry] true:r_worker2_t1l6b;
+  [worker2dot1l6a] true:r_worker2_t1l6a;
+  [worker2dot1l6aRetry] true:r_worker2_t1l6a;
   [r1movel4] true:1;
   [r1movel5] true:1;
-  [r1dot2l5] true:1;
-  [r1dot2l5Retry] true:1;
+  [r1dot2l5] true:r_r1_t2l5;
+  [r1dot2l5Retry] true:r_r1_t2l5;
   [r1movel8] true:1;
-  [r1dot2l8a] true:1;
-  [r1dot2l8aRetry] true:1;
-  [r1dot2l8b] true:1;
-  [r1dot2l8bRetry] true:1;
+  [r1dot2l8a] true:r_r1_t2l8a;
+  [r1dot2l8aRetry] true:r_r1_t2l8a;
+  [r1dot2l8b] true:r_r1_t2l8b;
+  [r1dot2l8bRetry] true:r_r1_t2l8b;
 endrewards

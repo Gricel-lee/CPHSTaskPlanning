@@ -12,16 +12,16 @@ evolve int r1_maxRetry_t2l5 [1..10];
 evolve int r1_maxRetry_t2l8a [1..10];
 evolve int r1_maxRetry_t2l8b [1..10];
 
-const double p_worker2_t1l4_ORIGINAL=1.0;
-const double p_worker2_t3l4_ORIGINAL=0.99;
-const double p_worker2_t1l7_ORIGINAL=1.0;
-const double p_worker2_t3l7_ORIGINAL=0.99;
-const double p_worker2_t3l9_ORIGINAL=0.99;
-const double p_worker2_t1l6b_ORIGINAL=1.0;
-const double p_worker2_t1l6a_ORIGINAL=1.0;
-const double p_r1_t2l5_ORIGINAL=0.99;
-const double p_r1_t2l8a_ORIGINAL=0.99;
-const double p_r1_t2l8b_ORIGINAL=0.99;
+const double p_worker2_t1l4_ORIGINAL= 0.85;
+const double p_worker2_t3l4_ORIGINAL=0.8;
+const double p_worker2_t1l7_ORIGINAL=0.85;
+const double p_worker2_t3l7_ORIGINAL=0.89;
+const double p_worker2_t3l9_ORIGINAL=0.92;
+const double p_worker2_t1l6b_ORIGINAL=0.86;
+const double p_worker2_t1l6a_ORIGINAL=0.85;
+const double p_r1_t2l5_ORIGINAL=0.9;
+const double p_r1_t2l8a_ORIGINAL=0.92;
+const double p_r1_t2l8b_ORIGINAL=0.94;
 
 const double e = 2.718281828459045;
 const double steepness = 1.5;
