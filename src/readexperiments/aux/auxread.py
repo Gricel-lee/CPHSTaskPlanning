@@ -67,7 +67,7 @@ def get_pareto_reference_and_plot(df, optimise):
         plt.title('Pareto Front Visualization')
         plt.legend()
         plt.grid(True)
-        plt.show()
+        # plt.show()
     else:
         print(f"No plot: Data has {data.shape[1]} dimensions (only 2D is plotted).")
 
