@@ -39,6 +39,11 @@ for example,
 python3 ./src/run.py --csv "input/experiments.csv" --model "input/evomodel/FX/fxLarge.pm" --properties "input/evomodel/FX/fxLarge.pctl" --output "output/fxlarge"
 ```
 
+```console
+python3 ./src/run.py --csv "input/experimentsAgricultural.csv" --model "input/evomodel/AG/agricultural-humanNonLinear.pm" --properties "input/evomodel/AG/agricultural.pctl" --output "output/agr-human-no-linear"
+```
+
+
 
 #### In UoY Viking server
 Sign into viking and lauch the jobscript.job file:
