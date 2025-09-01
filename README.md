@@ -27,19 +27,6 @@ cd CPHSTaskPlanning
 git submodule update --init --recursive 
 ```
 
-Note: In Viking, create virtual machine if no dependencies exists in python installation. First switch python and Java verisons (shown when running ```module spider Python``` or Java):
-```
-module load Python/3.10.4-GCCcore-11.3.0
-module load Java/11.0.20
-```
-then do:
-```
-python3 -m venv my_project_env
-source my_project_env/bin/activate
-pip3 install --upgrade pip
-pip3 install matplotlib
-pip3 install pandas
-```
 
 ## Run
 
@@ -73,7 +60,7 @@ cd EvoChecker
 git checkout -b seedResultsjar origin/seedResultsjar
 ```
 
-- Change Java to Java 11 or later when (in Viking is possible by running```module load Java/11.0.20```)
+- Change Java to Java 11 or later when (in Viking is possible from the .job file```module load Java/11.0.20```)
 ```
 Error: A JNI error has occurred, please check your installation and try again
 Exception in thread "main" java.lang.UnsupportedClassVersionError: evochecker/EvoChecker has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
