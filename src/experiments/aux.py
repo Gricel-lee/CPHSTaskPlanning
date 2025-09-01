@@ -6,7 +6,6 @@ import pandas as pd
 import shutil
 import os
 import sys
-import experiments.aux as aux
 
 def read_csv_file(file_path):
     """
@@ -139,11 +138,11 @@ def read_args(directory, csv_def, output_folder, optimisation_list, model, prope
         sys.exit(1)
     # -- output folder
     output_folder = os.path.join(directory, output_folder)
-    aux.make_folder(output_folder)
+    make_folder(output_folder)
     # -- no seeding backup folder
     noSeedingBackup = os.path.join(directory, output_folder+"/previousPopulation")
-    aux.make_folder(noSeedingBackup)
-    
+    make_folder(noSeedingBackup)
+
     if True:
         print(f"[ARGS] Directory: {directory}")
         print(f"[ARGS] CSV default file: {csv_def}")
