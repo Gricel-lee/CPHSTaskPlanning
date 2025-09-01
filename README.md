@@ -21,7 +21,7 @@ An output folder is automatically generated with the following content:
 
 #### In local laptop
 To run the experiments, clone this repository and download dependencies:
-```
+```console
 git clone https://github.com/Gricel-lee/CPHSTaskPlanning.git
 cd CPHSTaskPlanning
 git submodule update --init --recursive 
@@ -30,26 +30,26 @@ git submodule update --init --recursive
 ## Run
 
 From ```cd CPHSTaskPlanning```, run ```src/run.py``` as follows:
-```
+```console
 python3 ./src/run.py --csv <csv_file> --model <evochecker_model_file> --properties <evochecker_props_file> --output <output_folder>
 ```
 
 for example,
-```
+```console
 python3 ./src/run.py --csv "input/experiments.csv" --model "input/evomodel/FX/fxLarge.pm" --properties "input/evomodel/FX/fxLarge.pctl" --output "output/fxlarge"
 ```
 
 
 #### In UoY Viking server
 Sign into viking and lauch the jobscript.job file:
-```
+```console
 sbatch jobscript.job
 ```
 
 # Troubleshooting
 
 - If the EvoChecker file does not load normally after  ```git submodule update --init --recursive```, try:
-```
+```console
 cd EvoChecker
 git checkout -b seedResultsjar origin/seedResultsjar
 ```
