@@ -1,9 +1,7 @@
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 from readexperiments.aux.auxread import *
 from readexperiments.aux.metrics import evaluate_IGD_GD_HV
-import os
+
 
 
 def read_experiment_results_and_save_metrics(dir,output_dir,optimisation_list):
