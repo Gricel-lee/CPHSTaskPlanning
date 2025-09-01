@@ -20,14 +20,14 @@ An output folder is automatically generated with the following content:
 ## Run
 
 #### In local laptop
-To run the experiments, clone this repository and dependencies:
+To run the experiments, clone this repository and download dependencies:
 ```
 git clone https://github.com/Gricel-lee/CPHSTaskPlanning.git
 cd CPHSTaskPlanning
 git submodule update --init --recursive 
 ```
 
-Go the project's folder and from there run src/run.py with inputs and folder to save the output, for example, to save the output in output/fxlarge: 
+Go to the project's folder and from there run src/run.py with inputs and folder to save the output, for example, to save the output in output/fxlarge: 
 ```
 cd CPHSTaskPlanning
 python3 ./src/run.py --csv "input/experiments.csv" --model "input/evomodel/FX/fxLarge.pm" --properties "input/evomodel/FX/fxLarge.pctl" --output "output/fxlarge"
