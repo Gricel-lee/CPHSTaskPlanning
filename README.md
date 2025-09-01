@@ -17,7 +17,7 @@ An output folder is automatically generated with the following content:
     - **previousPopulation**: a copy of the results obtained with no seeding, used for seeding other experiments.
 
 
-## Run
+## Install
 
 #### In local laptop
 To run the experiments, clone this repository and download dependencies:
@@ -27,11 +27,18 @@ cd CPHSTaskPlanning
 git submodule update --init --recursive 
 ```
 
-Go to the project's folder and from there run src/run.py with inputs and folder to save the output, for example, to save the output in output/fxlarge: 
+## Run
+
+From ```cd CPHSTaskPlanning```, run ```src/run.py``` as follows:
 ```
-cd CPHSTaskPlanning
+python3 ./src/run.py --csv <csv_file> --model <evochecker_model_file> --properties <evochecker_props_file> --output <output_folder>
+```
+
+for example,
+```
 python3 ./src/run.py --csv "input/experiments.csv" --model "input/evomodel/FX/fxLarge.pm" --properties "input/evomodel/FX/fxLarge.pctl" --output "output/fxlarge"
 ```
+
 
 #### In UoY Viking server
 Sign into viking and lauch the jobscript.job file:
