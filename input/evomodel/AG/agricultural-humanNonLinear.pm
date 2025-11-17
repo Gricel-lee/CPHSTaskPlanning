@@ -2,23 +2,23 @@ dtmc
 
 
 evolve int worker2_maxRetry_t1l4 [1..5];
-evolve int worker2_maxRetry_t3l4 [1..5];
+evolve int worker2_maxRetry_t3l4 [1..6];
 evolve int worker2_maxRetry_t1l7 [1..5];
-evolve int worker2_maxRetry_t3l7 [1..5];
-evolve int worker2_maxRetry_t3l9 [1..5];
+evolve int worker2_maxRetry_t3l7 [1..6];
+evolve int worker2_maxRetry_t3l9 [1..6];
 evolve int worker2_maxRetry_t1l6b [1..5];
 evolve int worker2_maxRetry_t1l6a [1..5];
 evolve int r1_maxRetry_t2l5 [1..10];
 evolve int r1_maxRetry_t2l8a [1..10];
 evolve int r1_maxRetry_t2l8b [1..10];
 
-const double p_worker2_t1l4_ORIGINAL=0.1;
-const double p_worker2_t3l4_ORIGINAL=0.2;
-const double p_worker2_t1l7_ORIGINAL=0.3;
-const double p_worker2_t3l7_ORIGINAL=0.4;
-const double p_worker2_t3l9_ORIGINAL=0.5;
-const double p_worker2_t1l6b_ORIGINAL=0.6;
-const double p_worker2_t1l6a_ORIGINAL=0.7;
+const double p_worker2_t1l4_ORIGINAL=0.71;
+const double p_worker2_t3l4_ORIGINAL=0.85;
+const double p_worker2_t1l7_ORIGINAL=0.63;
+const double p_worker2_t3l7_ORIGINAL=0.84;
+const double p_worker2_t3l9_ORIGINAL=0.95;
+const double p_worker2_t1l6b_ORIGINAL=0.76;
+const double p_worker2_t1l6a_ORIGINAL=0.67;
 const double p_r1_t2l5_ORIGINAL=0.8;
 const double p_r1_t2l8a_ORIGINAL=0.9;
 const double p_r1_t2l8b_ORIGINAL=0.99;
