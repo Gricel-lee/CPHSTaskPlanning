@@ -27,6 +27,8 @@ cd CPHSTaskPlanning
 git submodule update --init --recursive 
 ```
 
+Note: The command 'git submodule' downloads the EvoChecker file from ```https://github.com/gerasimou/EvoChecker/tree/seedResultsjar```. This JAR is generated from the JAVA project ```https://github.com/gerasimou/EvoChecker/tree/seedresults```.
+
 
 ## Run
 

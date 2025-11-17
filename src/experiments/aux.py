@@ -15,7 +15,7 @@ def read_csv_file(file_path):
     return data
 
 
-def check_files_exist(csv_def, model, properties, optimisation_list):
+def check_files_exist(csv_def, model, properties, optimisation_list, change_list_file):
     # check that files exists csv_def, model, properties, optimisation_list
     if not os.path.isfile(csv_def):
         print(f"[ARGS] CSV file {csv_def} does not exist. Exiting.")
@@ -28,6 +28,9 @@ def check_files_exist(csv_def, model, properties, optimisation_list):
         exit(1)
     if not os.path.isfile(optimisation_list):
         print(f"[ARGS] Optimisation list file {optimisation_list} does not exist. Exiting.")
+        exit(1)
+    if change_list_file is not None and not os.path.isfile(change_list_file):
+        print(f"[ARGS] Changes list file {change_list_file} does not exist. Exiting.")
         exit(1)
 
 
@@ -88,7 +91,7 @@ def create_config_props_file(experiment:'Experiment',experiments:'ExperimentSet'
 
 
 
-def read_args(directory, csv_def, output_folder, optimisation_list, model, properties):    
+def read_args(directory, csv_def, output_folder, optimisation_list, model, properties, change_list_file):    
     # Read command line arguments
     parser = argparse.ArgumentParser(description="Run experiment.")
     parser.add_argument(
@@ -109,6 +112,10 @@ def read_args(directory, csv_def, output_folder, optimisation_list, model, prope
     parser.add_argument(
         "--optimisation", type=str, default=optimisation_list, help="Path to the optimisation list file"
     )
+    #not neccessary to pass this as arg
+    parser.add_argument(
+        "--changes", type=str, default=change_list_file, help="Path to the changes list file"
+    )
     
     # Save the arguments
     args = parser.parse_args()
@@ -128,7 +135,9 @@ def read_args(directory, csv_def, output_folder, optimisation_list, model, prope
         properties = args.properties
     if args.optimisation is not None:
         optimisation_list = args.optimisation
-    
+    if args.changes is not None:
+        change_list_file = args.changes
+
     # Get paths
     # -- csv file
     csv_def = os.path.join(directory, csv_def)
@@ -142,14 +151,18 @@ def read_args(directory, csv_def, output_folder, optimisation_list, model, prope
     # -- no seeding backup folder
     noSeedingBackup = os.path.join(directory, output_folder+"/previousPopulation")
     make_folder(noSeedingBackup)
+    # -- changes list file
+    change_list_file = os.path.join(directory, change_list_file)
+    
 
     if True:
         print(f"[ARGS] Directory: {directory}")
         print(f"[ARGS] CSV default file: {csv_def}")
         print(f"[ARGS] Output folder: {output_folder}")
         print(f"[ARGS] Seeding folder: {noSeedingBackup}")
+        print(f"[ARGS] Changes list file: {change_list_file}")
         
-    return directory, csv_def, output_folder, noSeedingBackup, optimisation_list
+    return directory, csv_def, output_folder, noSeedingBackup, optimisation_list, change_list_file
 
 
 def delete_folder(folder):
@@ -274,3 +287,9 @@ def get_files_in_folder(folderPath):
         if os.path.isfile(full_path):  # optional: only include files
             front_files.append(full_path)
     return front_files
+
+
+def read_file_as_string(filePath):
+    with open(filePath, 'r') as f:
+        content = f.read()
+    return content

@@ -1,9 +1,10 @@
 
+import ast
 import csv
 import os
 from experiments.experiment import Experiment
 from typing import List, Optional
-
+import experiments.aux as aux
 
 class ExperimentSet:
     """
@@ -11,7 +12,7 @@ class ExperimentSet:
     Each experiment is represented as an instance of the Experiment class.
     """
     
-    def __init__(self, dir:str, csv_file_abs: str, output_folder: str, noSeedingBackup: str, model:str, properties:str):
+    def __init__(self, dir:str, csv_file_abs: str, output_folder: str, noSeedingBackup: str, model:str, properties_file:str, change_list_file:Optional[str]=None):
         # paths info
         self.dir = dir
         self.csv_file_abs = csv_file_abs
@@ -24,11 +25,30 @@ class ExperimentSet:
         self.experiment_list:List[Experiment] = self.load_experiments()
         # evochecker files names
         self.evocheckerModel = model.split("/")[-1]
-        self.evocheckerProps = properties.split("/")[-1]
+        self.evocheckerProps = properties_file.split("/")[-1]
         # input evo files
         self.model = os.path.join(dir, model)
-        self.properties = os.path.join(dir, properties)
-    
+        self.properties = os.path.join(dir, properties_file)
+
+        #injected changes; follow the format {original_string: [changed_string, "model"/"properties"/"none"]}
+        
+        # TODO: import changes as part of aux.read_args()
+        self.change_list = self.import_changes(change_list_file)
+        
+    def import_changes(self, change_list_file:Optional[str]=None):
+        if change_list_file is None:
+            return {}
+        print(f"[EXP] Loading injected changes from {change_list_file}")
+        # Read the change list file content
+        file_content = aux.read_file_as_string(change_list_file)
+        # ast.literal_eval() safely parse the string into a Python dictionary
+        try:
+            change_list = ast.literal_eval(file_content)  # This converts the string to a Python dictionary
+            print(change_list)  # You can now use 'change_list' as a normal dictionary
+        except (ValueError, SyntaxError) as e:
+            print(f"Error parsing content: {e}")
+        return change_list
+
     def get(self, index: int) -> Experiment:
         """
         Get the experiment at the given index.

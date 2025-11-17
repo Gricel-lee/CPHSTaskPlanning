@@ -4,46 +4,54 @@ import experiments.aux as aux
 import experiments.workflow as workflow
 from readexperiments.readResultsExperiments import read_experiment_results_and_save_metrics
 
-def main():
-    # 1) Set up ---------------------------
-    # a) default paths
-    dirr = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+def initialise_paths():
+    directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     
+    # a) default paths examples (for quick testing)
     # FXLarge example paths
     csv_def = "input/experimentsfxLarge.csv"
     model = "input/evomodel/FX/fxLarge.pm"
     properties = "input/evomodel/FX/fxLarge.pctl"
     output_folder = "output/fxlarge"
-    optimisation_list = "input/optimisationList_fxLarge.txt"
-    
+    optimisation_list_path = "input/optimisationList_fxLarge.txt"
+    change_list_file = None
+
     # Agricultural example paths
     csv_def = "input/experimentsAgricultural.csv"
     model = "input/evomodel/AG/agricultural.pm"
     properties = "input/evomodel/AG/agricultural.pctl"
     output_folder = "output/agricultural"
-    optimisation_list = "input/optimisationList_agricultural.txt"
+    optimisation_list_path = "input/optimisationList_agricultural.txt"
+    change_list_file = "input/evomodel/AG/agricultural_changes_injected.txt"
     
-    
-    # override args from command line
-    dirr, csv_def, output_folder, noSeedingBackup, optimisation_list = aux.read_args(dirr, csv_def, output_folder, optimisation_list, model, properties)
-    
+    # b) override args from command line definitions
+    directory, csv_def, output_folder, noSeedingBackup, optimisation_list_path, change_list_file = aux.read_args(directory, csv_def, output_folder, optimisation_list_path, model, properties, change_list_file)
+
     # check files exist
-    aux.check_files_exist(csv_def, model, properties, optimisation_list)
-    
-    # b) remove previous initial seeding backup folder
+    aux.check_files_exist(csv_def, model, properties, optimisation_list_path, change_list_file)
+
+    return directory, csv_def, model, properties, output_folder, noSeedingBackup, optimisation_list_path, change_list_file
+
+
+
+def main():
+    # ===============================================================
+    # 1) Initialise experiment set
+    # a) initialise paths
+    directory, csv_def, model, properties, output_folder, noSeedingBackup, optimisation_list_path, change_list_file = initialise_paths()    
+    # b) remove output folder (if previous result folder exists)
     aux.delete_folder(output_folder)
-    
-    
-    # 2) Load experiments from CSV---------------------------
-    experiments = ExperimentSet(dirr, csv_def, output_folder, noSeedingBackup, model, properties)
-    
+    # c) load experiments from CSV
+    experiments = ExperimentSet(directory, csv_def, output_folder, noSeedingBackup, model, properties, change_list_file)
     
     # ===============================================================
-    # 3) Run experiments ---------------------------
+    # 2) Run experiments
     workflow.run_experiments(experiments)
     
-    # 4) Read experiment results and save metrics ---------------------------
-    read_experiment_results_and_save_metrics(dirr, output_folder, optimisation_list)
+    # ===============================================================
+    # 3) Read experiment results and save metrics
+    read_experiment_results_and_save_metrics(directory, output_folder, optimisation_list_path)
 
 if __name__ == "__main__":
     main()

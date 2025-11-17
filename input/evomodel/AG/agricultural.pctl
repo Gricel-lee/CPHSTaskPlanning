@@ -7,5 +7,5 @@ P=? [ F "success" ]
 //objective, min
 R=? [ F "done" ]
 
-////constraint, min, 0.95
-//P=? [ F "success" ]
+//constraint, min, 0.94
+P=? [ F "success" ]
