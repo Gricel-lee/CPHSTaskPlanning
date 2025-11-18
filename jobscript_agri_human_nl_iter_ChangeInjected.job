@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=Agriculture_30experiments_job               # Job name
 #SBATCH --partition=nodes               # What partition the job should run on
-#SBATCH --time=0-10:15:00               # Time limit (DD-HH:MM:SS)
+#SBATCH --time=0-30:15:00               # Time limit (DD-HH:MM:SS)
 #SBATCH --ntasks=1                      # Number of MPI tasks to request
 #SBATCH --cpus-per-task=1               # Number of CPU cores per MPI task
 #SBATCH --mem=20G                       # Total memory to request
