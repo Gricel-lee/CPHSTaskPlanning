@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH --job-name=Agriculture_30experiments_job               # Job name
+#SBATCH --job-name=Agriculture_ChangeInjectedBoth               # Job name
 #SBATCH --partition=nodes               # What partition the job should run on
 #SBATCH --time=0-30:15:00               # Time limit (DD-HH:MM:SS)
 #SBATCH --ntasks=1                      # Number of MPI tasks to request
