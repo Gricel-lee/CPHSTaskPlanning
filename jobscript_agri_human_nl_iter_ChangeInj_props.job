@@ -3,8 +3,8 @@
 #SBATCH --partition=nodes               # What partition the job should run on
 #SBATCH --time=0-30:15:00               # Time limit (DD-HH:MM:SS)
 #SBATCH --ntasks=1                      # Number of MPI tasks to request
-#SBATCH --cpus-per-task=1               # Number of CPU cores per MPI task
-#SBATCH --mem=20G                       # Total memory to request
+#SBATCH --cpus-per-task=9               # Number of CPU cores per MPI task
+#SBATCH --mem=30G                       # Total memory to request
 #SBATCH --account=cs-ai4work-2025       # Project account to use
 #SBATCH --mail-type=END,FAIL,ALL        # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=gricel.vazquez@york.ac.uk   # Where to send mail
