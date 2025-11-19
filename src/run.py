@@ -10,16 +10,16 @@ def initialise_paths():
     
     # a) default paths examples (for quick testing)
     # FXLarge example paths
-    csv_def = "input/experimentsfxLarge.csv"
-    model = "input/evomodel/FX/fxLarge.pm"
-    properties = "input/evomodel/FX/fxLarge.pctl"
+    csv_def = "viking_previous_tests/input/experimentsfxLarge.csv"
+    model = "viking_previous_tests/input/FX/fxLarge.pm"
+    properties = "viking_previous_tests/input/FX/fxLarge.pctl"
     output_folder = "output/fxlarge"
-    optimisation_list_path = "input/optimisationList_fxLarge.txt"
+    optimisation_list_path = "viking_previous_tests/input/optimisationList_fxLarge.txt"
     change_list_file = None
 
     # Agricultural example paths
     csv_def = "input/experimentsAgricultural.csv"
-    model = "input/evomodel/AG/agricultural.pm"
+    model = "input/evomodel/AG/agricultural-humanNonLinear.pm"
     properties = "input/evomodel/AG/agricultural.pctl"
     output_folder = "output/agricultural"
     optimisation_list_path = "input/optimisationList_agricultural.txt"
