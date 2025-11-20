@@ -2,10 +2,10 @@ dtmc
 
 
 evolve int worker2_maxRetry_t1l4 [1..5];
-evolve int worker2_maxRetry_t3l4 [1..6];
+evolve int worker2_maxRetry_t3l4 [1..5];
 evolve int worker2_maxRetry_t1l7 [1..5];
-evolve int worker2_maxRetry_t3l7 [1..6];
-evolve int worker2_maxRetry_t3l9 [1..6];
+evolve int worker2_maxRetry_t3l7 [1..5];
+evolve int worker2_maxRetry_t3l9 [1..5];
 evolve int worker2_maxRetry_t1l6b [1..5];
 evolve int worker2_maxRetry_t1l6a [1..5];
 evolve int r1_maxRetry_t2l5 [1..10];
