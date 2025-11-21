@@ -48,11 +48,17 @@ python3 ./src/run.py --csv "input/experimentsAgricultural.csv" --model "input/ev
 
 
 
-#### In UoY Viking server
+### In UoY Viking server
+
 Sign into viking and lauch the jobscript.job file:
 ```console
 sbatch jobscript.job
 ```
+### Generate Viking jobs automatically
+In order to submit one experiment at a time to viking, first run the ```run_this_to_gen_job_files.py``` with the desired experiment job files to create.
+Then run each job in viking.
+
+
 
 # Troubleshooting
 

@@ -18,7 +18,7 @@ def initialise_paths():
     change_list_file = None
 
     # Agricultural example paths
-    csv_def = "input/experimentsAgricultural.csv"
+    csv_def = "input/experimentsAgricultural_test.csv"
     model = "input/evomodel/AG/agricultural-humanNonLinear.pm"
     properties = "input/evomodel/AG/agricultural.pctl"
     output_folder = "output/agricultural"
