@@ -42,7 +42,7 @@ files_all = ["input/evomodel/AG/agricultural_changes_injected.txt","input/evomod
 
 
 # ========= Select the name for the job file (also use for the output folder name) ==========
-i = 2   #----> Select 0,1 or 2= ["Agri_ChangeInjectedBoth", "Agri_ChangeInjectedModel", "Agri_ChangeInjectedProp"]
+i = 0   #----> Select 0,1 or 2= ["Agri_ChangeInjectedBoth", "Agri_ChangeInjectedModel", "Agri_ChangeInjectedProp"]
 # Set numbering for experiments
 numbering_experiments = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 # ===========================================================================================
@@ -53,6 +53,7 @@ file_injected_change = files_all[i]
 
 for num in numbering_experiments:
     name = name_job_file + "_experiment" + str(num)
+    # Create job script file
     with open("jobscript_" + name + ".job", "w") as f:
         # replace placeholders
         s_new = s.replace("<REPLACE FOR JOB NAME>", name)
@@ -61,4 +62,11 @@ for num in numbering_experiments:
         # write to file
         f.write(s_new)
         
+# Create single .sh to launch all jobs
+with open("launch_all_jobs_" + name_job_file + ".sh", "w") as f:
+    f.write("#!/usr/bin/env bash\n\n")
+    for num in numbering_experiments:
+        name = name_job_file + "_experiment" + str(num)
+        f.write(f"echo 'Submitting jobscript_{name}.job'\n")
+        f.write(f"sbatch jobscript_{name}.job\n")
 
