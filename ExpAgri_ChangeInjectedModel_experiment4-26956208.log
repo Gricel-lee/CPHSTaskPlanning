@@ -28,3 +28,23 @@ Requirement already satisfied: about-time==4.2.1 in /users/gnvf500/.local/lib/py
 Requirement already satisfied: grapheme==0.6.0 in /users/gnvf500/.local/lib/python3.11/site-packages (from alive-progress->pymoo) (0.6.0)
 Requirement already satisfied: wrapt<2,>=1.10 in /users/gnvf500/.local/lib/python3.11/site-packages (from Deprecated->pymoo) (1.17.2)
 Requirement already satisfied: six>=1.5 in /users/gnvf500/.local/lib/python3.11/site-packages (from python-dateutil>=2.7->matplotlib>=3->pymoo) (1.17.0)
+
+============================
+ Job utilisation efficiency
+============================
+
+Job ID: 26956208
+Cluster: viking2.yor.alces.network
+User/Group: gnvf500/clusterusers
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 9
+CPU Utilized: 07:19:03
+CPU Efficiency: 7.35% of 4-03:30:36 core-walltime
+Job Wall-clock time: 11:03:24
+Memory Utilized: 1.86 GB
+Memory Efficiency: 6.21% of 30.00 GB
+ Requested wall clock time: 1-16:15:00
+    Actual wall clock time: 11:03:24
+Wall clock time efficiency: 27.5%
+           Job queued time: 00:00:02
