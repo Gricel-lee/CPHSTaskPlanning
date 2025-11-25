@@ -22,6 +22,7 @@ def process_metrics_files(main_directory: str) -> pd.DataFrame:
             metrics_file_path = os.path.join(folder_path, "metrics_IGD_HV_IG.csv")
             if os.path.exists(metrics_file_path):
                 try:
+                    print(f"  Reading metrics file: {metrics_file_path}")
                     df = pd.read_csv(metrics_file_path)
                     experiment_path_series = df['experiment']
                     df['iteration'] = experiment_path_series.str.split('_').str[-2].astype(int, errors='ignore')

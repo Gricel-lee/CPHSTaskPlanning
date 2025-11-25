@@ -42,7 +42,7 @@ def main():
     
     # ===============================================================
     # 3) Read experiment results and save metrics (DONE in run_experiments.py if required to be tested separately)
-    save_all_data_df(experiments,"|NONE|") # NOTE: pass folder to ignore in PF metrics
+    save_all_data_df(experiments,"|NONE|")      #>>>> NOTE: pass string in folder to ignore in PF metrics, e.g. "|NONE|"
     read_experiment_results_and_save_metrics(output_folder, optimisation_list_file)
 
 

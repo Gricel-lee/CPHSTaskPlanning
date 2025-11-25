@@ -2,19 +2,18 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ------------------------------------------------------------------------------
-# Utility Function to Normalise Objective Directions
-# ------------------------------------------------------------------------------
-def minimise_if_maximise(df, optimise):
-    """
-    Convert the DataFrame to a minimization problem if any column is set to 'max'.
-    """
-    for i, goal in enumerate(optimise):
-        if goal == "max":
-            df.iloc[:, i] = -df.iloc[:, i]  # Negate the column for minimization
-        if goal not in ["min", "max"]:
-            raise ValueError("Each entry in 'optimise' must be 'min' or 'max'")
-    return df
+
+# @Deprecated: changed to minimise in readResultsExperiments.py
+# def minimise_if_maximise(df, optimise):
+#     """
+#     Convert the DataFrame to a minimization problem if any column is set to 'max'.
+#     """
+#     for i, goal in enumerate(optimise):
+#         if goal == "max":
+#             df.iloc[:, i] = -df.iloc[:, i]  # Negate the column for minimization
+#         if goal not in ["min", "max"]:
+#             raise ValueError("Each entry in 'optimise' must be 'min' or 'max'")
+#     return df
 
 # ------------------------------------------------------------------------------
 # Pareto front calculation
@@ -30,8 +29,32 @@ def _is_pareto_reference(costs):
             is_ref[i] = True  # Keep self
     return is_ref
 
+def pareto_mask_2d(costs):
+    """
+    Efficient 2D Pareto front mask for minimization.
+    costs: np.array of shape (n_points, 2)
+    Returns: boolean mask of Pareto-optimal points
+    """
+    # Sort by the first objective
+    sorted_idx = np.argsort(costs[:, 0])
+    costs_sorted = costs[sorted_idx]
 
-def get_pareto_reference(df,optimise):
+    pareto_mask_sorted = np.ones(costs_sorted.shape[0], dtype=bool)
+    min_second_obj = np.inf
+
+    for i, (_, second) in enumerate(costs_sorted):
+        if second < min_second_obj:
+            min_second_obj = second
+        else:
+            pareto_mask_sorted[i] = False
+
+    # Return mask in original order
+    mask = np.zeros(costs.shape[0], dtype=bool)
+    mask[sorted_idx] = pareto_mask_sorted
+    return mask
+
+
+def get_pareto_reference(df):
     """
     Get the Pareto reference points.
     """
@@ -39,35 +62,42 @@ def get_pareto_reference(df,optimise):
 
     # Select all data columns except the last one (which is the 'experiment' string)
     data = df.iloc[:, :-1]
-    
-    # Convert to "costs" (for Pareto calculation, lower is better): if "max", we negate the column to turn it into a "min" problem
-    optimised_data = minimise_if_maximise(data, optimise).values
-    
+
     # Get Pareto reference points masked
-    pareto_mask = _is_pareto_reference(optimised_data)
-    
+    pareto_mask = _is_pareto_reference(data.values)
+
     # Get Pareto front
     pareto_df = df[pareto_mask]
     
     return pareto_df, data, pareto_mask
 
-def get_pareto_reference_and_plot(df, optimise):
+def get_pareto_reference_and_plot(df, output_dir):
     """
     Get Pareto reference points and plot them if the data is 2D.
     """
-    pareto_df, data, pareto_mask = get_pareto_reference(df, optimise)
+    pareto_df, data, pareto_mask = get_pareto_reference(df)
     
     # Plot if 2D
     if data.shape[1] == 2:
         plt.figure(figsize=(8, 6))
-        plt.scatter(data[:, 0], data[:, 1], color='red', label='All Points')
-        plt.scatter(data[pareto_mask, 0], data[pareto_mask, 1], color='blue', label='Pareto Front')
-        plt.xlabel(df.columns[0])
-        plt.ylabel(df.columns[1])
+        # Use the DataFrame values for numeric indexing and keep the DataFrame for labels
+        data_vals = data.values
+        # debug print of first few x values
+        print(data.iloc[:, 0].head())
+        plt.scatter(data_vals[:, 0], data_vals[:, 1], color='red', label='All Points')
+        plt.scatter(data_vals[pareto_mask, 0], data_vals[pareto_mask, 1], color='blue', label='Pareto Front')
+        plt.xlabel(data.columns[0])
+        plt.ylabel(data.columns[1])
         plt.title('Pareto Front Visualization')
         plt.legend()
         plt.grid(True)
         # plt.show()
+        
+        # Save plot
+        plt.savefig(f'{output_dir}/pareto_front_plot.png')
+        plt.close()
+        print("Pareto front plot saved as 'pareto_front_plot.png'.")
+        
     else:
         print(f"No plot: Data has {data.shape[1]} dimensions (only 2D is plotted).")
 
@@ -76,36 +106,6 @@ def get_pareto_reference_and_plot(df, optimise):
     
     return pareto_df
 
-
-# ------------------------------------------------------------------------------
-# Nadir Point Calculation
-# ------------------------------------------------------------------------------
-def compute_nadir_point(data: np.ndarray, optimise: list[str]) -> np.ndarray:
-    """
-    Compute the nadir point from a dataset and optimisation directions.
-    
-    Parameters:
-        data (np.ndarray): The dataset (N x M), where N is the number of points and M is the number of objectives.
-        optimise (list[str]): List of "max" or "min" for each objective column.
-        
-    Returns:
-        np.ndarray: The nadir point (1 x M)
-    """
-    # Validate input dimensions
-    if data.shape[1] != len(optimise):
-        raise ValueError("Length of 'optimise' must match number of columns in 'data'")
-    
-    # Compute nadir point: worst value among Pareto points per objective
-    nadir = []
-    for i, goal in enumerate(optimise):
-        if goal == "min":
-            nadir.append(np.max(data[:, i]))  # worst = max for min
-        elif goal == "max":
-            nadir.append(np.min(data[:, i]))  # worst = min for max
-        else:
-            raise ValueError("Each entry in 'optimise' must be 'min' or 'max'")
-    # print(f"Nadir Point: {np.array(nadir)}")
-    return np.array(nadir)
 
 
 # ------------------------------------------------------------------------------
