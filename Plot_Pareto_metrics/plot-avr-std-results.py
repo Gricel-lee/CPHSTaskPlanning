@@ -4,6 +4,7 @@ import re
 import matplotlib.pyplot as plt
 import seaborn as sns
 import sys
+from matplotlib.patches import Rectangle
 
 def process_metrics_files(main_directory: str) -> pd.DataFrame:
     """
@@ -85,54 +86,99 @@ def calculate_summary_stats(df: pd.DataFrame) -> pd.DataFrame:
 
 def plot_metric(summary_df: pd.DataFrame, metric: str, y_label: str, output_filename: str):
     """
-    Generic function to plot any given metric vs. iteration for each experiment.
-    Lines are differentiated by color and style.
+    Grouped box-like plot per iteration: for each iteration on the x-axis draw n adjacent
+    rectangular "boxes" (one per experiment) whose center marks the experiment mean
+    (metric_avr) and whose height represents +/- std (metric_std).
     """
     if summary_df.empty:
         print(f"Cannot create plot for {metric.upper()}: The summary DataFrame is empty.")
         return
-    
+
     metric_avr = f'{metric}_avr'
     metric_std = f'{metric}_std'
     if metric_avr not in summary_df.columns or metric_std not in summary_df.columns:
         print(f"Cannot create plot: Columns '{metric_avr}' or '{metric_std}' not found.")
         return
 
-    print(f"\nGenerating plot for {metric.upper()} and saving to '{output_filename}'...")
-    
+    print(f"\nGenerating grouped box plot for {metric.upper()} and saving to '{output_filename}'...")
+
     plt.style.use('seaborn-v0_8-whitegrid')
-    fig, ax = plt.subplots(figsize=(12, 8))
-    
-    palette = sns.color_palette("husl", n_colors=summary_df['experiment'].nunique())
-    linestyles = ['-', '--', '-.', ':']
-    
-    for i, experiment in enumerate(summary_df['experiment'].unique()):
-        experiment_df = summary_df[summary_df['experiment'] == experiment].sort_values('iteration')
-        
-        current_style = linestyles[i % len(linestyles)]
-        
-        ax.plot(
-            experiment_df['iteration'], 
-            experiment_df[metric_avr], 
-            label=experiment, 
-            color=palette[i],
-            linestyle=current_style,
-            linewidth=2
-        )
-        
-        ax.fill_between(
-            experiment_df['iteration'],
-            experiment_df[metric_avr] - experiment_df[metric_std],
-            experiment_df[metric_avr] + experiment_df[metric_std],
-            color=palette[i],
-            alpha=0.15
-        )
-        
-    ax.set_title(f'{metric.upper()} vs. Iteration by Experiment', fontsize=16, fontweight='bold')
+
+    # Prepare iterations and experiments
+    unique_iters = sorted(summary_df['iteration'].unique())
+    experiments = list(summary_df['experiment'].unique())
+    n_iters = len(unique_iters)
+    n_experiments = len(experiments)
+
+    # Adapt figure size to number of iterations and experiments for clarity
+    fig_width = max(6, min(24, 0.8 * max(n_iters, 16)))  # scale with iterations but bound reasonably
+    fig_height = max(5, 1.2 * n_experiments)            # give more vertical room when many experiments
+    fig, ax = plt.subplots(figsize=(fig_width, fig_height))
+
+    palette = sns.color_palette("husl", n_colors=n_experiments)
+
+    # Map iteration value to x position indices for even spacing
+    x_positions = {it: idx for idx, it in enumerate(unique_iters)}
+
+    # box sizing in axis units (x units are integer indexes)
+    box_total_width = 0.8  # total width allocated for group of boxes at each x
+    box_width = box_total_width / max(n_experiments, 1)
+
+    # Draw boxes for each experiment at each iteration
+    for ei, experiment in enumerate(experiments):
+        exp_df = summary_df[summary_df['experiment'] == experiment]
+        for _, row in exp_df.iterrows():
+            it = row['iteration']
+            if it not in x_positions:
+                continue
+            xidx = x_positions[it]
+            avr = row.get(metric_avr, float('nan'))
+            std = row.get(metric_std, 0.0)
+            if pd.isna(avr):
+                continue
+            if pd.isna(std):
+                std = 0.0
+
+            # left edge so boxes are grouped and centered at integer x positions
+            left = xidx - box_total_width / 2 + ei * box_width
+            height = 2.0 * std
+            bottom = avr - std
+
+            # ensure minimum visible height if std == 0 (small thin box)
+            min_height = max(0.02 * (summary_df[metric_avr].max() - summary_df[metric_avr].min() if summary_df[metric_avr].nunique() > 1 else abs(avr) + 1.0), 1e-6)
+            if height <= 0:
+                height = min_height
+                bottom = avr - height / 2.0
+
+            rect = Rectangle(
+                (left, bottom),
+                box_width,
+                height,
+                facecolor=palette[ei],
+                alpha=0.6,
+                edgecolor='black',
+                linewidth=0.6
+            )
+            ax.add_patch(rect)
+
+            # mean marker at center of the box
+            center_x = left + box_width / 2.0
+            ax.plot(center_x, avr, marker='o', color='white', markeredgecolor='black', markersize=4)
+
+    # Set x ticks to iteration labels at integer positions
+    ax.set_xticks(list(range(n_iters)))
+    ax.set_xticklabels([str(it) for it in unique_iters], rotation=45)
+    ax.set_xlim(-0.6, n_iters - 0.4)
+
     ax.set_xlabel('Iteration', fontsize=12)
     ax.set_ylabel(y_label, fontsize=12)
-    ax.legend(title='Experiment', bbox_to_anchor=(1.05, 1), loc='upper left')
-    
+    ax.set_title(f'{metric.upper()} vs. Iteration (grouped boxes per experiment)', fontsize=14)
+
+    # Create legend patches
+    legend_patches = [Rectangle((0, 0), 1, 1, facecolor=palette[i], edgecolor='black', alpha=0.6)
+                      for i in range(n_experiments)]
+    ax.legend(legend_patches, experiments, title='Experiment', bbox_to_anchor=(1.05, 1), loc='upper left')
+
     plt.tight_layout(rect=[0, 0, 0.85, 1])
     plt.savefig(output_filename, dpi=300)
     plt.close()
