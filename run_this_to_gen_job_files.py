@@ -36,15 +36,15 @@ python3 ./src/run.py --csv "input/experimentsAgricultural_iter.csv" --model "inp
 '''
 
 # lists of names and files
-names_all = ["Agri_ChangeInjectedBoth", "Agri_ChangeInjectedModel", "Agri_ChangeInjectedProp"]
+names_all = ["ExpAgri_ChangeInjectedBoth", "ExpAgri_ChangeInjectedModel", "ExpAgri_ChangeInjectedProp"]
 files_all = ["input/evomodel/AG/agricultural_changes_injected.txt","input/evomodel/AG/agricultural_changes_injected_in_model.txt","input/evomodel/AG/agricultural_changes_injected_in_prop.txt"]
 
 
 
 # ========= Select the name for the job file (also use for the output folder name) ==========
-i = 2   #----> Select 0,1 or 2= ["Agri_ChangeInjectedBoth", "Agri_ChangeInjectedModel", "Agri_ChangeInjectedProp"]
+i = 0   #---->>>> Select 0,1 or 2= ["Agri_ChangeInjectedBoth", "Agri_ChangeInjectedModel", "Agri_ChangeInjectedProp"]
 # Set numbering for experiments
-numbering_experiments = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+numbering_experiments = [1,2,3,4,5,6,7,8,9,10]               #,11,12,13,14,15,16,17,18,19,20]
 # ===========================================================================================
 
 # create job files

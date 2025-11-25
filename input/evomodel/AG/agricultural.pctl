@@ -7,5 +7,5 @@ Pmax=? [ F "success" ]
 //objective, min
 Rmin=? [ F "done" ]
 
-//constraint, min, 0.00
+//constraint, min, 0.70
 Pmin=? [ F "success" ]
