@@ -1,23 +1,25 @@
 import os
 import pandas as pd
+from experiments.experimentSet import ExperimentSet
 
 class ExperimentResults:
-    file_path =  ""
+    file_with_all_Pareto_results_paths =  ""
     files = []
     df_combined_data = pd.DataFrame()
     
 
-    def __init__(self,  file_path: str):
-        self.file_path  = file_path
+    def __init__(self,  experiments: ExperimentSet, str_folder_to_ignore_in_PF_metrics: str = "|NONE|"):
+        self.file_with_all_Pareto_results_paths  = experiments.file_with_all_Pareto_results_paths
         self.files = self._read_experiment_paths()
+        self.str_folder_to_ignore_in_PF_metrics = str_folder_to_ignore_in_PF_metrics
         self.df_combined_data = self._read_all_experiment_pareto_front_data()
         self.save_df("combined_experiment_data.csv")
         
     def _read_experiment_paths(self):
-        if not os.path.exists(self.file_path):
-            print(f"[ERROR] The file {self.file_path} does not exist.")
+        if not os.path.exists(self.file_with_all_Pareto_results_paths):
+            print(f"[ERROR] The file {self.file_with_all_Pareto_results_paths} does not exist.")
             exit(1)
-        with open(self.file_path, 'r') as file:
+        with open(self.file_with_all_Pareto_results_paths, 'r') as file:
             self.files = [line.strip() for line in file if line.strip()]
         return self.files
     
@@ -29,7 +31,9 @@ class ExperimentResults:
         all_experiment_data = []
 
         for file in self.files:
-            if os.path.exists(file):
+            if self.str_folder_to_ignore_in_PF_metrics in file:
+                continue
+            elif os.path.exists(file):
                 try:
                     data = pd.read_csv(file, sep='\t', header=0)
                     #data['source_file'] = os.path.basename(file)
@@ -55,7 +59,7 @@ class ExperimentResults:
             print("[ERROR] No data available to save.")
             return
 
-        f = os.path.dirname(self.file_path)
+        f = os.path.dirname(self.file_with_all_Pareto_results_paths)
         self.df_combined_data.to_csv(os.path.join(os.path.abspath(f), file_name), index=False)
         print(f"[INFO] Data saved to {file_name} in {f}")
         

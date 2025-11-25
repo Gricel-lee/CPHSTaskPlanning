@@ -1,18 +1,10 @@
 import experiments.aux as aux
 import os
 import subprocess
-from experiments.experimentsResults import ExperimentResults
 from experiments.experimentSet import ExperimentSet
 
-def run_experiments(experiments: ExperimentSet):
-    f = run_exp_workflow(experiments)
-    save_all_data_df(f)
 
-def save_all_data_df(f):
-        ex = ExperimentResults(f)
-
-
-def run_exp_workflow(experiments: ExperimentSet):
+def run_experiments_workflow(experiments: ExperimentSet):
     """
     Run the experiment workflow.
     """    
@@ -91,8 +83,21 @@ def run_exp_workflow(experiments: ExperimentSet):
         tempResults = os.path.join(experiments.get(i).temp_folder, "data/"+experiments.get(i).case+"/"+experiments.get(i).moga+"/")
         results = experiments.get(i).res_folder
         print(f"[CP] Copying EvoChecker results {tempResults} to {results}")
-        aux.copy_folder_recursive_ignoreSome(tempResults, results)
+        aux.copy_folder_recursive_ignoreSome(tempResults, results) # ignore if start with "prev_" as this are the previous population files
         
+        # ------ comment out to keep all EvoChecker temp data ------
+        # delete unnecesary folders from the EvoChecker run
+        folders = ["classes/", "libs/", "maven-archiver/", "maven-status/", "scripts/", "surefire-reports/", "test-classes/"]
+        for folder in folders:
+            tempOtherData = os.path.join(experiments.get(i).temp_folder, folder)
+            aux.delete_folder(tempOtherData)
+        tempOtherData = os.path.join(experiments.get(i).temp_folder, "EvoChecker-1.1.1.jar")
+        aux.delete_file(tempOtherData)
+        tempOtherData = os.path.join(experiments.get(i).temp_folder, "EvoChecker-1.1.1.zip")
+        aux.delete_file(tempOtherData)
+        # ------------------------------------------------------------
+        
+
         # g) backup results from No seeding (and rename to distinguish)
         if (i == 0):
             backup = experiments.noSeedingBackup
@@ -105,11 +110,9 @@ def run_exp_workflow(experiments: ExperimentSet):
         
         # i) Save all result file paths as a single file
         files_pareto_fronts = get_sorted_front_files(results)
-        file_res_paths = os.path.join(experiments.output_folder, "resPaths.txt")
         for f in files_pareto_fronts:
-            aux.append_to_file(file_res_paths,f+"\n")
-        
-    return file_res_paths
+            aux.append_to_file(experiments.file_with_all_Pareto_results_paths,f+"\n")
+    return 
 
 
 

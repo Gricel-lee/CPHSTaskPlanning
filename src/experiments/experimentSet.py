@@ -12,29 +12,30 @@ class ExperimentSet:
     Each experiment is represented as an instance of the Experiment class.
     """
     
-    def __init__(self, dir:str, csv_file_abs: str, output_folder: str, noSeedingBackup: str, model:str, properties_file:str, change_list_file:Optional[str]=None):
+    def __init__(self, csv_file: str, output_folder: str, noSeedingBackup_folder: str, model_file:str, properties_file:str, change_list_file:Optional[str]=None):
         # paths info
-        self.dir = dir
-        self.csv_file_abs = csv_file_abs
+        self.dir = aux.get_directory()
+        self.csv_file = csv_file
         # create output folders
         self.output_folder = output_folder
-        self.noSeedingBackup = noSeedingBackup
-        print(f"[EXP] CSV file: {self.csv_file_abs}")
+        self.noSeedingBackup = noSeedingBackup_folder
+        print(f"[EXP] CSV file: {self.csv_file}")
         print(f"[EXP] Output folder: {self.output_folder}")
         # load the experiments from the csv file
         self.experiment_list:List[Experiment] = self.load_experiments()
         # evochecker files names
-        self.evocheckerModel = model.split("/")[-1]
+        self.evocheckerModel = model_file.split("/")[-1]
         self.evocheckerProps = properties_file.split("/")[-1]
         # input evo files
-        self.model = os.path.join(dir, model)
-        self.properties = os.path.join(dir, properties_file)
+        self.model = os.path.join(self.dir, model_file)
+        self.properties = os.path.join(self.dir, properties_file)
 
-        #injected changes; follow the format {original_string: [changed_string, "model"/"properties"/"none"]}
-        
-        # TODO: import changes as part of aux.read_args()
+        # load injected changes. Injected changes; follow the format {original_string: [changed_string, "model"/"properties"/"none"]}
         self.change_list = self.import_changes(change_list_file)
-        
+
+        # file with all Pareto front results paths (across all experiments and iterations)
+        self.file_with_all_Pareto_results_paths = os.path.join(self.output_folder, "resPaths.txt")
+
     def import_changes(self, change_list_file:Optional[str]=None):
         if change_list_file is None:
             return {}
@@ -60,13 +61,13 @@ class ExperimentSet:
             
     def load_experiments(self):
         all_experiments = []
-        with open(self.csv_file_abs, newline='', encoding='cp1252') as csvfile:
+        with open(self.csv_file, newline='', encoding='cp1252') as csvfile:
             #read the csv file abs 
             # csvfile = open(self.csv_file_abs, newline='', encoding='utf-8')
             # for line in csvfile:
             #     print(line)
             
-            with open(self.csv_file_abs, mode='r', newline='', encoding='utf-8') as file:
+            with open(self.csv_file, mode='r', newline='', encoding='utf-8') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
                     # - get experiment instance
@@ -89,7 +90,7 @@ class ExperimentSet:
                     if False:
                         print(f"[EXPSET] Loaded {exp}.\n ID: {exp.id}")
                     all_experiments.append(exp)
-        print(f"[EXP] Loaded {len(all_experiments)} experiments from {self.csv_file_abs}.")
+        print(f"[EXP] Loaded {len(all_experiments)} experiments from {self.csv_file}.")
         return all_experiments
     
     
