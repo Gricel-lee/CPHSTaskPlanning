@@ -1,6 +1,0 @@
-iteration1	4.578
-iteration2	6.328
-iteration3	7.394
-iteration4	8.374
-iteration5	9.358
-end	9.359
