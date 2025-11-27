@@ -101,13 +101,13 @@ if __name__ == "__main__":
         for select in [0,1,2]: # [0, 1, 2]: # 0: both changes injected, 1: only properties changes injected, 2: only model changes injected
             # == Select batch ==
             # Second batch "ExpAgri"
-            experiment_folder = ["outputExpAgri_ChangeInjectedBoth",
-                                "outputExpAgri_ChangeInjectedProp",
-                                "outputAgri_ChangeInjectedModel"][select]
+            # experiment_folder = ["outputExpAgri_ChangeInjectedBoth",
+            #                     "outputExpAgri_ChangeInjectedProp",
+            #                     "outputExpAgri_ChangeInjectedModel"][select]
             # # First batch "Agri"
-            # experiment_folder = ["outputAgri_ChangeInjectedBoth",
-            #                     "outputAgri_ChangeInjectedProp",
-            #                     "outputAgri_ChangeInjectedModel"][select]
+            experiment_folder = ["outputAgri_ChangeInjectedBoth",
+                                "outputAgri_ChangeInjectedProp",
+                                "outputAgri_ChangeInjectedModel"][select]
             
             
             # Shared files
