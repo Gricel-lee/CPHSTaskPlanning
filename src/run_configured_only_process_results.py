@@ -41,12 +41,18 @@ def main():
     if not get_only_PF_res: workflow.run_experiments_workflow(experiments)
     
     # ===============================================================
-    # 3) Read experiment results and save metrics (DONE in run_experiments.py if required to be tested separately)
-    save_all_data_df(experiments,"|NONE|")      #>>>> NOTE: pass string in folder to ignore in PF metrics, e.g. "|NONE|"
+    #>>>> NOTE: the combined_experiment_data.csv file is created in Viking!!
+    # 3) Read experiment results (save all PF data points into single CSV "combined_experiment_data.csv", excluding |NONE|)
+    # save_all_data_df(experiments,"|NONE|")      
+    
+    # 4) Read experiment results and save metrics (DONE in run_experiments.py if required to be tested separately)
     read_experiment_results_and_save_metrics(output_folder, optimisation_list_file)
 
+
 def save_all_data_df(experiments, str_folder_to_ignore_in_PF_metrics):
-        ex = ExperimentResults(experiments)
+    # Save all data points from all experiments into a single CSV file combined_experiment_data.csv
+    # ignores |NONE| folder experiments (used for seeding)
+    ex = ExperimentResults(experiments)
 
 
 

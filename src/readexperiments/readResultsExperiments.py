@@ -6,7 +6,8 @@ from experiments.experimentSet import ExperimentSet
 
 def read_experiment_results_and_save_metrics(output_dir,optimisation_list):
     """
-    Read experiment results from a CSV file, compute Pareto reference points, Nadir point, and Pareto metrics.
+    Read experiment results from a CSV file "combined_experiment_data.csv"
+    Compute Pareto reference points, Nadir point, and Pareto metrics.
     Save results to CSV output files.
     
     Input:
@@ -25,11 +26,16 @@ def read_experiment_results_and_save_metrics(output_dir,optimisation_list):
         optimise = f.readline().strip().split(",")
     print("Optimisation list:", optimise)
     
-    
     # --- Transform data: remove duplicate rows (when same point appears more than once in a Pareto front)
     print(f"[PF-Indicators] Data points before removing duplicates: {len(df)} rows.")
     df = df.drop_duplicates()
     print(f"[PF-Indicators] Data points after removing duplicates: {len(df)} rows.")
+    
+    # --- Transform data: remove rows with 0,0 in first two objectives (due to PRISM bug)
+    df = df[~((df.iloc[:, 0] == 0) & (df.iloc[:, 1] == 0))]
+    # save for reference
+    df.to_csv(f'{output_dir}/combined_experiment_data_no0s.csv', index=False)
+    
 
     # --- Transform data: make it a minimisation problem (pymoo assumes minimisation)
     for i in range(len(optimise)):
@@ -38,7 +44,6 @@ def read_experiment_results_and_save_metrics(output_dir,optimisation_list):
     # if max in any objective, print a note
     if "max" in optimise:
         print("[PF-Indicators] Some objectives were converted from maximisation to minimisation for Pareto calculations.")
-        print(df.head())
         # save for reference
         df.to_csv(f'{output_dir}/combined_experiment_data_minimised.csv', index=False)
     
