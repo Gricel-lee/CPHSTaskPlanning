@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH --job-name=ExpCon_ChangInjPropMin_CON9               # Job name
+#SBATCH --job-name=ExpCon_ChangInjPropMin_exp3               # Job name
 #SBATCH --partition=nodes               # What partition the job should run on
 #SBATCH --time=0-40:15:00               # Time limit (DD-HH:MM:SS)
 #SBATCH --ntasks=1                      # Number of MPI tasks to request
@@ -32,4 +32,4 @@ pip3 install pandas
 pip3 install pymoo
 
 # 1 experiments for agricultural model
-python3 ./src/run.py --csv "RQ1/Construction/experiment_files/experiments_iter_25_50.csv" --model "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism" --properties "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props" --output "outputExpCon_ChangInjPropMin/construction9" --optimisation "RQ1/Construction/experiment_files/change_injected_in_prop_minimum.txt" --changes "RQ1/Construction/experiment_files/con_change_injected_in_prop_minimum.txt"
+python3 ./src/run.py --csv "RQ1/Construction/experiment_files/experiments_iter_25_50.csv" --model "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism" --properties "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props" --output "outputExpCon_ChangInjPropMin/construction3" --optimisation "RQ1/Construction/experiment_files/change_injected_in_prop_minimum.txt" --changes "RQ1/Construction/experiment_files/con_change_injected_in_prop_minimum.txt"

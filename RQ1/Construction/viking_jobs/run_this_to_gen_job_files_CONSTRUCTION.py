@@ -55,7 +55,7 @@ name_job_file = names_all[i]
 file_injected_change = files_all[i]
 
 for num in numbering_experiments:
-    name = name_job_file + "_CON" + str(num)
+    name = name_job_file + "_exp" + str(num)
     # Create job script file
     with open("jobscript_" + name + ".job", "w") as f:
         # replace placeholders
@@ -69,7 +69,7 @@ for num in numbering_experiments:
 with open("launch_all_jobs_" + name_job_file + ".sh", "w") as f:
     f.write("#!/usr/bin/env bash\n\n")
     for num in numbering_experiments:
-        name = name_job_file + "_experiment" + str(num)
+        name = name_job_file + "_exp" + str(num)
         f.write(f"echo 'Submitting jobscript_{name}.job'\n")
         f.write(f"sbatch jobscript_{name}.job\n")
 
