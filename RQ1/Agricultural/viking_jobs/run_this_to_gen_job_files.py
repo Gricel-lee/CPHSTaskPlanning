@@ -39,6 +39,9 @@ python3 ./src/run.py --csv "input/experimentsAgricultural_iter.csv" --model "inp
 names_all = ["ExpAgri_ChangeInjectedBoth", "ExpAgri_ChangeInjectedModel", "ExpAgri_ChangeInjectedProp"]
 files_all = ["input/evomodel/AG/agricultural_changes_injected.txt","input/evomodel/AG/agricultural_changes_injected_in_model.txt","input/evomodel/AG/agricultural_changes_injected_in_prop.txt"]
 
+# lists of names and files
+names_all = ["ExpAgri_ChangeInjectedPropMin"]
+files_all = ["input/evomodel/AG/agricultural_changes_injected_in_prop_minimum.txt"]
 
 
 # ========= Select the name for the job file (also use for the output folder name) ==========
