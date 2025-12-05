@@ -65,7 +65,7 @@ def process_time_files(main_directory: str) -> pd.DataFrame:
         return pd.DataFrame()
     return pd.concat(all_time_data, ignore_index=True)
 
-def calculate_summary_stats(df: pd.DataFrame) -> pd.DataFrame:
+def calculate_summary_stats_latex(df: pd.DataFrame) -> pd.DataFrame:
     """
     Calculates the average and standard deviation for key metrics, grouped by 'experiment' and 'iteration'.
     """
@@ -87,6 +87,81 @@ def calculate_summary_stats(df: pd.DataFrame) -> pd.DataFrame:
 
 
 
+
+
+def latex_table_metric(summary_df: pd.DataFrame, output_filename_ref: str):
+    """
+    Generates a LaTeX table for GD, HV, and IGD metrics for the first iteration only.
+    Saves the .tex file in the same directory as the plot images.
+    """
+    # 1. Define output path based on the plot output path
+    output_dir = os.path.dirname(output_filename_ref)
+    table_path = os.path.join(output_dir, "table_first_iteration_metrics.tex")
+
+    # 2. Filter data for the first iteration only (usually 0 or 1)
+    if summary_df.empty:
+        return
+    
+    first_iter = summary_df['iteration'].min()
+    df_first = summary_df[summary_df['iteration'] == first_iter].copy()
+
+    # 3. Sort the data using the existing 'experiment_key' logic
+    # We apply the key to the experiment column to create a sortable index
+    df_first['sort_idx'] = df_first['experiment'].apply(experiment_key)
+    df_first = df_first.sort_values(by='sort_idx')
+
+    # 4. Construct LaTeX content
+    latex_lines = []
+    latex_lines.append("\\begin{table}[ht]")
+    latex_lines.append("\\centering")
+    latex_lines.append(f"\\caption{{{output_filename_ref}Comparison of metrics at the first iteration (Iteration {first_iter}). Values are Mean $\\pm$ Std.}}")
+    latex_lines.append("\\label{tab:init_metrics}")
+    latex_lines.append("\\resizebox{\\textwidth}{!}{")
+    latex_lines.append("\\begin{tabular}{l|ccc}")
+    latex_lines.append("\\hline")
+    latex_lines.append("\\textbf{Strategy} & \\textbf{GD} & \\textbf{HV} & \\textbf{IGD} \\\\")
+    latex_lines.append("\\hline")
+
+    for _, row in df_first.iterrows():
+        # Escape special LaTeX characters in experiment names
+        exp_name = str(row['experiment']).split("|")[1]  # Keep only the part after the first "|"
+        exp_name = exp_name + str(row['experiment']).split("|")[2]  # Keep only the part after the first "|"
+        exp_name = exp_name.replace("NONE2", "None")
+
+
+        # Helper to safely format numbers
+        def fmt(val, std):
+            if pd.isna(val): return "N/A"
+            s = 0.0 if pd.isna(std) else std
+            return f"{val:.4f} $\\pm$ {s:.4f}"
+
+        gd_str = fmt(row.get('GD_avr'), row.get('GD_std'))
+        hv_str = fmt(row.get('HV_avr'), row.get('HV_std'))
+        igd_str = fmt(row.get('IGD_avr'), row.get('IGD_std'))
+
+        latex_lines.append(f"{exp_name} & {gd_str} & {hv_str} & {igd_str} \\\\")
+
+    latex_lines.append("\\hline")
+    latex_lines.append("\\end{tabular}")
+    latex_lines.append("}")
+    latex_lines.append("\\end{table}")
+    
+    latex_str = "\n".join(latex_lines)
+    
+    # Replace 
+
+    # 5. Write to file
+    try:
+        with open(table_path, "w") as f:
+            f.write(latex_str)
+        print(f"   -> LaTeX table generated: {table_path}")
+    except Exception as e:
+        print(f"   -> Failed to write LaTeX table: {e}")
+
+
+
+
+
 ##### Force order
 desired_order = [
         "NONE2|0",
@@ -98,6 +173,15 @@ desired_order = [
         "FuzzyKMeans|100",
         "DBSCAN|25",
         "DBSCAN|100"
+]
+# removing 100 seeding for all-1
+desired_order = [
+        "NONE2|0",
+        "Random|25",
+        "KMeans|25",
+        "FuzzyKMeans|25",
+        "DBSCAN|25",
+        "Random|100"
 ]
 # Build a lookup index
 order_index = {entry: i for i, entry in enumerate(desired_order)}
@@ -111,118 +195,195 @@ def experiment_key(exp):
 ########
 
 
-def plot_metric(summary_df: pd.DataFrame, metric: str, y_label: str, output_filename: str):
+# Define this once — a pattern per experiment
+PATTERNS = [
+    "",
+    "////",      # diagonal
+    "////",      # diagonal
+    "...",      # dots
+    "...",      # dots
+    "xxx",      # cross hatch
+    "xxx",      # cross hatch
+    "\\\\",    # opposite diagonal
+    "\\\\",    # opposite diagonal
+]
+PATTERNS = [
+    "",
+    "////",      # diagonal
+    "////",      # diagonal
+    "...",      # dots
+    "...",      # dots
+    "/",      # cross hatch
+    "/",      # cross hatch
+    "\\\\",    # opposite diagonal
+    "\\\\",    # opposite diagonal
+]
+PATTERNS = [
+    "",
+    "",      # none
+    "//",      # diagonal
+    "",      # none
+    "//",      # diagonal
+    "",      # none
+    "//",      # diagonal
+    "",      # none
+    "//",      # diagonal
+]
+# removing 100%
+PATTERNS = [
+    "",
+    "",      # none
+    "",      # none
+    "",      # none
+    "",      # none
+    "",    # diagonal for 100%
+]
+
+GRAYS = ["#FFFFFF",
+         "#FFFFFF","#666666",
+         "#FFFFFF","#777777",
+         "#FFFFFF","#777777",
+         "#FFFFFF","#777777",
+         "#FFFFFF","#777777"]
+GRAYS = ["#ffffff",
+           "#e9aae4","#e9aae4",
+           "#97cc99","#97cc99",
+           "#ffe119","#ffe119",
+           "#8aa4ff","#8aa4ff"
+           ]
+# removing 100%
+GRAYS = ["#ffffff",
+           "#e9aae4",
+           "#97cc99",
+           "#ffe119",
+           "#8aa4ff",
+           "#ff9900"
+           ]
+
+import numpy as np
+
+def plot_metric_boxplots(raw_df: pd.DataFrame, metric: str, y_label: str, output_filename: str):
     """
-    Draw grouped 'box-like' plots: For each iteration on the x-axis,
-    draw N adjacent boxes (one per experiment) representing mean ± std.
+    Creates grouped boxplots:
+        - X-axis = iterations
+        - Each iteration group has N boxes (one per experiment)
+        - Real quartile boxplots (no outliers)
+        - Grayscale + hatching preserved per experiment
     """
 
-    #>>>> Filter (you had iteration < 6 for debugging)
-    summary_df = summary_df[summary_df['iteration'] < 11]
+    # ======= FILTER ITERATIONS =======
+    # Filter to first two iterations AND iterations 5 and 10 only
+    raw_df = raw_df[raw_df["iteration"].isin([1, 2, 5, 10])].copy()
+    # raw_df = raw_df[raw_df["iteration"] <= 2].copy()
     
-    print(summary_df.head())
-
-    if summary_df.empty:
-        print(f"Cannot create plot for {metric.upper()}: The summary DataFrame is empty.")
+    # ======= FILTER DBSCAN|100, FuzzyKMeans|100, KMeans|100 =======
+    # Filter columns where "experiment" contains |DBSCAN|100|
+    raw_df = raw_df[~raw_df["experiment"].str.contains(r"\|DBSCAN\|100\|", regex=True, na=False)]
+    # Filter columns where "experiment" contains |FuzzyKMeans|100|
+    raw_df = raw_df[~raw_df["experiment"].str.contains(r"\|FuzzyKMeans\|100\|", regex=True, na=False)]
+    # Filter columns where "experiment" contains |KMeans|100|
+    raw_df = raw_df[~raw_df["experiment"].str.contains(r"\|KMeans\|100\|", regex=True, na=False)]
+    
+    
+    if raw_df.empty:
+        print(f"Cannot create boxplot for {metric.upper()}")
         return
 
-    metric_avr = f"{metric}_avr"
-    metric_std = f"{metric}_std"
+    # Sort experiments with your ranking function
+    raw_df["exp_sort"] = raw_df["experiment"].apply(experiment_key)
+    experiments = sorted(raw_df["experiment"].unique(), key=experiment_key)
+    iterations = sorted(raw_df["iteration"].unique())
 
-    if metric_avr not in summary_df or metric_std not in summary_df:
-        print(f"Missing columns {metric_avr} or {metric_std}")
-        return
+    # Prepare color/hatch maps
+    exp_to_color = {exp: GRAYS[i % len(GRAYS)] for i, exp in enumerate(experiments)}
+    exp_to_hatch = {exp: PATTERNS[i % len(PATTERNS)] for i, exp in enumerate(experiments)}
 
-    print(f"\nGenerating grouped box plot for {metric.upper()} → {output_filename}")
+    fig, ax = plt.subplots(figsize=(max(10, 1.2 * len(iterations)), 6))
 
-    # Unique iterations and experiments
-    iterations = sorted(summary_df["iteration"].unique())
-    experiments = sorted(summary_df["experiment"].unique())
-    
-    #>>>>> FORCE order <<<<< (check function)
-    experiments_sorted = sorted(summary_df["experiment"].unique(), key=experiment_key)
-    experiments = experiments_sorted
+    # Width settings
+    group_width = 0.8                 # width each iteration group occupies
+    box_width = group_width / len(experiments)
+
+    # X positions for each iteration
+    group_centers = np.arange(len(iterations))
+
+    # Collect handles for legend
+    legend_handles = []
+
+    # For each experiment: place its boxes inside each iteration group
+    for exp_idx, exp in enumerate(experiments):
+        positions = group_centers - group_width/2 + exp_idx * box_width + box_width/2
+
+        # box_data[i] = values for this experiment at iteration i
+        box_data = []
+        for it in iterations:
+            values = raw_df[(raw_df["iteration"] == it) &
+                            (raw_df["experiment"] == exp)][metric].dropna().values
+            box_data.append(values if len(values) > 0 else [np.nan])
+
+        # Draw boxplot for this experiment
+        bp = ax.boxplot(
+            box_data,
+            positions=positions,
+            widths=box_width * 0.9,
+            patch_artist=True,
+            showfliers=False
+        )
+        
+        # Color medians red
+        for median in bp['medians']:
+            median.set_color("red")
+            median.set_linewidth(1.5)
 
 
-    # Figure size – scale reasonably
-    fig, ax = plt.subplots(figsize=(max(8, 1.2 * len(iterations)), 6))
-    
-    n_experiments = len(experiments)
+        # Style each box
+        for patch in bp["boxes"]:
+            patch.set_facecolor(exp_to_color[exp])
+            patch.set_hatch(exp_to_hatch[exp])
+            patch.set_edgecolor("black")
+            patch.set_linewidth(1.1)
 
-    palette = sns.color_palette("husl", n_experiments)
+        # Store legend box
+        legend_handles.append(
+            Rectangle((0, 0), 1, 1, facecolor=exp_to_color[exp],
+                      hatch=exp_to_hatch[exp], edgecolor='black')
+        )
+        
 
-    # ----- Spacing -----
-    group_width = 0.8                      # width occupied by the entire group
-    box_width = group_width / n_experiments  # width per experiment
-
-    # Draw rectangular boxes
-    for exp_index, exp_name in enumerate(experiments):
-        sub = summary_df[summary_df["experiment"] == exp_name]
-
-        for _, row in sub.iterrows():
-            it = row["iteration"]
-            avr = row[metric_avr]
-            std = row[metric_std] if not pd.isna(row[metric_std]) else 0
-
-            # X-position for this experiment inside the iteration group
-            center = iterations.index(it)
-            left = center - group_width / 2 + exp_index * box_width
-
-            # Rectangle geometry
-            bottom = avr - std
-            height = 2 * std
-
-            # Avoid invisible zero-height boxes
-            if height <= 0:
-                height = 0.01
-                bottom = avr - height / 2
-
-            rect = Rectangle(
-                (left, bottom),
-                box_width,
-                height,
-                facecolor=palette[exp_index],
-                alpha=0.55,
-                edgecolor="black",
-                linewidth=0.7,
-            )
-            ax.add_patch(rect)
-
-            # Mean marker
-            ax.plot(left + box_width / 2, avr, "o", markersize=4,
-                    color="white", markeredgecolor="black")
-
-    # ----- Axes -----
-    ax.set_xticks(range(len(iterations)))
-    ax.set_xticklabels(iterations, rotation=45)
-    ax.set_xlabel("Iteration")
-    ax.set_ylabel(y_label)
-    # ax.set_title(f"{metric.upper()} vs Iteration (Grouped Boxes)")
-
-    # ----- Legend -----
-    legend_patches = [
-        Rectangle((0, 0), 1, 1, facecolor=palette[i], edgecolor="black", alpha=0.55)
-        for i in range(n_experiments)
-    ]
-    # ax.legend(legend_patches, experiments, title="Experiment",
-    #           bbox_to_anchor=(1.02, 1), loc="upper left")
-    
-    # add legend inside top right, size reduced
-    ax.legend(legend_patches, experiments, title="Experiment",
-              loc="upper right", fontsize='x-small', title_fontsize='medium')
     
     
+    # Axis formatting
+    ax.set_xticks(group_centers)
+    ax.set_xticklabels(iterations)
+    # ax.set_xlabel("Iteration")
+    # ax.set_title(y_label)
+    # ax.set_ylabel(y_label)
+    # ax.set_title(f"{metric.upper()} vs Iteration (Grouped Boxplot)")
+    
+    # Increase axis fonts
+    ax.tick_params(axis='x', labelsize=12 + 5)
+    ax.tick_params(axis='y', labelsize=12 + 5)
+    ax.xaxis.label.set_size(14 + 8)
+    ax.yaxis.label.set_size(14 + 8)
+    # increase title font
+    ax.title.set_size(16 + 10)
+
+    # Legend
+    plot_legend = False
+    if plot_legend:
+        ax.legend(legend_handles, experiments, title="Experiment",
+                fontsize='x-small', title_fontsize='medium', loc='upper right')
+    
+    
+    # Tighten x-limits in figure edges and box plot
+    ax.set_xlim(-0.5, len(iterations) - 0.5)
 
     plt.tight_layout()
     plt.savefig(output_filename, dpi=300)
     plt.close()
-    
-    # save legend as a separate image
-    plt.legend(legend_patches, experiments, title="Experiment")
-    plt.savefig(os.path.join(output_filename.split("/")[0], "legend.png"), dpi=300)
-    plt.close()
-    
-    print(f"✔ Saved {output_filename}")
+
+    print(f"✔ Saved grouped boxplot {output_filename}")
+    return output_filename
 
 
 
@@ -271,53 +432,72 @@ def runIt():
         merged_df.to_csv(combined_csv_path, index=False)
         print(f"\n✅ Saved the combined raw data to '{combined_csv_path}'")
         
-        summary_dataframe = calculate_summary_stats(merged_df)
+        summary_dataframe = calculate_summary_stats_latex(merged_df)
 
         if not summary_dataframe.empty:
             summary_csv_path = os.path.join(output_dir, "summary_statistics.csv")
             summary_dataframe.to_csv(summary_csv_path, index=False)
             print(f"✅ Saved the summary statistics to '{summary_csv_path}'")
             
+            
+            
+            # [NEW] Generate the LaTeX table for the first iteration (will overwrite 4 times, ensuring it's up to date)
+            latex_table_metric(summary_dataframe, output_dir)
+
             # --- Generate all four plots using the refactored function, saving to the new directory ---
-            plot_metric(summary_dataframe, 
+
+            f1 = plot_metric_boxplots(merged_df, 
+                        metric='HV', 
+                        y_label='HV (Higher is Better)', 
+                        output_filename=os.path.join(output_dir, 'HV_vs_Iteration.png'))
+            f2 = plot_metric_boxplots(merged_df, 
+                        metric='GD', 
+                        y_label='GD (Lower is Better)', 
+                        output_filename=os.path.join(output_dir, 'GD_vs_Iteration.png'))
+            f3 = plot_metric_boxplots(merged_df, 
                         metric='IGD', 
-                        y_label='Average IGD (Lower is Better)', 
+                        y_label='IGD (Lower is Better)', 
                         output_filename=os.path.join(output_dir, 'IGD_vs_Iteration.png'))
 
-            plot_metric(summary_dataframe, 
-                        metric='GD', 
-                        y_label='Average GD (Lower is Better)', 
-                        output_filename=os.path.join(output_dir, 'GD_vs_Iteration.png'))
-            
-            plot_metric(summary_dataframe, 
-                        metric='HV', 
-                        y_label='Average HV (Higher is Better)', 
-                        output_filename=os.path.join(output_dir, 'HV_vs_Iteration.png'))
 
-            plot_metric(summary_dataframe, 
+            plot_metric_boxplots(merged_df, 
                         metric='time', 
-                        y_label='Average Time (s)', 
+                        y_label='Time (s)', 
                         output_filename=os.path.join(output_dir, 'Time_vs_Iteration.png'))
 
+
+            # ---- Get images and joint them into one figure ----
+            images = [f1, f2, f3]
+            fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+            for ax, img_path in zip(axes, images):
+                img = plt.imread(img_path)
+                ax.imshow(img)
+                ax.axis('off')
+            plt.tight_layout()
+            # Reduce space between images
+            plt.subplots_adjust(wspace=0.0, hspace=0)  
+            combined_image_path = os.path.join(output_dir, 'Combined_Metrics_vs_Iteration.png')
+            # plt.savefig(combined_image_path, dpi=300)
+            plt.savefig(combined_image_path, dpi=300, bbox_inches='tight', pad_inches=0)
+
+            plt.close()
+            print(f"✔ Saved combined metrics image {combined_image_path}")
 
 
 if __name__ == "__main__":
 
     # Run runIt() for each test case by setting sys.argv accordingly
     test_cases = [
-        ('outputAgri_ChangeInjectedProp', 'plot_outputAgri_ChangeInjectedProp'),
-        ('outputAgri_ChangeInjectedModel', 'plot_outputAgri_ChangeInjectedModel'),
-        ('outputAgri_ChangeInjectedBoth', 'plot_outputAgri_ChangeInjectedBoth'),
-        ('outputExpAgri_ChangeInjectedBoth', 'plot_outputExpAgri_ChangeInjectedBoth'),
+        ('outputExpAgri_ChangeInjectedPropMin', 'plot_outputExpAgri_ChangeInjectedPropMin'),
+        # ('outputAgri_ChangeInjectedProp', 'plot_outputAgri_ChangeInjectedProp'),
+        # ('outputAgri_ChangeInjectedModel', 'plot_outputAgri_ChangeInjectedModel'),
+        # ('outputAgri_ChangeInjectedBoth', 'plot_outputAgri_ChangeInjectedBoth'),
         ('outputExpAgri_ChangeInjectedProp', 'plot_outputExpAgri_ChangeInjectedProp'),
         ('outputExpAgri_ChangeInjectedBoth', 'plot_outputExpAgri_ChangeInjectedBoth'),
+        ('outputExpAgri_ChangeInjectedModel', 'plot_outputExpAgri_ChangeInjectedModel'),
         ('outputSanity', 'plot_outputSanity')
     ]
 
     for inp_dir, out_dir in test_cases:
         sys.argv = ['process_summarize_plot.py', inp_dir, out_dir]
-        try:
-            runIt()
-        except Exception as e:
-            print(f"Error running for ({inp_dir}, {out_dir}): {e}")
         runIt()
