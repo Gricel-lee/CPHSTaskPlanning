@@ -32,7 +32,7 @@ pip3 install pandas
 pip3 install pymoo
 
 # 1 experiments for agricultural model
-python3 ./src/run.py --csv "RQ1/Construction/experiment_files/experiments_iter_25_50.csv" --model "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism" --properties "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props" --output "<REPLACE_OUTPUT_FOLDER_AND_EXPERIMENT_SUBFOLDER>" --optimisation "RQ1/Construction/experiment_files/change_injected_in_prop_minimum.txt" --changes "<REPLACE_CHANGES_FILE>"
+python3 ./src/run.py --csv "RQ1/Construction/experiment_files/experiments_iter_25_50.csv" --model "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism" --properties "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props" --output "<REPLACE_OUTPUT_FOLDER_AND_EXPERIMENT_SUBFOLDER>" --optimisation "RQ1/Construction/experiment_files/optimisationList_construction.txt" --changes "<REPLACE_CHANGES_FILE>"
 '''
 
 # lists of names and files
@@ -41,7 +41,7 @@ python3 ./src/run.py --csv "RQ1/Construction/experiment_files/experiments_iter_2
 
 # lists of names and files
 names_all = ["ExpCon_ChangInjPropMin"]
-files_all = ["RQ1/Construction/experiment_files/con_change_injected_in_prop_minimum.txt"]
+files_all = ["RQ1/Construction/experiment_files/change_injected_in_prop_minimum.txt"]
 
 
 # ========= Select the name for the job file (also use for the output folder name) ==========
