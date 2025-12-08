@@ -1,0 +1,2098 @@
+/opt/apps/eb/software/Java/11.0.20/lib:/opt/apps/eb/software/Python/3.11.3-GCCcore-12.3.0/lib:/opt/apps/eb/software/OpenSSL/1.1/lib:/opt/apps/eb/software/libffi/3.4.4-GCCcore-12.3.0/lib64:/opt/apps/eb/software/XZ/5.4.2-GCCcore-12.3.0/lib:/opt/apps/eb/software/SQLite/3.42.0-GCCcore-12.3.0/lib:/opt/apps/eb/software/Tcl/8.6.13-GCCcore-12.3.0/lib:/opt/apps/eb/software/libreadline/8.2-GCCcore-12.3.0/lib:/opt/apps/eb/software/ncurses/6.4-GCCcore-12.3.0/lib:/opt/apps/eb/software/bzip2/1.0.8-GCCcore-12.3.0/lib:/opt/apps/eb/software/binutils/2.40-GCCcore-12.3.0/lib:/opt/apps/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib:/opt/apps/eb/software/GCCcore/12.3.0/lib64:/users/gnvf500/scratch/CPHSTaskPlanning/EvoChecker/libs/runtime
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pandas in /users/gnvf500/.local/lib/python3.11/site-packages (2.3.0)
+Requirement already satisfied: numpy>=1.23.2 in /users/gnvf500/.local/lib/python3.11/site-packages (from pandas) (2.3.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in /users/gnvf500/.local/lib/python3.11/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /users/gnvf500/.local/lib/python3.11/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /users/gnvf500/.local/lib/python3.11/site-packages (from pandas) (2025.2)
+Requirement already satisfied: six>=1.5 in /users/gnvf500/.local/lib/python3.11/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pymoo in /users/gnvf500/.local/lib/python3.11/site-packages (0.6.1.5)
+Requirement already satisfied: numpy>=1.19.3 in /users/gnvf500/.local/lib/python3.11/site-packages (from pymoo) (2.3.0)
+Requirement already satisfied: scipy>=1.1 in /users/gnvf500/.local/lib/python3.11/site-packages (from pymoo) (1.15.3)
+Requirement already satisfied: matplotlib>=3 in /users/gnvf500/.local/lib/python3.11/site-packages (from pymoo) (3.10.3)
+Requirement already satisfied: autograd>=1.4 in /users/gnvf500/.local/lib/python3.11/site-packages (from pymoo) (1.8.0)
+Requirement already satisfied: cma>=3.2.2 in /users/gnvf500/.local/lib/python3.11/site-packages (from pymoo) (4.2.0)
+Requirement already satisfied: alive-progress in /users/gnvf500/.local/lib/python3.11/site-packages (from pymoo) (3.2.0)
+Requirement already satisfied: dill in /users/gnvf500/.local/lib/python3.11/site-packages (from pymoo) (0.4.0)
+Requirement already satisfied: Deprecated in /users/gnvf500/.local/lib/python3.11/site-packages (from pymoo) (1.2.18)
+Requirement already satisfied: contourpy>=1.0.1 in /users/gnvf500/.local/lib/python3.11/site-packages (from matplotlib>=3->pymoo) (1.3.2)
+Requirement already satisfied: cycler>=0.10 in /users/gnvf500/.local/lib/python3.11/site-packages (from matplotlib>=3->pymoo) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /users/gnvf500/.local/lib/python3.11/site-packages (from matplotlib>=3->pymoo) (4.58.4)
+Requirement already satisfied: kiwisolver>=1.3.1 in /users/gnvf500/.local/lib/python3.11/site-packages (from matplotlib>=3->pymoo) (1.4.8)
+Requirement already satisfied: packaging>=20.0 in /opt/apps/eb/software/Python/3.11.3-GCCcore-12.3.0/lib/python3.11/site-packages (from matplotlib>=3->pymoo) (23.1)
+Requirement already satisfied: pillow>=8 in /users/gnvf500/.local/lib/python3.11/site-packages (from matplotlib>=3->pymoo) (11.2.1)
+Requirement already satisfied: pyparsing>=2.3.1 in /users/gnvf500/.local/lib/python3.11/site-packages (from matplotlib>=3->pymoo) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in /users/gnvf500/.local/lib/python3.11/site-packages (from matplotlib>=3->pymoo) (2.9.0.post0)
+Requirement already satisfied: about-time==4.2.1 in /users/gnvf500/.local/lib/python3.11/site-packages (from alive-progress->pymoo) (4.2.1)
+Requirement already satisfied: grapheme==0.6.0 in /users/gnvf500/.local/lib/python3.11/site-packages (from alive-progress->pymoo) (0.6.0)
+Requirement already satisfied: wrapt<2,>=1.10 in /users/gnvf500/.local/lib/python3.11/site-packages (from Deprecated->pymoo) (1.17.2)
+Requirement already satisfied: six>=1.5 in /users/gnvf500/.local/lib/python3.11/site-packages (from python-dateutil>=2.7->matplotlib>=3->pymoo) (1.17.0)
+[ARGS] Directory: /mnt/scratch/users/gnvf500/CPHSTaskPlanning
+[ARGS] CSV default file: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/experiment_files/experiments_iter_25_50.csv
+[ARGS] Output folder: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1
+[ARGS] Seeding folder: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/previousPopulation
+[ARGS] Changes list file: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/experiment_files/change_injected_in_prop_minimum.txt
+[EXP] CSV file: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/experiment_files/experiments_iter_25_50.csv
+[EXP] Output folder: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1
+[EXP] Loaded 7 experiments from /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/experiment_files/experiments_iter_25_50.csv.
+[EXP] Loading injected changes from /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/experiment_files/change_injected_in_prop_minimum.txt
+{'constraint, min, 0.70': ['constraint, min, 0.65', 'properties']}
+[EXP] Experiment 0: Experiment(case=agricultural,seeding=NONE, percentage=0, kMeanIterations=None, distance=None, fuzziness=None, epsilon=None, nMinPerCluster=None, dataPareto=FRONT, population=20, evaluations=400, moga=NSGAII)
+[CONFIG] Config file: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/config.properties
+[CP] Copying EvoChecker /mnt/scratch/users/gnvf500/CPHSTaskPlanning/EvoChecker/target folder to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target
+[CP] Copying EvoChecker model /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.prism
+[CP] Copying EvoChecker properties /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props
+[CP] Copying EvoChecker config /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/config.properties to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/config.properties
+Configuration script
+==========================================
+SEED_FUZZINESS = None
+JAVA = /opt/apps/eb/software/Java/11.0.20/bin/java
+PROPERTIES_FILE = models/datamodelEvo.props
+PYTHON3_DIRECTORY = /usr/bin/python3
+PROBLEM = agricultural
+ALGORITHM = NSGAII
+SEED_DBSCAN_EPS = None
+SEED_PERCENTAGE = 0
+INIT_PORT = 8860
+EVOCHECKER_TYPE = NORMAL
+MODEL_TEMPLATE_FILE = models/datamodelEvo.prism
+MAX_EVALUATIONS = 400
+SEED_CLUSTER_FROM_PARETO = FRONT
+SEED_KMEANS_ITERATIONS = None
+SAVE_PARETO_EVERY_N_ITERATIONS = 1
+MODEL_CHECKING_ENGINE_LIBS_DIRECTORY = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/libs/runtime
+PROCESSORS = 1
+EVOCHECKER_ENGINE = PRISM
+VERBOSE = FALSE
+SEED_DBSCAN_MINPTS = None
+MODEL_CHECKING_ENGINE = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/libs/PrismExecutor.jar
+POPULATION_SIZE = 20
+PLOT_PARETO_FRONT = FALSE
+==========================================
+
+Objectives (O)/Constraints(C)
+O: P=? [ F "success" ], Max?true
+O: R=? [ F "done" ], Max?false
+C: P=? [ F "success" ], Limit=0.7, Max?false
+
+Starting  evolution
+[Seeding] Population to seed is 0. Skipping seeding.
+[pNSGAII] Saving Pareto set, iter: 1
+-------------------------------------------------
+SOLUTIONS: 	8
+1
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1102513566671922916154912_1_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11025111620801455360179151_1_Set
+Successfully appended 'a' to the file.
+Evaluations:	20
+[pNSGAII] Saving Pareto set, iter: 2
+-------------------------------------------------
+SOLUTIONS: 	16
+2
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11025711776509056358496949_2_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1102574745198587903906168_2_Set
+Successfully appended 'a' to the file.
+Evaluations:	40
+[pNSGAII] Saving Pareto set, iter: 3
+-------------------------------------------------
+SOLUTIONS: 	20
+3
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11030218233756829978473323_3_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103027304933868470304261_3_Set
+Successfully appended 'a' to the file.
+Evaluations:	60
+[pNSGAII] Saving Pareto set, iter: 4
+-------------------------------------------------
+SOLUTIONS: 	20
+4
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11030412382798568497397106_4_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11030415375952023783198963_4_Set
+Successfully appended 'a' to the file.
+Evaluations:	80
+[pNSGAII] Saving Pareto set, iter: 5
+-------------------------------------------------
+SOLUTIONS: 	20
+5
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103064432362575568768245_5_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11030611826360795058518402_5_Set
+Successfully appended 'a' to the file.
+Evaluations:	100
+[pNSGAII] Saving Pareto set, iter: 6
+-------------------------------------------------
+SOLUTIONS: 	20
+6
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103084975121305870733821_6_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103088369968027153372642_6_Set
+Successfully appended 'a' to the file.
+Evaluations:	120
+[pNSGAII] Saving Pareto set, iter: 7
+-------------------------------------------------
+SOLUTIONS: 	20
+7
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11031217567261078487005356_7_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11031211973544478733983882_7_Set
+Successfully appended 'a' to the file.
+Evaluations:	140
+[pNSGAII] Saving Pareto set, iter: 8
+-------------------------------------------------
+SOLUTIONS: 	20
+8
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103148531523890263764503_8_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103144988461674738387250_8_Set
+Successfully appended 'a' to the file.
+Evaluations:	160
+[pNSGAII] Saving Pareto set, iter: 9
+-------------------------------------------------
+SOLUTIONS: 	20
+9
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103151459436108056887232_9_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11031510727451199140688850_9_Set
+Successfully appended 'a' to the file.
+Evaluations:	180
+[pNSGAII] Saving Pareto set, iter: 10
+-------------------------------------------------
+SOLUTIONS: 	20
+10
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103172452309297332597272_10_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103178419779469952078088_10_Set
+Successfully appended 'a' to the file.
+Evaluations:	200
+[pNSGAII] Saving Pareto set, iter: 11
+-------------------------------------------------
+SOLUTIONS: 	20
+11
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11031913677396166865292957_11_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103192771682627902385568_11_Set
+Successfully appended 'a' to the file.
+Evaluations:	220
+[pNSGAII] Saving Pareto set, iter: 12
+-------------------------------------------------
+SOLUTIONS: 	20
+12
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103217436501085769803087_12_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103215849053289563894946_12_Set
+Successfully appended 'a' to the file.
+Evaluations:	240
+[pNSGAII] Saving Pareto set, iter: 13
+-------------------------------------------------
+SOLUTIONS: 	20
+13
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11032312686760135315869459_13_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103233818343242783756094_13_Set
+Successfully appended 'a' to the file.
+Evaluations:	260
+[pNSGAII] Saving Pareto set, iter: 14
+-------------------------------------------------
+SOLUTIONS: 	20
+14
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103242103890482260297023_14_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11032410302953576980861373_14_Set
+Successfully appended 'a' to the file.
+Evaluations:	280
+[pNSGAII] Saving Pareto set, iter: 15
+-------------------------------------------------
+SOLUTIONS: 	20
+15
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103262141282827215859806_15_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103263461116462672635650_15_Set
+Successfully appended 'a' to the file.
+Evaluations:	300
+[pNSGAII] Saving Pareto set, iter: 16
+-------------------------------------------------
+SOLUTIONS: 	20
+16
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103284911899152070683316_16_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103288983997694228472025_16_Set
+Successfully appended 'a' to the file.
+Evaluations:	320
+[pNSGAII] Saving Pareto set, iter: 17
+-------------------------------------------------
+SOLUTIONS: 	20
+17
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11032910128259286642551199_17_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11032916848587037769105091_17_Set
+Successfully appended 'a' to the file.
+Evaluations:	340
+[pNSGAII] Saving Pareto set, iter: 18
+-------------------------------------------------
+SOLUTIONS: 	20
+18
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11033214609378030555217673_18_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103321014130266249450484_18_Set
+Successfully appended 'a' to the file.
+Evaluations:	360
+[pNSGAII] Saving Pareto set, iter: 19
+-------------------------------------------------
+SOLUTIONS: 	20
+19
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103337119035511753126322_19_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103339346966638033505327_19_Set
+Successfully appended 'a' to the file.
+Evaluations:	380
+[pNSGAII] Saving Pareto set, iter: 20
+-------------------------------------------------
+SOLUTIONS: 	20
+20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103354336628844868839891_20_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11033515315520645006377748_20_Set
+Successfully appended 'a' to the file.
+Successfully appended 'a' to the file.
+-------------------------------------------------
+SOLUTIONS: 	20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1103352830659837781625501_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11033516685338829118003612_Set
+Time:	79.616
+
+
+
+EvoChecker finished successfully.
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/ to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE|0|-|-|-|-|-|FRONT|20|400|NSGAII/results
+Renamed 'AGRICULTURAL_NSGAII_071225_11032410302953576980861373_14_Set' to 'prev_AGRICULTURAL_NSGAII_071225_11032410302953576980861373_14_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_11033515315520645006377748_20_Set' to 'prev_AGRICULTURAL_NSGAII_071225_11033515315520645006377748_20_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103284911899152070683316_16_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103284911899152070683316_16_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_11030218233756829978473323_3_Front' to 'prev_AGRICULTURAL_NSGAII_071225_11030218233756829978473323_3_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_11031211973544478733983882_7_Set' to 'prev_AGRICULTURAL_NSGAII_071225_11031211973544478733983882_7_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_11030415375952023783198963_4_Set' to 'prev_AGRICULTURAL_NSGAII_071225_11030415375952023783198963_4_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_11025111620801455360179151_1_Set' to 'prev_AGRICULTURAL_NSGAII_071225_11025111620801455360179151_1_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103233818343242783756094_13_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1103233818343242783756094_13_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_11031510727451199140688850_9_Set' to 'prev_AGRICULTURAL_NSGAII_071225_11031510727451199140688850_9_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103148531523890263764503_8_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103148531523890263764503_8_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_11033214609378030555217673_18_Front' to 'prev_AGRICULTURAL_NSGAII_071225_11033214609378030555217673_18_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103262141282827215859806_15_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103262141282827215859806_15_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103064432362575568768245_5_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103064432362575568768245_5_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103217436501085769803087_12_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103217436501085769803087_12_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_11025711776509056358496949_2_Front' to 'prev_AGRICULTURAL_NSGAII_071225_11025711776509056358496949_2_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103321014130266249450484_18_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1103321014130266249450484_18_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103354336628844868839891_20_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103354336628844868839891_20_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103178419779469952078088_10_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1103178419779469952078088_10_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103288983997694228472025_16_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1103288983997694228472025_16_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_11032916848587037769105091_17_Set' to 'prev_AGRICULTURAL_NSGAII_071225_11032916848587037769105091_17_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103027304933868470304261_3_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1103027304933868470304261_3_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103088369968027153372642_6_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1103088369968027153372642_6_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_11030412382798568497397106_4_Front' to 'prev_AGRICULTURAL_NSGAII_071225_11030412382798568497397106_4_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103263461116462672635650_15_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1103263461116462672635650_15_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_11030611826360795058518402_5_Set' to 'prev_AGRICULTURAL_NSGAII_071225_11030611826360795058518402_5_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103215849053289563894946_12_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1103215849053289563894946_12_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103084975121305870733821_6_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103084975121305870733821_6_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_11031217567261078487005356_7_Front' to 'prev_AGRICULTURAL_NSGAII_071225_11031217567261078487005356_7_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103337119035511753126322_19_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103337119035511753126322_19_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_11031913677396166865292957_11_Front' to 'prev_AGRICULTURAL_NSGAII_071225_11031913677396166865292957_11_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103172452309297332597272_10_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103172452309297332597272_10_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103242103890482260297023_14_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103242103890482260297023_14_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_11032312686760135315869459_13_Front' to 'prev_AGRICULTURAL_NSGAII_071225_11032312686760135315869459_13_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1102513566671922916154912_1_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1102513566671922916154912_1_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_11032910128259286642551199_17_Front' to 'prev_AGRICULTURAL_NSGAII_071225_11032910128259286642551199_17_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1102574745198587903906168_2_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1102574745198587903906168_2_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103144988461674738387250_8_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1103144988461674738387250_8_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103339346966638033505327_19_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1103339346966638033505327_19_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103352830659837781625501_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103352830659837781625501_Front'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103192771682627902385568_11_Set' to 'prev_AGRICULTURAL_NSGAII_071225_1103192771682627902385568_11_Set'
+Renamed 'AGRICULTURAL_NSGAII_071225_11033516685338829118003612_Set' to 'prev_AGRICULTURAL_NSGAII_071225_11033516685338829118003612_Set'
+Renamed 'time.txt' to 'prev_time.txt'
+Renamed 'AGRICULTURAL_NSGAII_071225_1103151459436108056887232_9_Front' to 'prev_AGRICULTURAL_NSGAII_071225_1103151459436108056887232_9_Front'
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+[EXP] Experiment 1: Experiment(case=agricultural,seeding=NONE2, percentage=0, kMeanIterations=None, distance=None, fuzziness=None, epsilon=None, nMinPerCluster=None, dataPareto=FRONT, population=20, evaluations=400, moga=NSGAII)
+[CONFIG] Config file: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/config.properties
+[CP] Copying EvoChecker /mnt/scratch/users/gnvf500/CPHSTaskPlanning/EvoChecker/target folder to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target
+[CP] Copying EvoChecker model /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.prism
+[CP] Copying EvoChecker properties /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props
+[INJ_CHANGE] Injected change into /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props file: constraint, min, 0.70 -> constraint, min, 0.65
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/previousPopulation to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/
+[CP] Copying EvoChecker config /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/config.properties to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/config.properties
+Configuration script
+==========================================
+JAVA = /opt/apps/eb/software/Java/11.0.20/bin/java
+SEED_DBSCAN_EPS = None
+ALGORITHM = NSGAII
+EVOCHECKER_TYPE = NORMAL
+MODEL_TEMPLATE_FILE = models/datamodelEvo.prism
+SAVE_PARETO_EVERY_N_ITERATIONS = 1
+SEED_TYPE = NONE2
+SEED_CLUSTER_FROM_PARETO = FRONT
+VERBOSE = FALSE
+MODEL_CHECKING_ENGINE = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/libs/PrismExecutor.jar
+POPULATION_SIZE = 20
+PLOT_PARETO_FRONT = FALSE
+SEED_FUZZINESS = None
+PROPERTIES_FILE = models/datamodelEvo.props
+PYTHON3_DIRECTORY = /usr/bin/python3
+PROBLEM = agricultural
+SEED_PERCENTAGE = 0
+INIT_PORT = 8860
+SEED_KMEANS_ITERATIONS = None
+MAX_EVALUATIONS = 400
+MODEL_CHECKING_ENGINE_LIBS_DIRECTORY = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/libs/runtime
+PROCESSORS = 1
+EVOCHECKER_ENGINE = PRISM
+SEED_DBSCAN_MINPTS = None
+==========================================
+
+Objectives (O)/Constraints(C)
+O: P=? [ F "success" ], Max?true
+O: R=? [ F "done" ], Max?false
+C: P=? [ F "success" ], Limit=0.65, Max?false
+
+Starting  evolution
+[Seeding] Population to seed is 0. Skipping seeding.
+[pNSGAII] Saving Pareto set, iter: 1
+-------------------------------------------------
+SOLUTIONS: 	8
+1
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1104365414773844302767478_1_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1104367848563726080485977_1_Set
+Successfully appended 'a' to the file.
+Evaluations:	20
+[pNSGAII] Saving Pareto set, iter: 2
+-------------------------------------------------
+SOLUTIONS: 	15
+2
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1104386622002283511758336_2_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1104387155714800600144410_2_Set
+Successfully appended 'a' to the file.
+Evaluations:	40
+[pNSGAII] Saving Pareto set, iter: 3
+-------------------------------------------------
+SOLUTIONS: 	20
+3
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11044014988773771990067276_3_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_110440659673305187662080_3_Set
+Successfully appended 'a' to the file.
+Evaluations:	60
+[pNSGAII] Saving Pareto set, iter: 4
+-------------------------------------------------
+SOLUTIONS: 	20
+4
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1104413121927187952288449_4_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11044116210209381438693509_4_Set
+Successfully appended 'a' to the file.
+Evaluations:	80
+[pNSGAII] Saving Pareto set, iter: 5
+-------------------------------------------------
+SOLUTIONS: 	20
+5
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1104476792264311557632863_5_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_110447481002537848049952_5_Set
+Successfully appended 'a' to the file.
+Evaluations:	100
+[pNSGAII] Saving Pareto set, iter: 6
+-------------------------------------------------
+SOLUTIONS: 	20
+6
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_110449660109382396270113_6_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1104491204798275158851465_6_Set
+Successfully appended 'a' to the file.
+Evaluations:	120
+[pNSGAII] Saving Pareto set, iter: 7
+-------------------------------------------------
+SOLUTIONS: 	20
+7
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1104509496234561488292764_7_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1104505847299852650140613_7_Set
+Successfully appended 'a' to the file.
+Evaluations:	140
+[pNSGAII] Saving Pareto set, iter: 8
+-------------------------------------------------
+SOLUTIONS: 	20
+8
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11045417036929522485239088_8_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1104541995096184187790096_8_Set
+Successfully appended 'a' to the file.
+Evaluations:	160
+[pNSGAII] Saving Pareto set, iter: 9
+-------------------------------------------------
+SOLUTIONS: 	20
+9
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1105039498836947931253285_9_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11050314225745709692310998_9_Set
+Successfully appended 'a' to the file.
+Evaluations:	180
+[pNSGAII] Saving Pareto set, iter: 10
+-------------------------------------------------
+SOLUTIONS: 	20
+10
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11050811480473494666763516_10_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1105086346350586116409808_10_Set
+Successfully appended 'a' to the file.
+Evaluations:	200
+[pNSGAII] Saving Pareto set, iter: 11
+-------------------------------------------------
+SOLUTIONS: 	20
+11
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11051211200998207860449964_11_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11051217243808494465507335_11_Set
+Successfully appended 'a' to the file.
+Evaluations:	220
+[pNSGAII] Saving Pareto set, iter: 12
+-------------------------------------------------
+SOLUTIONS: 	20
+12
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1105147502901698079232877_12_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11051418100753664296556781_12_Set
+Successfully appended 'a' to the file.
+Evaluations:	240
+[pNSGAII] Saving Pareto set, iter: 13
+-------------------------------------------------
+SOLUTIONS: 	20
+13
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11051812761566771597211810_13_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1105185091474723805644309_13_Set
+Successfully appended 'a' to the file.
+Evaluations:	260
+[pNSGAII] Saving Pareto set, iter: 14
+-------------------------------------------------
+SOLUTIONS: 	20
+14
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11053817764221112527799295_14_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1105388238541864313886911_14_Set
+Successfully appended 'a' to the file.
+Evaluations:	280
+[pNSGAII] Saving Pareto set, iter: 15
+-------------------------------------------------
+SOLUTIONS: 	20
+15
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1105409699664357757653355_15_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11054013178852699147062742_15_Set
+Successfully appended 'a' to the file.
+Evaluations:	300
+[pNSGAII] Saving Pareto set, iter: 16
+-------------------------------------------------
+SOLUTIONS: 	20
+16
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11054211995233971395232090_16_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11054214074161240814767005_16_Set
+Successfully appended 'a' to the file.
+Evaluations:	320
+[pNSGAII] Saving Pareto set, iter: 17
+-------------------------------------------------
+SOLUTIONS: 	20
+17
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_110544153067187772640831_17_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11054416102773999214523432_17_Set
+Successfully appended 'a' to the file.
+Evaluations:	340
+[pNSGAII] Saving Pareto set, iter: 18
+-------------------------------------------------
+SOLUTIONS: 	20
+18
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11054710853734165654524040_18_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11054716387825267146946538_18_Set
+Successfully appended 'a' to the file.
+Evaluations:	360
+[pNSGAII] Saving Pareto set, iter: 19
+-------------------------------------------------
+SOLUTIONS: 	20
+19
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1105485291918699703767064_19_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1105489872556912246015821_19_Set
+Successfully appended 'a' to the file.
+Evaluations:	380
+[pNSGAII] Saving Pareto set, iter: 20
+-------------------------------------------------
+SOLUTIONS: 	20
+20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_110551760582418649973799_20_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1105513816497191318020435_20_Set
+Successfully appended 'a' to the file.
+Successfully appended 'a' to the file.
+-------------------------------------------------
+SOLUTIONS: 	20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11060110616992618948311155_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11060111757850702916757180_Set
+Time:	116.594
+
+
+
+EvoChecker finished successfully.
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/ to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|NONE2|0|-|-|-|-|-|FRONT|20|400|NSGAII/results
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+[EXP] Experiment 2: Experiment(case=agricultural,seeding=Random, percentage=25, kMeanIterations=None, distance=None, fuzziness=None, epsilon=None, nMinPerCluster=None, dataPareto=FRONT, population=20, evaluations=400, moga=NSGAII)
+[CONFIG] Config file: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/config.properties
+[CP] Copying EvoChecker /mnt/scratch/users/gnvf500/CPHSTaskPlanning/EvoChecker/target folder to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target
+[CP] Copying EvoChecker model /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.prism
+[CP] Copying EvoChecker properties /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props
+[INJ_CHANGE] Injected change into /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props file: constraint, min, 0.70 -> constraint, min, 0.65
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/previousPopulation to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/
+[CP] Copying EvoChecker config /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/config.properties to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/config.properties
+Configuration script
+==========================================
+JAVA = /opt/apps/eb/software/Java/11.0.20/bin/java
+SEED_DBSCAN_EPS = None
+ALGORITHM = NSGAII
+EVOCHECKER_TYPE = NORMAL
+MODEL_TEMPLATE_FILE = models/datamodelEvo.prism
+SAVE_PARETO_EVERY_N_ITERATIONS = 1
+SEED_TYPE = Random
+SEED_CLUSTER_FROM_PARETO = FRONT
+VERBOSE = FALSE
+MODEL_CHECKING_ENGINE = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/libs/PrismExecutor.jar
+POPULATION_SIZE = 20
+PLOT_PARETO_FRONT = FALSE
+SEED_FUZZINESS = None
+PROPERTIES_FILE = models/datamodelEvo.props
+PYTHON3_DIRECTORY = /usr/bin/python3
+PROBLEM = agricultural
+SEED_PERCENTAGE = 25
+INIT_PORT = 8860
+SEED_KMEANS_ITERATIONS = None
+MAX_EVALUATIONS = 400
+MODEL_CHECKING_ENGINE_LIBS_DIRECTORY = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/libs/runtime
+PROCESSORS = 1
+EVOCHECKER_ENGINE = PRISM
+SEED_DBSCAN_MINPTS = None
+==========================================
+
+Objectives (O)/Constraints(C)
+O: P=? [ F "success" ], Max?true
+O: R=? [ F "done" ], Max?false
+C: P=? [ F "success" ], Limit=0.65, Max?false
+
+Starting  evolution
+[Seeding] Seeding porcentage define at 25%. Searching for 5 solutions
+[Seeding] SEED_TYPE: RANDOM
+[Seeding] SEED_FROM_DATA. Using Pareto Front data.
+[Seeding] Reading previous Pareto Set: prev_AGRICULTURAL_NSGAII_071225_11033516685338829118003612_Set with 20 reusable solutions.
+[Seeding] Reading previous Pareto Front: prev_AGRICULTURAL_NSGAII_071225_1103352830659837781625501_Front with 20 reusable solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[Seeding] Seeding 5 solutions.
+[pNSGAII] Saving Pareto set, iter: 1
+-------------------------------------------------
+SOLUTIONS: 	9
+1
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11062912073483304578620291_1_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11062911541031340154686668_1_Set
+Successfully appended 'a' to the file.
+Evaluations:	20
+[pNSGAII] Saving Pareto set, iter: 2
+-------------------------------------------------
+SOLUTIONS: 	18
+2
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_110631789044888745842593_2_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11063115390876518431888913_2_Set
+Successfully appended 'a' to the file.
+Evaluations:	40
+[pNSGAII] Saving Pareto set, iter: 3
+-------------------------------------------------
+SOLUTIONS: 	20
+3
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1106404994917539745944313_3_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1106409318404310714627566_3_Set
+Successfully appended 'a' to the file.
+Evaluations:	60
+[pNSGAII] Saving Pareto set, iter: 4
+-------------------------------------------------
+SOLUTIONS: 	20
+4
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1106418487946370659748307_4_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1106418021510747549740286_4_Set
+Successfully appended 'a' to the file.
+Evaluations:	80
+[pNSGAII] Saving Pareto set, iter: 5
+-------------------------------------------------
+SOLUTIONS: 	20
+5
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11065113672737376023808271_5_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11065114383217540422142750_5_Set
+Successfully appended 'a' to the file.
+Evaluations:	100
+[pNSGAII] Saving Pareto set, iter: 6
+-------------------------------------------------
+SOLUTIONS: 	20
+6
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1106522834396572213411231_6_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11065217257509724811623571_6_Set
+Successfully appended 'a' to the file.
+Evaluations:	120
+[pNSGAII] Saving Pareto set, iter: 7
+-------------------------------------------------
+SOLUTIONS: 	20
+7
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1106537240513911578882300_7_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1106537071138526978849930_7_Set
+Successfully appended 'a' to the file.
+Evaluations:	140
+[pNSGAII] Saving Pareto set, iter: 8
+-------------------------------------------------
+SOLUTIONS: 	20
+8
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1106558258576190705787078_8_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1106558338772411397347010_8_Set
+Successfully appended 'a' to the file.
+Evaluations:	160
+[pNSGAII] Saving Pareto set, iter: 9
+-------------------------------------------------
+SOLUTIONS: 	20
+9
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11065610802094273357534152_9_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11065610560923102556832819_9_Set
+Successfully appended 'a' to the file.
+Evaluations:	180
+[pNSGAII] Saving Pareto set, iter: 10
+-------------------------------------------------
+SOLUTIONS: 	20
+10
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1106575877503311037329826_10_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1106573993913080408038079_10_Set
+Successfully appended 'a' to the file.
+Evaluations:	200
+[pNSGAII] Saving Pareto set, iter: 11
+-------------------------------------------------
+SOLUTIONS: 	20
+11
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1107098330500981084511561_11_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11070916108346958545907020_11_Set
+Successfully appended 'a' to the file.
+Evaluations:	220
+[pNSGAII] Saving Pareto set, iter: 12
+-------------------------------------------------
+SOLUTIONS: 	20
+12
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1107103549420690930028531_12_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11071015946515236951326751_12_Set
+Successfully appended 'a' to the file.
+Evaluations:	240
+[pNSGAII] Saving Pareto set, iter: 13
+-------------------------------------------------
+SOLUTIONS: 	20
+13
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1107113593467614599959531_13_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11071111438667791659528076_13_Set
+Successfully appended 'a' to the file.
+Evaluations:	260
+[pNSGAII] Saving Pareto set, iter: 14
+-------------------------------------------------
+SOLUTIONS: 	20
+14
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_110712481276333943877145_14_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1107124903465272228699666_14_Set
+Successfully appended 'a' to the file.
+Evaluations:	280
+[pNSGAII] Saving Pareto set, iter: 15
+-------------------------------------------------
+SOLUTIONS: 	20
+15
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11072216228040750765506228_15_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11072210639003242212441146_15_Set
+Successfully appended 'a' to the file.
+Evaluations:	300
+[pNSGAII] Saving Pareto set, iter: 16
+-------------------------------------------------
+SOLUTIONS: 	20
+16
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11073615652766289121477637_16_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11073618120783332275144138_16_Set
+Successfully appended 'a' to the file.
+Evaluations:	320
+[pNSGAII] Saving Pareto set, iter: 17
+-------------------------------------------------
+SOLUTIONS: 	20
+17
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11073710356508494482952779_17_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11073718315637456993409734_17_Set
+Successfully appended 'a' to the file.
+Evaluations:	340
+[pNSGAII] Saving Pareto set, iter: 18
+-------------------------------------------------
+SOLUTIONS: 	20
+18
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1107388287138594736780026_18_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11073813185999211946784572_18_Set
+Successfully appended 'a' to the file.
+Evaluations:	360
+[pNSGAII] Saving Pareto set, iter: 19
+-------------------------------------------------
+SOLUTIONS: 	20
+19
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1107563210333059287299138_19_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11075611926021957372906147_19_Set
+Successfully appended 'a' to the file.
+Evaluations:	380
+[pNSGAII] Saving Pareto set, iter: 20
+-------------------------------------------------
+SOLUTIONS: 	20
+20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11075713911120921068916115_20_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11075718029960312015814498_20_Set
+Successfully appended 'a' to the file.
+Successfully appended 'a' to the file.
+-------------------------------------------------
+SOLUTIONS: 	20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11075715267260620184041874_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11075716751422598799218246_Set
+Time:	91.496
+
+
+
+EvoChecker finished successfully.
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/ to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|25|-|-|-|-|-|FRONT|20|400|NSGAII/results
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+[EXP] Experiment 3: Experiment(case=agricultural,seeding=KMeans, percentage=25, kMeanIterations=1000, distance=Euclidean, fuzziness=None, epsilon=None, nMinPerCluster=None, dataPareto=FRONT, population=20, evaluations=400, moga=NSGAII)
+[CONFIG] Config file: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/config.properties
+[CP] Copying EvoChecker /mnt/scratch/users/gnvf500/CPHSTaskPlanning/EvoChecker/target folder to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target
+[CP] Copying EvoChecker model /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.prism
+[CP] Copying EvoChecker properties /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props
+[INJ_CHANGE] Injected change into /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props file: constraint, min, 0.70 -> constraint, min, 0.65
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/previousPopulation to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/
+[CP] Copying EvoChecker config /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/config.properties to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/config.properties
+Configuration script
+==========================================
+JAVA = /opt/apps/eb/software/Java/11.0.20/bin/java
+SEED_DBSCAN_EPS = None
+ALGORITHM = NSGAII
+EVOCHECKER_TYPE = NORMAL
+MODEL_TEMPLATE_FILE = models/datamodelEvo.prism
+SAVE_PARETO_EVERY_N_ITERATIONS = 1
+SEED_TYPE = KMeans
+SEED_CLUSTER_FROM_PARETO = FRONT
+VERBOSE = FALSE
+MODEL_CHECKING_ENGINE = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/libs/PrismExecutor.jar
+POPULATION_SIZE = 20
+PLOT_PARETO_FRONT = FALSE
+SEED_FUZZINESS = None
+PROPERTIES_FILE = models/datamodelEvo.props
+PYTHON3_DIRECTORY = /usr/bin/python3
+PROBLEM = agricultural
+SEED_PERCENTAGE = 25
+INIT_PORT = 8860
+SEED_KMEANS_ITERATIONS = 1000
+MAX_EVALUATIONS = 400
+MODEL_CHECKING_ENGINE_LIBS_DIRECTORY = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/libs/runtime
+PROCESSORS = 1
+EVOCHECKER_ENGINE = PRISM
+SEED_DBSCAN_MINPTS = None
+==========================================
+
+Objectives (O)/Constraints(C)
+O: P=? [ F "success" ], Max?true
+O: R=? [ F "done" ], Max?false
+C: P=? [ F "success" ], Limit=0.65, Max?false
+
+Starting  evolution
+[Seeding] Seeding porcentage define at 25%. Searching for 5 solutions
+[Seeding] SEED_TYPE: KMEANS
+[Seeding] SEED_FROM_DATA. Using Pareto Front data.
+[Seeding] Reading previous Pareto Set: prev_AGRICULTURAL_NSGAII_071225_11033516685338829118003612_Set with 20 reusable solutions.
+[Seeding] Reading previous Pareto Front: prev_AGRICULTURAL_NSGAII_071225_1103352830659837781625501_Front with 20 reusable solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[Seeding] Seeding 5 solutions.
+[pNSGAII] Saving Pareto set, iter: 1
+-------------------------------------------------
+SOLUTIONS: 	10
+1
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108268027243189262883111_1_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11082617001134428176565388_1_Set
+Successfully appended 'a' to the file.
+Evaluations:	20
+[pNSGAII] Saving Pareto set, iter: 2
+-------------------------------------------------
+SOLUTIONS: 	18
+2
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11082717835150098647314270_2_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108275630164089167204583_2_Set
+Successfully appended 'a' to the file.
+Evaluations:	40
+[pNSGAII] Saving Pareto set, iter: 3
+-------------------------------------------------
+SOLUTIONS: 	20
+3
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108282366085635522073197_3_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108289937296809884909689_3_Set
+Successfully appended 'a' to the file.
+Evaluations:	60
+[pNSGAII] Saving Pareto set, iter: 4
+-------------------------------------------------
+SOLUTIONS: 	20
+4
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108293094620156240436370_4_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11082913115839192670990652_4_Set
+Successfully appended 'a' to the file.
+Evaluations:	80
+[pNSGAII] Saving Pareto set, iter: 5
+-------------------------------------------------
+SOLUTIONS: 	20
+5
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108316950387187230555908_5_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11083117157639052647184924_5_Set
+Successfully appended 'a' to the file.
+Evaluations:	100
+[pNSGAII] Saving Pareto set, iter: 6
+-------------------------------------------------
+SOLUTIONS: 	20
+6
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108326470319032107361965_6_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11083217396622720981289082_6_Set
+Successfully appended 'a' to the file.
+Evaluations:	120
+[pNSGAII] Saving Pareto set, iter: 7
+-------------------------------------------------
+SOLUTIONS: 	20
+7
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11083318092646941550139536_7_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11083312347626136189480711_7_Set
+Successfully appended 'a' to the file.
+Evaluations:	140
+[pNSGAII] Saving Pareto set, iter: 8
+-------------------------------------------------
+SOLUTIONS: 	20
+8
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108345394525276098066612_8_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11083418265760208442776580_8_Set
+Successfully appended 'a' to the file.
+Evaluations:	160
+[pNSGAII] Saving Pareto set, iter: 9
+-------------------------------------------------
+SOLUTIONS: 	20
+9
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11083513399441821253584572_9_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108353255369532790049593_9_Set
+Successfully appended 'a' to the file.
+Evaluations:	180
+[pNSGAII] Saving Pareto set, iter: 10
+-------------------------------------------------
+SOLUTIONS: 	20
+10
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_110837508905025218443615_10_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11083710390085714374720300_10_Set
+Successfully appended 'a' to the file.
+Evaluations:	200
+[pNSGAII] Saving Pareto set, iter: 11
+-------------------------------------------------
+SOLUTIONS: 	20
+11
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108382707821807923596168_11_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11083813656480226631851640_11_Set
+Successfully appended 'a' to the file.
+Evaluations:	220
+[pNSGAII] Saving Pareto set, iter: 12
+-------------------------------------------------
+SOLUTIONS: 	20
+12
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108406313839258184915255_12_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11084016040059679614742421_12_Set
+Successfully appended 'a' to the file.
+Evaluations:	240
+[pNSGAII] Saving Pareto set, iter: 13
+-------------------------------------------------
+SOLUTIONS: 	20
+13
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11084211321929399210562403_13_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11084218088134766895336306_13_Set
+Successfully appended 'a' to the file.
+Evaluations:	260
+[pNSGAII] Saving Pareto set, iter: 14
+-------------------------------------------------
+SOLUTIONS: 	20
+14
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108439859563210336918700_14_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11084313868523773174430729_14_Set
+Successfully appended 'a' to the file.
+Evaluations:	280
+[pNSGAII] Saving Pareto set, iter: 15
+-------------------------------------------------
+SOLUTIONS: 	20
+15
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11084516693921976000458415_15_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108456081819965823097123_15_Set
+Successfully appended 'a' to the file.
+Evaluations:	300
+[pNSGAII] Saving Pareto set, iter: 16
+-------------------------------------------------
+SOLUTIONS: 	20
+16
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11084614761138202692176321_16_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108462287555830541611404_16_Set
+Successfully appended 'a' to the file.
+Evaluations:	320
+[pNSGAII] Saving Pareto set, iter: 17
+-------------------------------------------------
+SOLUTIONS: 	20
+17
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108487460277113582063807_17_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108484285485794189849321_17_Set
+Successfully appended 'a' to the file.
+Evaluations:	340
+[pNSGAII] Saving Pareto set, iter: 18
+-------------------------------------------------
+SOLUTIONS: 	20
+18
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11084914130657329578915468_18_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11084911361393490892630335_18_Set
+Successfully appended 'a' to the file.
+Evaluations:	360
+[pNSGAII] Saving Pareto set, iter: 19
+-------------------------------------------------
+SOLUTIONS: 	20
+19
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1108502689978181078183128_19_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11085014579178789257984180_19_Set
+Successfully appended 'a' to the file.
+Evaluations:	380
+[pNSGAII] Saving Pareto set, iter: 20
+-------------------------------------------------
+SOLUTIONS: 	20
+20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11085214261763113093096151_20_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11085217668906252817932904_20_Set
+Successfully appended 'a' to the file.
+Successfully appended 'a' to the file.
+-------------------------------------------------
+SOLUTIONS: 	20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11085210662733982853712117_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11085212408579729880414940_Set
+Time:	42.137
+
+
+
+EvoChecker finished successfully.
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/ to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|KMeans|25|1000|Euclidean|-|-|-|FRONT|20|400|NSGAII/results
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+[EXP] Experiment 4: Experiment(case=agricultural,seeding=FuzzyKMeans, percentage=25, kMeanIterations=1000, distance=Euclidean, fuzziness=1.05, epsilon=None, nMinPerCluster=None, dataPareto=FRONT, population=20, evaluations=400, moga=NSGAII)
+[CONFIG] Config file: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/config.properties
+[CP] Copying EvoChecker /mnt/scratch/users/gnvf500/CPHSTaskPlanning/EvoChecker/target folder to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target
+[CP] Copying EvoChecker model /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.prism
+[CP] Copying EvoChecker properties /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props
+[INJ_CHANGE] Injected change into /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props file: constraint, min, 0.70 -> constraint, min, 0.65
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/previousPopulation to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/
+[CP] Copying EvoChecker config /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/config.properties to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/config.properties
+Configuration script
+==========================================
+JAVA = /opt/apps/eb/software/Java/11.0.20/bin/java
+SEED_DBSCAN_EPS = None
+ALGORITHM = NSGAII
+EVOCHECKER_TYPE = NORMAL
+MODEL_TEMPLATE_FILE = models/datamodelEvo.prism
+SAVE_PARETO_EVERY_N_ITERATIONS = 1
+SEED_TYPE = FuzzyKMeans
+SEED_CLUSTER_FROM_PARETO = FRONT
+VERBOSE = FALSE
+MODEL_CHECKING_ENGINE = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/libs/PrismExecutor.jar
+POPULATION_SIZE = 20
+PLOT_PARETO_FRONT = FALSE
+SEED_FUZZINESS = 1.05
+PROPERTIES_FILE = models/datamodelEvo.props
+PYTHON3_DIRECTORY = /usr/bin/python3
+PROBLEM = agricultural
+SEED_PERCENTAGE = 25
+INIT_PORT = 8860
+SEED_KMEANS_ITERATIONS = 1000
+MAX_EVALUATIONS = 400
+MODEL_CHECKING_ENGINE_LIBS_DIRECTORY = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/libs/runtime
+PROCESSORS = 1
+EVOCHECKER_ENGINE = PRISM
+SEED_DBSCAN_MINPTS = None
+==========================================
+
+Objectives (O)/Constraints(C)
+O: P=? [ F "success" ], Max?true
+O: R=? [ F "done" ], Max?false
+C: P=? [ F "success" ], Limit=0.65, Max?false
+
+Starting  evolution
+[Seeding] Seeding porcentage define at 25%. Searching for 5 solutions
+[Seeding] SEED_TYPE: FUZZYKMEANS
+[Seeding] SEED_FROM_DATA. Using Pareto Front data.
+[Seeding] Reading previous Pareto Set: prev_AGRICULTURAL_NSGAII_071225_11033516685338829118003612_Set with 20 reusable solutions.
+[Seeding] Reading previous Pareto Front: prev_AGRICULTURAL_NSGAII_071225_1103352830659837781625501_Front with 20 reusable solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[SeedingFuzzyKM] Fuzziness parameter: 1.05
+[PreviousPareto] Found 20 previous Pareto solutions.
+[Seeding] Seeding 5 solutions.
+[pNSGAII] Saving Pareto set, iter: 1
+-------------------------------------------------
+SOLUTIONS: 	10
+1
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109178835770453520713617_1_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11091713869004148207364372_1_Set
+Successfully appended 'a' to the file.
+Evaluations:	20
+[pNSGAII] Saving Pareto set, iter: 2
+-------------------------------------------------
+SOLUTIONS: 	19
+2
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11091913909232190538687990_2_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109199650391977645574822_2_Set
+Successfully appended 'a' to the file.
+Evaluations:	40
+[pNSGAII] Saving Pareto set, iter: 3
+-------------------------------------------------
+SOLUTIONS: 	20
+3
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109207483480648915910150_3_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109203658931067594713823_3_Set
+Successfully appended 'a' to the file.
+Evaluations:	60
+[pNSGAII] Saving Pareto set, iter: 4
+-------------------------------------------------
+SOLUTIONS: 	20
+4
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11092111727237437027910595_4_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109216792520713187191621_4_Set
+Successfully appended 'a' to the file.
+Evaluations:	80
+[pNSGAII] Saving Pareto set, iter: 5
+-------------------------------------------------
+SOLUTIONS: 	20
+5
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109237091177969086000360_5_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109235566176781809994438_5_Set
+Successfully appended 'a' to the file.
+Evaluations:	100
+[pNSGAII] Saving Pareto set, iter: 6
+-------------------------------------------------
+SOLUTIONS: 	20
+6
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109257543044482840982304_6_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11092512543757753319404654_6_Set
+Successfully appended 'a' to the file.
+Evaluations:	120
+[pNSGAII] Saving Pareto set, iter: 7
+-------------------------------------------------
+SOLUTIONS: 	20
+7
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11092713244941794195796255_7_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11092713035831018300384909_7_Set
+Successfully appended 'a' to the file.
+Evaluations:	140
+[pNSGAII] Saving Pareto set, iter: 8
+-------------------------------------------------
+SOLUTIONS: 	20
+8
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11092816786172672507242265_8_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109289884305993528297460_8_Set
+Successfully appended 'a' to the file.
+Evaluations:	160
+[pNSGAII] Saving Pareto set, iter: 9
+-------------------------------------------------
+SOLUTIONS: 	20
+9
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109293817316394021977361_9_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109291928202294281100337_9_Set
+Successfully appended 'a' to the file.
+Evaluations:	180
+[pNSGAII] Saving Pareto set, iter: 10
+-------------------------------------------------
+SOLUTIONS: 	20
+10
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109312469681956519796141_10_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11093118374013611846435423_10_Set
+Successfully appended 'a' to the file.
+Evaluations:	200
+[pNSGAII] Saving Pareto set, iter: 11
+-------------------------------------------------
+SOLUTIONS: 	20
+11
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109322822515105586535961_11_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11093214843129938238132220_11_Set
+Successfully appended 'a' to the file.
+Evaluations:	220
+[pNSGAII] Saving Pareto set, iter: 12
+-------------------------------------------------
+SOLUTIONS: 	20
+12
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11093415485026463828866569_12_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11093418010546641292771527_12_Set
+Successfully appended 'a' to the file.
+Evaluations:	240
+[pNSGAII] Saving Pareto set, iter: 13
+-------------------------------------------------
+SOLUTIONS: 	20
+13
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109361029112592339669709_13_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109369490410822015207129_13_Set
+Successfully appended 'a' to the file.
+Evaluations:	260
+[pNSGAII] Saving Pareto set, iter: 14
+-------------------------------------------------
+SOLUTIONS: 	20
+14
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109372929543881304630025_14_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109375760641284858078641_14_Set
+Successfully appended 'a' to the file.
+Evaluations:	280
+[pNSGAII] Saving Pareto set, iter: 15
+-------------------------------------------------
+SOLUTIONS: 	20
+15
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11093912489267257241027949_15_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11093912747316530401154698_15_Set
+Successfully appended 'a' to the file.
+Evaluations:	300
+[pNSGAII] Saving Pareto set, iter: 16
+-------------------------------------------------
+SOLUTIONS: 	20
+16
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109407286989766611437688_16_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11094016694815814142925597_16_Set
+Successfully appended 'a' to the file.
+Evaluations:	320
+[pNSGAII] Saving Pareto set, iter: 17
+-------------------------------------------------
+SOLUTIONS: 	20
+17
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11094215509515838322723025_17_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11094217587300577783255713_17_Set
+Successfully appended 'a' to the file.
+Evaluations:	340
+[pNSGAII] Saving Pareto set, iter: 18
+-------------------------------------------------
+SOLUTIONS: 	20
+18
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109435903285067933743074_18_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11094310091278835056997342_18_Set
+Successfully appended 'a' to the file.
+Evaluations:	360
+[pNSGAII] Saving Pareto set, iter: 19
+-------------------------------------------------
+SOLUTIONS: 	20
+19
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109452404811146457770335_19_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11094517433693081077749173_19_Set
+Successfully appended 'a' to the file.
+Evaluations:	380
+[pNSGAII] Saving Pareto set, iter: 20
+-------------------------------------------------
+SOLUTIONS: 	20
+20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11094617640945805972911954_20_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11094614127542569659580703_20_Set
+Successfully appended 'a' to the file.
+Successfully appended 'a' to the file.
+-------------------------------------------------
+SOLUTIONS: 	20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1109465210967519800592305_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11094614573988124685457442_Set
+Time:	36.944
+
+
+
+EvoChecker finished successfully.
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/ to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|FuzzyKMeans|25|1000|Euclidean|1.05|-|-|FRONT|20|400|NSGAII/results
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+[EXP] Experiment 5: Experiment(case=agricultural,seeding=DBSCAN, percentage=25, kMeanIterations=None, distance=None, fuzziness=None, epsilon=0.2, nMinPerCluster=2, dataPareto=FRONT, population=20, evaluations=400, moga=NSGAII)
+[CONFIG] Config file: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/config.properties
+[CP] Copying EvoChecker /mnt/scratch/users/gnvf500/CPHSTaskPlanning/EvoChecker/target folder to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target
+[CP] Copying EvoChecker model /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.prism
+[CP] Copying EvoChecker properties /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props
+[INJ_CHANGE] Injected change into /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props file: constraint, min, 0.70 -> constraint, min, 0.65
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/previousPopulation to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/
+[CP] Copying EvoChecker config /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/config.properties to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/config.properties
+Configuration script
+==========================================
+JAVA = /opt/apps/eb/software/Java/11.0.20/bin/java
+SEED_DBSCAN_EPS = 0.2
+ALGORITHM = NSGAII
+EVOCHECKER_TYPE = NORMAL
+MODEL_TEMPLATE_FILE = models/datamodelEvo.prism
+SAVE_PARETO_EVERY_N_ITERATIONS = 1
+SEED_TYPE = DBSCAN
+SEED_CLUSTER_FROM_PARETO = FRONT
+VERBOSE = FALSE
+MODEL_CHECKING_ENGINE = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/libs/PrismExecutor.jar
+POPULATION_SIZE = 20
+PLOT_PARETO_FRONT = FALSE
+SEED_FUZZINESS = None
+PROPERTIES_FILE = models/datamodelEvo.props
+PYTHON3_DIRECTORY = /usr/bin/python3
+PROBLEM = agricultural
+SEED_PERCENTAGE = 25
+INIT_PORT = 8860
+SEED_KMEANS_ITERATIONS = None
+MAX_EVALUATIONS = 400
+MODEL_CHECKING_ENGINE_LIBS_DIRECTORY = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/libs/runtime
+PROCESSORS = 1
+EVOCHECKER_ENGINE = PRISM
+SEED_DBSCAN_MINPTS = 2
+==========================================
+
+Objectives (O)/Constraints(C)
+O: P=? [ F "success" ], Max?true
+O: R=? [ F "done" ], Max?false
+C: P=? [ F "success" ], Limit=0.65, Max?false
+
+Starting  evolution
+[Seeding] Seeding porcentage define at 25%. Searching for 5 solutions
+[Seeding] SEED_TYPE: DBSCAN
+[Seeding] SEED_FROM_DATA. Using Pareto Front data.
+[Seeding] Reading previous Pareto Set: prev_AGRICULTURAL_NSGAII_071225_11033516685338829118003612_Set with 20 reusable solutions.
+[Seeding] Reading previous Pareto Front: prev_AGRICULTURAL_NSGAII_071225_1103352830659837781625501_Front with 20 reusable solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[DBSCAN] Eps value: 0.2
+[DBSCAN] MinPts value: 2
+[PreviousPareto] Found 20 previous Pareto solutions.
+Cluster 0
+Num points in cluster: 19
+[Seeding] Seeding 1 solutions.
+[pNSGAII] Saving Pareto set, iter: 1
+-------------------------------------------------
+SOLUTIONS: 	9
+1
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110301490985085822317416_1_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11103016659841103215991394_1_Set
+Successfully appended 'a' to the file.
+Evaluations:	20
+[pNSGAII] Saving Pareto set, iter: 2
+-------------------------------------------------
+SOLUTIONS: 	17
+2
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11103111929624039194695992_2_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11103110205466625492821993_2_Set
+Successfully appended 'a' to the file.
+Evaluations:	40
+[pNSGAII] Saving Pareto set, iter: 3
+-------------------------------------------------
+SOLUTIONS: 	20
+3
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11103310011126972082580388_3_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110338464121633823122497_3_Set
+Successfully appended 'a' to the file.
+Evaluations:	60
+[pNSGAII] Saving Pareto set, iter: 4
+-------------------------------------------------
+SOLUTIONS: 	20
+4
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11103410793563859592486266_4_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110349459494862579189569_4_Set
+Successfully appended 'a' to the file.
+Evaluations:	80
+[pNSGAII] Saving Pareto set, iter: 5
+-------------------------------------------------
+SOLUTIONS: 	20
+5
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110366086915494830218441_5_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110367478364747863061850_5_Set
+Successfully appended 'a' to the file.
+Evaluations:	100
+[pNSGAII] Saving Pareto set, iter: 6
+-------------------------------------------------
+SOLUTIONS: 	20
+6
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110372315115458397187666_6_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11103713734593895247323769_6_Set
+Successfully appended 'a' to the file.
+Evaluations:	120
+[pNSGAII] Saving Pareto set, iter: 7
+-------------------------------------------------
+SOLUTIONS: 	20
+7
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11103810841546170663505153_7_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11103812322914903096765736_7_Set
+Successfully appended 'a' to the file.
+Evaluations:	140
+[pNSGAII] Saving Pareto set, iter: 8
+-------------------------------------------------
+SOLUTIONS: 	20
+8
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110395260803110226302018_8_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11103918318878961089247419_8_Set
+Successfully appended 'a' to the file.
+Evaluations:	160
+[pNSGAII] Saving Pareto set, iter: 9
+-------------------------------------------------
+SOLUTIONS: 	20
+9
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110419962081554771026069_9_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110416399625660009536542_9_Set
+Successfully appended 'a' to the file.
+Evaluations:	180
+[pNSGAII] Saving Pareto set, iter: 10
+-------------------------------------------------
+SOLUTIONS: 	20
+10
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11104218174948473713203970_10_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11104212435705714122846710_10_Set
+Successfully appended 'a' to the file.
+Evaluations:	200
+[pNSGAII] Saving Pareto set, iter: 11
+-------------------------------------------------
+SOLUTIONS: 	20
+11
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11104312632213156565788757_11_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110435224890945052241198_11_Set
+Successfully appended 'a' to the file.
+Evaluations:	220
+[pNSGAII] Saving Pareto set, iter: 12
+-------------------------------------------------
+SOLUTIONS: 	20
+12
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110444848023904821225037_12_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110441047013977697464477_12_Set
+Successfully appended 'a' to the file.
+Evaluations:	240
+[pNSGAII] Saving Pareto set, iter: 13
+-------------------------------------------------
+SOLUTIONS: 	20
+13
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11104510253349009739528055_13_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110457760088586659449422_13_Set
+Successfully appended 'a' to the file.
+Evaluations:	260
+[pNSGAII] Saving Pareto set, iter: 14
+-------------------------------------------------
+SOLUTIONS: 	20
+14
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11104616871601398675316984_14_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110468320126994558169161_14_Set
+Successfully appended 'a' to the file.
+Evaluations:	280
+[pNSGAII] Saving Pareto set, iter: 15
+-------------------------------------------------
+SOLUTIONS: 	20
+15
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11104714982420194167003362_15_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11104710450354311513470940_15_Set
+Successfully appended 'a' to the file.
+Evaluations:	300
+[pNSGAII] Saving Pareto set, iter: 16
+-------------------------------------------------
+SOLUTIONS: 	20
+16
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110485069134147763365548_16_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110483985225696841771817_16_Set
+Successfully appended 'a' to the file.
+Evaluations:	320
+[pNSGAII] Saving Pareto set, iter: 17
+-------------------------------------------------
+SOLUTIONS: 	20
+17
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110495164881045883054458_17_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110494668182680954362402_17_Set
+Successfully appended 'a' to the file.
+Evaluations:	340
+[pNSGAII] Saving Pareto set, iter: 18
+-------------------------------------------------
+SOLUTIONS: 	20
+18
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11105015091541808432419861_18_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110502079603725791067932_18_Set
+Successfully appended 'a' to the file.
+Evaluations:	360
+[pNSGAII] Saving Pareto set, iter: 19
+-------------------------------------------------
+SOLUTIONS: 	20
+19
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11105212164396326728897500_19_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110527269303429040635343_19_Set
+Successfully appended 'a' to the file.
+Evaluations:	380
+[pNSGAII] Saving Pareto set, iter: 20
+-------------------------------------------------
+SOLUTIONS: 	20
+20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_111053914903298685736856_20_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11105317913641058691651520_20_Set
+Successfully appended 'a' to the file.
+Successfully appended 'a' to the file.
+-------------------------------------------------
+SOLUTIONS: 	20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11105314686328000389320912_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1110539627801537505883933_Set
+Time:	31.816
+
+
+
+EvoChecker finished successfully.
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/ to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|DBSCAN|25|-|-|-|0.2|2|FRONT|20|400|NSGAII/results
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+[EXP] Experiment 6: Experiment(case=agricultural,seeding=Random, percentage=100, kMeanIterations=None, distance=None, fuzziness=None, epsilon=None, nMinPerCluster=None, dataPareto=FRONT, population=20, evaluations=400, moga=NSGAII)
+[CONFIG] Config file: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/config.properties
+[CP] Copying EvoChecker /mnt/scratch/users/gnvf500/CPHSTaskPlanning/EvoChecker/target folder to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target
+[CP] Copying EvoChecker model /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.prism
+[CP] Copying EvoChecker properties /mnt/scratch/users/gnvf500/CPHSTaskPlanning/RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props
+[INJ_CHANGE] Injected change into /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/models/datamodelEvo.props file: constraint, min, 0.70 -> constraint, min, 0.65
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/previousPopulation to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/
+[CP] Copying EvoChecker config /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/config.properties to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/config.properties
+Configuration script
+==========================================
+JAVA = /opt/apps/eb/software/Java/11.0.20/bin/java
+SEED_DBSCAN_EPS = None
+ALGORITHM = NSGAII
+EVOCHECKER_TYPE = NORMAL
+MODEL_TEMPLATE_FILE = models/datamodelEvo.prism
+SAVE_PARETO_EVERY_N_ITERATIONS = 1
+SEED_TYPE = Random
+SEED_CLUSTER_FROM_PARETO = FRONT
+VERBOSE = FALSE
+MODEL_CHECKING_ENGINE = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/libs/PrismExecutor.jar
+POPULATION_SIZE = 20
+PLOT_PARETO_FRONT = FALSE
+SEED_FUZZINESS = None
+PROPERTIES_FILE = models/datamodelEvo.props
+PYTHON3_DIRECTORY = /usr/bin/python3
+PROBLEM = agricultural
+SEED_PERCENTAGE = 100
+INIT_PORT = 8860
+SEED_KMEANS_ITERATIONS = None
+MAX_EVALUATIONS = 400
+MODEL_CHECKING_ENGINE_LIBS_DIRECTORY = /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/libs/runtime
+PROCESSORS = 1
+EVOCHECKER_ENGINE = PRISM
+SEED_DBSCAN_MINPTS = None
+==========================================
+
+Objectives (O)/Constraints(C)
+O: P=? [ F "success" ], Max?true
+O: R=? [ F "done" ], Max?false
+C: P=? [ F "success" ], Limit=0.65, Max?false
+
+Starting  evolution
+[Seeding] Seeding porcentage define at 100%. Searching for 20 solutions
+[Seeding] SEED_TYPE: RANDOM
+[Seeding] SEED_FROM_DATA. Using Pareto Front data.
+[Seeding] Reading previous Pareto Set: prev_AGRICULTURAL_NSGAII_071225_11033516685338829118003612_Set with 20 reusable solutions.
+[Seeding] Reading previous Pareto Front: prev_AGRICULTURAL_NSGAII_071225_1103352830659837781625501_Front with 20 reusable solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[PreviousPareto] Found 20 previous Pareto solutions.
+[Seeding] Seeding all 20 previous reusable solutions
+[PreviousPareto] Found 20 previous Pareto solutions.
+[pNSGAII] Saving Pareto set, iter: 1
+-------------------------------------------------
+SOLUTIONS: 	20
+1
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111178732808522773276986_1_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111179851413422498703948_1_Set
+Successfully appended 'a' to the file.
+Evaluations:	20
+[pNSGAII] Saving Pareto set, iter: 2
+-------------------------------------------------
+SOLUTIONS: 	20
+2
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111198246103593311596654_2_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111198297042396605711318_2_Set
+Successfully appended 'a' to the file.
+Evaluations:	40
+[pNSGAII] Saving Pareto set, iter: 3
+-------------------------------------------------
+SOLUTIONS: 	20
+3
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111213743866939250946169_3_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111212195185866023949295_3_Set
+Successfully appended 'a' to the file.
+Evaluations:	60
+[pNSGAII] Saving Pareto set, iter: 4
+-------------------------------------------------
+SOLUTIONS: 	20
+4
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_111123167268216748988964_4_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11112310667257969702994394_4_Set
+Successfully appended 'a' to the file.
+Evaluations:	80
+[pNSGAII] Saving Pareto set, iter: 5
+-------------------------------------------------
+SOLUTIONS: 	20
+5
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11112410990940517346685496_5_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111248638700775603908365_5_Set
+Successfully appended 'a' to the file.
+Evaluations:	100
+[pNSGAII] Saving Pareto set, iter: 6
+-------------------------------------------------
+SOLUTIONS: 	20
+6
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11112616826255879257732718_6_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11112617613497368286775142_6_Set
+Successfully appended 'a' to the file.
+Evaluations:	120
+[pNSGAII] Saving Pareto set, iter: 7
+-------------------------------------------------
+SOLUTIONS: 	20
+7
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111286232497871174922750_7_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111288032049197126212983_7_Set
+Successfully appended 'a' to the file.
+Evaluations:	140
+[pNSGAII] Saving Pareto set, iter: 8
+-------------------------------------------------
+SOLUTIONS: 	20
+8
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11112910202814821035087481_8_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11112910732299468926208233_8_Set
+Successfully appended 'a' to the file.
+Evaluations:	160
+[pNSGAII] Saving Pareto set, iter: 9
+-------------------------------------------------
+SOLUTIONS: 	20
+9
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11113115149187935965011229_9_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111316929756408353826329_9_Set
+Successfully appended 'a' to the file.
+Evaluations:	180
+[pNSGAII] Saving Pareto set, iter: 10
+-------------------------------------------------
+SOLUTIONS: 	20
+10
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111347474032120063599273_10_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111345205402866202246615_10_Set
+Successfully appended 'a' to the file.
+Evaluations:	200
+[pNSGAII] Saving Pareto set, iter: 11
+-------------------------------------------------
+SOLUTIONS: 	20
+11
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111353635877130373979267_11_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11113515425944168377014658_11_Set
+Successfully appended 'a' to the file.
+Evaluations:	220
+[pNSGAII] Saving Pareto set, iter: 12
+-------------------------------------------------
+SOLUTIONS: 	20
+12
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11113611944211831655967898_12_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11113614087128662896838494_12_Set
+Successfully appended 'a' to the file.
+Evaluations:	240
+[pNSGAII] Saving Pareto set, iter: 13
+-------------------------------------------------
+SOLUTIONS: 	20
+13
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11113810640819257891558876_13_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11113815431298714555560449_13_Set
+Successfully appended 'a' to the file.
+Evaluations:	260
+[pNSGAII] Saving Pareto set, iter: 14
+-------------------------------------------------
+SOLUTIONS: 	20
+14
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_111139483850690620931819_14_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111399320552397786075403_14_Set
+Successfully appended 'a' to the file.
+Evaluations:	280
+[pNSGAII] Saving Pareto set, iter: 15
+-------------------------------------------------
+SOLUTIONS: 	20
+15
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111408248068753832441849_15_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11114011489498864963958116_15_Set
+Successfully appended 'a' to the file.
+Evaluations:	300
+[pNSGAII] Saving Pareto set, iter: 16
+-------------------------------------------------
+SOLUTIONS: 	20
+16
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_111141896488470085104424_16_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11114111679987592575646892_16_Set
+Successfully appended 'a' to the file.
+Evaluations:	320
+[pNSGAII] Saving Pareto set, iter: 17
+-------------------------------------------------
+SOLUTIONS: 	20
+17
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111431995340847812124428_17_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111436506787812094889763_17_Set
+Successfully appended 'a' to the file.
+Evaluations:	340
+[pNSGAII] Saving Pareto set, iter: 18
+-------------------------------------------------
+SOLUTIONS: 	20
+18
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_11114410645598501068009241_18_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111446599329068992162745_18_Set
+Successfully appended 'a' to the file.
+Evaluations:	360
+[pNSGAII] Saving Pareto set, iter: 19
+-------------------------------------------------
+SOLUTIONS: 	20
+19
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111461743592013314152295_19_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111467415096033946530838_19_Set
+Successfully appended 'a' to the file.
+Evaluations:	380
+[pNSGAII] Saving Pareto set, iter: 20
+-------------------------------------------------
+SOLUTIONS: 	20
+20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111474513185203749139667_20_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111471907922480343127106_20_Set
+Successfully appended 'a' to the file.
+Successfully appended 'a' to the file.
+-------------------------------------------------
+SOLUTIONS: 	20
+
+Pareto Front and Pareto set saved at: data/agricultural/NSGAII/
+Pareto Front: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111476243528020035284054_Front
+Pareto Set: /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/AGRICULTURAL_NSGAII_071225_1111471955094555131558863_Set
+Time:	46.649
+
+
+
+EvoChecker finished successfully.
+[CP] Copying EvoChecker results /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/temp/target/data/agricultural/NSGAII/ to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/agricultural|Random|100|-|-|-|-|-|FRONT|20|400|NSGAII/results
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+filePath /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/resPaths.txt
+[INFO] Data saved to combined_experiment_data.csv in /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1
+Optimisation list: ['max', 'min']
+[PF-Indicators] Data points before removing duplicates: 2333 rows.
+[PF-Indicators] Data points after removing duplicates: 1456 rows.
+[PF-Indicators] Some objectives were converted from maximisation to minimisation for Pareto calculations.
+   P=? [ F "success" ]  ...                                         experiment
+1             0.110132  ...  /mnt/scratch/users/gnvf500/CPHSTaskPlanning/ou...
+2            80.396476  ...  /mnt/scratch/users/gnvf500/CPHSTaskPlanning/ou...
+3            60.682819  ...  /mnt/scratch/users/gnvf500/CPHSTaskPlanning/ou...
+4            30.837004  ...  /mnt/scratch/users/gnvf500/CPHSTaskPlanning/ou...
+5            51.431718  ...  /mnt/scratch/users/gnvf500/CPHSTaskPlanning/ou...
+
+[5 rows x 3 columns]
+Nadir Point: [100.0001 100.0001]
+Nadir Point: [100.0001 100.0001]
+1     0.110132
+2    80.396476
+3    60.682819
+4    30.837004
+5    51.431718
+Name: P=? [ F "success" ], dtype: float64
+Pareto front plot saved as 'pareto_front_plot.png'.
+Length all data: 1356
+Length of pareto_ref: 1175
+Experiments: 120 experiments found.
+Pareto reference points: 1175
+Metrics saved to /mnt/scratch/users/gnvf500/CPHSTaskPlanning/outputExpCon_ChangInjPropMin/construction1/metrics_IGD_HV_IG.csv
+
+============================
+ Job utilisation efficiency
+============================
+
+Job ID: 27682172
+Cluster: viking2.yor.alces.network
+User/Group: gnvf500/clusterusers
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 9
+CPU Utilized: 00:04:31
+CPU Efficiency: 4.11% of 01:49:48 core-walltime
+Job Wall-clock time: 00:12:12
+Memory Utilized: 923.96 MB
+Memory Efficiency: 3.01% of 30.00 GB
+ Requested wall clock time: 1-16:15:00
+    Actual wall clock time: 00:12:12
+Wall clock time efficiency: 0.5%
+           Job queued time: 00:00:13

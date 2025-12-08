@@ -497,6 +497,11 @@ if __name__ == "__main__":
         ('outputExpAgri_ChangeInjectedModel', 'plot_outputExpAgri_ChangeInjectedModel'),
         ('outputSanity', 'plot_outputSanity')
     ]
+    
+    # Construction
+    test_cases = [
+        ('outputExpCon_ChangInjPropMin', 'plot_outputExpCon_ChangInjPropMin')
+    ]
 
     for inp_dir, out_dir in test_cases:
         sys.argv = ['process_summarize_plot.py', inp_dir, out_dir]

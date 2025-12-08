@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+echo 'Submitting jobscript_ExpCon_ChangInjPropMin_exp1.job'
+sbatch jobscript_ExpCon_ChangInjPropMin_exp1.job
+echo 'Submitting jobscript_ExpCon_ChangInjPropMin_exp2.job'
+sbatch jobscript_ExpCon_ChangInjPropMin_exp2.job
+echo 'Submitting jobscript_ExpCon_ChangInjPropMin_exp3.job'
+sbatch jobscript_ExpCon_ChangInjPropMin_exp3.job
+echo 'Submitting jobscript_ExpCon_ChangInjPropMin_exp4.job'
+sbatch jobscript_ExpCon_ChangInjPropMin_exp4.job
+echo 'Submitting jobscript_ExpCon_ChangInjPropMin_exp5.job'
+sbatch jobscript_ExpCon_ChangInjPropMin_exp5.job
+echo 'Submitting jobscript_ExpCon_ChangInjPropMin_exp6.job'
+sbatch jobscript_ExpCon_ChangInjPropMin_exp6.job
+echo 'Submitting jobscript_ExpCon_ChangInjPropMin_exp7.job'
+sbatch jobscript_ExpCon_ChangInjPropMin_exp7.job
+echo 'Submitting jobscript_ExpCon_ChangInjPropMin_exp8.job'
+sbatch jobscript_ExpCon_ChangInjPropMin_exp8.job
+echo 'Submitting jobscript_ExpCon_ChangInjPropMin_exp9.job'
+sbatch jobscript_ExpCon_ChangInjPropMin_exp9.job
+echo 'Submitting jobscript_ExpCon_ChangInjPropMin_exp10.job'
+sbatch jobscript_ExpCon_ChangInjPropMin_exp10.job
