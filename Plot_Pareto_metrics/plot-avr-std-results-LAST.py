@@ -499,8 +499,11 @@ if __name__ == "__main__":
     ]
     
     # Construction
+    # test_cases = [
+    #     ('outputExpCon_ChangInjPropMin', 'plot_outputExpCon_ChangInjPropMin')
+    # ]
     test_cases = [
-        ('outputExpCon_ChangInjPropMin', 'plot_outputExpCon_ChangInjPropMin')
+        ('outputExpCon_ChangInjPropLarge', 'plot_outputExpCon_ChangInjPropLarge')
     ]
 
     for inp_dir, out_dir in test_cases:

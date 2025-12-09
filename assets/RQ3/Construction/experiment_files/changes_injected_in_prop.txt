@@ -1,0 +1,3 @@
+{
+"constraint, min, 0.80":["constraint, min, 0.00", "properties"]
+}
