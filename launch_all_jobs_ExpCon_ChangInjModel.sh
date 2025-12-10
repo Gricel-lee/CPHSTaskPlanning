@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+echo 'Submitting jobscript_ExpCon_ChangInjModel_exp1.job'
+sbatch jobscript_ExpCon_ChangInjModel_exp1.job
+echo 'Submitting jobscript_ExpCon_ChangInjModel_exp2.job'
+sbatch jobscript_ExpCon_ChangInjModel_exp2.job
+echo 'Submitting jobscript_ExpCon_ChangInjModel_exp3.job'
+sbatch jobscript_ExpCon_ChangInjModel_exp3.job
+echo 'Submitting jobscript_ExpCon_ChangInjModel_exp4.job'
+sbatch jobscript_ExpCon_ChangInjModel_exp4.job
+echo 'Submitting jobscript_ExpCon_ChangInjModel_exp5.job'
+sbatch jobscript_ExpCon_ChangInjModel_exp5.job
+echo 'Submitting jobscript_ExpCon_ChangInjModel_exp6.job'
+sbatch jobscript_ExpCon_ChangInjModel_exp6.job
+echo 'Submitting jobscript_ExpCon_ChangInjModel_exp7.job'
+sbatch jobscript_ExpCon_ChangInjModel_exp7.job
+echo 'Submitting jobscript_ExpCon_ChangInjModel_exp8.job'
+sbatch jobscript_ExpCon_ChangInjModel_exp8.job
+echo 'Submitting jobscript_ExpCon_ChangInjModel_exp9.job'
+sbatch jobscript_ExpCon_ChangInjModel_exp9.job
+echo 'Submitting jobscript_ExpCon_ChangInjModel_exp10.job'
+sbatch jobscript_ExpCon_ChangInjModel_exp10.job
