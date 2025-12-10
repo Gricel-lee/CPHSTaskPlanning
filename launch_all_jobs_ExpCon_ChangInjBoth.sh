@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+echo 'Submitting jobscript_ExpCon_ChangInjBoth_exp1.job'
+sbatch jobscript_ExpCon_ChangInjBoth_exp1.job
+echo 'Submitting jobscript_ExpCon_ChangInjBoth_exp2.job'
+sbatch jobscript_ExpCon_ChangInjBoth_exp2.job
+echo 'Submitting jobscript_ExpCon_ChangInjBoth_exp3.job'
+sbatch jobscript_ExpCon_ChangInjBoth_exp3.job
+echo 'Submitting jobscript_ExpCon_ChangInjBoth_exp4.job'
+sbatch jobscript_ExpCon_ChangInjBoth_exp4.job
+echo 'Submitting jobscript_ExpCon_ChangInjBoth_exp5.job'
+sbatch jobscript_ExpCon_ChangInjBoth_exp5.job
+echo 'Submitting jobscript_ExpCon_ChangInjBoth_exp6.job'
+sbatch jobscript_ExpCon_ChangInjBoth_exp6.job
+echo 'Submitting jobscript_ExpCon_ChangInjBoth_exp7.job'
+sbatch jobscript_ExpCon_ChangInjBoth_exp7.job
+echo 'Submitting jobscript_ExpCon_ChangInjBoth_exp8.job'
+sbatch jobscript_ExpCon_ChangInjBoth_exp8.job
+echo 'Submitting jobscript_ExpCon_ChangInjBoth_exp9.job'
+sbatch jobscript_ExpCon_ChangInjBoth_exp9.job
+echo 'Submitting jobscript_ExpCon_ChangInjBoth_exp10.job'
+sbatch jobscript_ExpCon_ChangInjBoth_exp10.job

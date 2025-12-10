@@ -43,6 +43,9 @@ python3 ./src/run.py --csv "assets/RQ3/Construction/experiment_files/experiments
 names_all = ["ExpCon_ChangInjModel"]
 files_all = ["assets/RQ3/Construction/experiment_files/changes_injected_in_model.txt"]
 
+names_all = ["ExpCon_ChangInjBoth"]
+files_all = ["assets/RQ3/Construction/experiment_files/changes_injected_both.txt"]
+
 
 # ========= Select the name for the job file (also use for the output folder name) ==========
 i = 0   #---->>>> Select 0,1 or 2= ["Agri_ChangeInjectedBoth", "Agri_ChangeInjectedModel", "Agri_ChangeInjectedProp"]
