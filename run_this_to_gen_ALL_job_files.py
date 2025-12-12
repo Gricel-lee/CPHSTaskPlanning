@@ -4,7 +4,7 @@ import os
 s = '''#!/usr/bin/env bash
 #SBATCH --job-name=<REPLACE FOR JOB NAME>               # Job name
 #SBATCH --partition=nodes               # What partition the job should run on
-#SBATCH --time=0-50:15:00               # Time limit (DD-HH:MM:SS)
+#SBATCH --time=0-40:15:00               # Time limit (DD-HH:MM:SS)
 #SBATCH --ntasks=1                      # Number of MPI tasks to request
 #SBATCH --cpus-per-task=9               # Number of CPU cores per MPI task
 #SBATCH --mem=40G                       # Total memory to request
