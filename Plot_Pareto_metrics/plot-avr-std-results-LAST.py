@@ -95,7 +95,7 @@ def latex_table_metric(summary_df: pd.DataFrame, output_filename_ref: str):
     Saves the .tex file in the same directory as the plot images.
     """
     # 1. Define output path based on the plot output path
-    output_dir = os.path.dirname(output_filename_ref)
+    output_dir = output_filename_ref #os.path.dirname(output_filename_ref)
     table_path = os.path.join(output_dir, "table_first_iteration_metrics.tex")
 
     # 2. Filter data for the first iteration only (usually 0 or 1)
@@ -505,6 +505,24 @@ if __name__ == "__main__":
     test_cases = [
         ('outputExpCon_ChangInjPropLarge', 'plot_outputExpCon_ChangInjPropLarge')
     ]
+    test_cases = [
+        ('outputExpCon_ChangInjBoth', 'plot_outputExpCon_ChangInjBoth')
+    ]
+    # test_cases = [
+    #     ('outputExpCon_ChangInjModel', 'plot_outputExpCon_ChangInjModel')
+    # ]
+    
+    test_cases = [
+        ('assets/RQ3/Construction/data/outputExpCon_NoChangInj', 'plot_outputExpCon_NoChangInj')
+    ]
+    test_cases = [
+        ('assets/RQ3/Construction/data/outputExpCon_ChangInjPropMin', 'plot_outputExpCon_ChangInjPropMin')
+    ]
+    test_cases = [
+        ('assets/RQ3/Construction/data/outputExpCon_ChangInjPropLarge', 'plot_outputExpCon_ChangInjPropLarge')
+    ]
+    
+
 
     for inp_dir, out_dir in test_cases:
         sys.argv = ['process_summarize_plot.py', inp_dir, out_dir]

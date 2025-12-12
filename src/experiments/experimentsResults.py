@@ -4,15 +4,17 @@ from experiments.experimentSet import ExperimentSet
 
 class ExperimentResults:
     file_with_all_Pareto_results_paths =  ""
-    files = []
+    list_all_pareto_files_paths = []
     df_combined_data = pd.DataFrame()
     
 
-    def __init__(self,  experiments: ExperimentSet, str_folder_to_ignore_in_PF_metrics: str = "|NONE|"):
+    def __init__(self,  experiments: ExperimentSet):
         self.file_with_all_Pareto_results_paths  = experiments.file_with_all_Pareto_results_paths
-        self.files = self._read_experiment_paths()
-        self.str_folder_to_ignore_in_PF_metrics = str_folder_to_ignore_in_PF_metrics
-        self.df_combined_data = self._read_all_experiment_pareto_front_data()
+        # Get list of paths to all Pareto front result files
+        self.list_all_pareto_files_paths = self._read_experiment_paths()
+        # Read and combine all experiment Pareto front data (except those to ignore)
+        self.df_combined_data = self._read_raw_data_all_experiment_pareto_fronts()
+        # Save combined data to CSV
         self.save_df("combined_experiment_data.csv")
         
     def _read_experiment_paths(self):
@@ -20,20 +22,18 @@ class ExperimentResults:
             print(f"[ERROR] The file {self.file_with_all_Pareto_results_paths} does not exist.")
             exit(1)
         with open(self.file_with_all_Pareto_results_paths, 'r') as file:
-            self.files = [line.strip() for line in file if line.strip()]
-        return self.files
+            self.list_all_pareto_files_paths = [line.strip() for line in file if line.strip()]
+        return self.list_all_pareto_files_paths
     
-    def _read_all_experiment_pareto_front_data(self):
+    def _read_raw_data_all_experiment_pareto_fronts(self):
         """
         Reads and concatenates all experiment files from the paths stored in self.files.
         Assumes each file has the same structure and tab-separated values.
         """
         all_experiment_data = []
 
-        for file in self.files:
-            if self.str_folder_to_ignore_in_PF_metrics in file:
-                continue
-            elif os.path.exists(file):
+        for file in self.list_all_pareto_files_paths:
+            if os.path.exists(file):
                 try:
                     data = pd.read_csv(file, sep='\t', header=0)
                     #data['source_file'] = os.path.basename(file)

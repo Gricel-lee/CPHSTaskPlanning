@@ -54,14 +54,14 @@ if __name__ == "__main__":
     if len(sys.argv) == 1:  # no arguments passed, run example
         
         # Run example for fxLarge
-        sys.argv = [
-            "run.py",  # usually the script name
-            "--csv", "viking_previous_tests/input/experimentsfxLarge.csv",
-            "--model", "viking_previous_tests/input/FX/fxLarge.pm",
-            "--properties", "viking_previous_tests/input/FX/fxLarge.pctl",
-            "--output", "outputDummy/fxlarge_test",
-            "--optimisation", "viking_previous_tests/input/optimisationList_fxLarge.txt"
-        ]
+        # sys.argv = [
+        #     "run.py",  # usually the script name
+        #     "--csv", "viking_previous_tests/input/experimentsfxLarge.csv",
+        #     "--model", "viking_previous_tests/input/FX/fxLarge.pm",
+        #     "--properties", "viking_previous_tests/input/FX/fxLarge.pctl",
+        #     "--output", "outputDummy/fxlarge_test",
+        #     "--optimisation", "viking_previous_tests/input/optimisationList_fxLarge.txt"
+        # ]
 
         # # Run example for agricultural
         # sys.argv = [
@@ -72,5 +72,26 @@ if __name__ == "__main__":
         #     "--output", "outputDummy/fxlarge_test",
         #     "--optimisation", "viking_previous_tests/input/optimisationList_fxLarge.txt"
         # ]
+        
+        # sys.argv = [
+        #     "run.py",  # usually the script name
+        #     "--csv", "RQ1/Construction/experiment_files/experiments_iter_25_50.csv",
+        #     "--model", "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism",
+        #     "--properties", "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props",
+        #     "--output", "outputExpCon_ChangInjPropMin/construction1",
+        #     "--optimisation", "RQ1/Construction/experiment_files/optimisationList_construction.txt",
+        #     "--changes", "RQ1/Construction/experiment_files/change_injected_in_prop_minimum.txt"
+        # ]
+        
+        sys.argv = [
+            "run.py",  # script name
+            "--csv", "assets/RQ1/Agricultural/experiment_files/dummy.csv",
+            "--model", "assets/RQ1/Agricultural/ARCH_input/evomodel/agricultural-humanNonLinear.pm",
+            "--properties", "assets/RQ1/Agricultural/ARCH_input/evomodel/agricultural.pctl",
+            "--output", f"outputDummy/agri2",
+            "--optimisation", "assets/RQ1/Agricultural/experiment_files/optimisationList_agricultural.txt",
+            "--changes", "assets/RQ1/Agricultural/experiment_files/changes_injected/agricultural_changes_injected_in_prop_minimum.txt"
+        ]
+
 
     main()

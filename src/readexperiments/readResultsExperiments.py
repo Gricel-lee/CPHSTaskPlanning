@@ -4,7 +4,7 @@ from readexperiments.aux.auxread import *
 from readexperiments.aux.metrics import evaluate_IGD_GD_HV
 from experiments.experimentSet import ExperimentSet
 
-def read_experiment_results_and_save_metrics(output_dir,optimisation_list):
+def read_experiment_results_and_save_metrics(output_dir,optimisation_list, str_folder_NONE_to_ignore="|NONE|", normalize=False):
     """
     Read experiment results from a CSV file "combined_experiment_data.csv"
     Compute Pareto reference points, Nadir point, and Pareto metrics.
@@ -13,14 +13,16 @@ def read_experiment_results_and_save_metrics(output_dir,optimisation_list):
     Input:
     - output_dir: Directory where the output files will be saved.
     - optimise: File with list indicating whether to maximise or minimise each objective (e.g., "max,min" s.t. optimise=["max", "min"]).
+    - normalize: Flag to indicate whether to normalise data before computing metrics (if normalize the data from 0-100)
     """
-    #>>>> Select if normalize the data from 0-100
-    normalize = True
+    
     
     
     # --- Get data
     # read combined data from all Pareto Fronts saved in resPaths.csv
-    df = pd.read_csv(f'{output_dir}/combined_experiment_data.csv')
+    df_original = pd.read_csv(f'{output_dir}/combined_experiment_data.csv')
+    df = df_original.copy()
+    
     # read optimisation list
     with open(optimisation_list, 'r') as f:
         optimise = f.readline().strip().split(",")
@@ -30,6 +32,10 @@ def read_experiment_results_and_save_metrics(output_dir,optimisation_list):
     print(f"[PF-Indicators] Data points before removing duplicates: {len(df)} rows.")
     df = df.drop_duplicates()
     print(f"[PF-Indicators] Data points after removing duplicates: {len(df)} rows.")
+    
+    # --- Tranform data: remove |NONE| folder experiments (used for seeding)
+    
+    df = df[~df['experiment'].str.contains(r"\|NONE\|", regex=True, na=False)]
     
     # --- Transform data: remove rows with 0,0 in first two objectives (due to PRISM bug)
     df = df[~((df.iloc[:, 0] == 0) & (df.iloc[:, 1] == 0))]

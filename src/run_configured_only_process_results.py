@@ -46,7 +46,7 @@ def main():
     save_all_data_df(experiments)      
     
     # 4) Read experiment results and save metrics (DONE in run_experiments.py if required to be tested separately) , exclude |NONE| results
-    read_experiment_results_and_save_metrics(output_folder, optimisation_list_file, "|NONE|")
+    read_experiment_results_and_save_metrics(output_folder, optimisation_list_file, "|NONE|", normalize=False)
 
 
 def save_all_data_df(experiments):
@@ -78,19 +78,63 @@ if __name__ == "__main__":
         #     "--optimisation", "viking_previous_tests/input/optimisationList_fxLarge.txt"
         # ]
         
-        # Construction example
+        # ---Construction example
+        # sys.argv = [
+        #     "run.py",  # script name
+        #     "--csv", "RQ1/Construction/experiment_files/experiments_iter_25_50.csv",
+        #     "--model", "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism",
+        #     "--properties", "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props",
+        #     "--output", "outputExpCon_ChangInjPropMin/construction3",
+        #     "--optimisation", "RQ1/Construction/experiment_files/optimisationList_construction.txt",
+        #     "--changes", "RQ1/Construction/experiment_files/change_injected_in_prop_minimum.txt"
+        # ]
+        # main()
+        
+        # Both changes injected both- Construction example
+        
+        # for i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+        #     sys.argv = [
+        #         "run.py",  # script name
+        #         "--csv", "assets/RQ3/Construction/experiment_files/experiments_iter_25_50.csv",
+        #         "--model", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.prism",
+        #         "--properties", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.props",
+        #         "--output", f"outputExpCon_ChangInjBoth/construction{i}",
+        #         "--optimisation", "assets/RQ3/Construction/experiment_files/optimisationList_construction.txt",
+        #         "--changes", "assets/RQ3/Construction/experiment_files/changes_injected_both.txt"
+        #     ]
+
+        #     main()
+        
+        # Both changes injected both- Construction example
+        
+        # for i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+        #     sys.argv = [
+        #         "run.py",  # script name
+        #         "--csv", "assets/RQ3/Construction/experiment_files/experiments_iter_25_50.csv",
+        #         "--model", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.prism",
+        #         "--properties", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.props",
+        #         "--output", f"outputExpCon_ChangInjModel/construction{i}",
+        #         "--optimisation", "assets/RQ3/Construction/experiment_files/optimisationList_construction.txt",
+        #         "--changes", "assets/RQ3/Construction/experiment_files/changes_injected_in_model.txt"
+        #     ]
+
+        #     main()
+        
         sys.argv = [
             "run.py",  # script name
-            "--csv", "RQ1/Construction/experiment_files/experiments_iter_25_50.csv",
-            "--model", "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.prism",
-            "--properties", "RQ1/Construction/ARCH_input/evomodel/datamodelEvo.props",
-            "--output", "outputExpCon_ChangInjPropMin/construction3",
-            "--optimisation", "RQ1/Construction/experiment_files/optimisationList_construction.txt",
-            "--changes", "RQ1/Construction/experiment_files/change_injected_in_prop_minimum.txt"
+            "--csv", "assets/RQ1/Agricultural/experiment_files/dummy.csv",
+            "--model", "assets/RQ1/Agricultural/ARCH_input/evomodel/agricultural-humanNonLinear.pm",
+            "--properties", "assets/RQ1/Agricultural/ARCH_input/evomodel/agricultural.pctl",
+            "--output", f"outputDummy/exp2",
+            "--optimisation", "assets/RQ1/Agricultural/experiment_files/optimisationList_agricultural.txt",
+            "--changes", "assets/RQ1/Agricultural/experiment_files/changes_injected/agricultural_changes_injected_in_prop_minimum.txt"
         ]
+
         main()
-        
-        
+
+
+            
+        # ---- Agricultural example
         # for select in [0,1,2]: # [0, 1, 2]: # 0: both changes injected, 1: only properties changes injected, 2: only model changes injected
             
         #     # >>>>>> Select batch <<<<

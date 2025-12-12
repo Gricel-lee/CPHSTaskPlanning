@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+echo 'Submitting jobscript_ExpAgricultural_None1.job'
+sbatch jobscript_ExpAgricultural_None1.job
+echo 'Submitting jobscript_ExpAgricultural_None2.job'
+sbatch jobscript_ExpAgricultural_None2.job
+echo 'Submitting jobscript_ExpAgricultural_None3.job'
+sbatch jobscript_ExpAgricultural_None3.job
+echo 'Submitting jobscript_ExpAgricultural_None4.job'
+sbatch jobscript_ExpAgricultural_None4.job
+echo 'Submitting jobscript_ExpAgricultural_None5.job'
+sbatch jobscript_ExpAgricultural_None5.job
+echo 'Submitting jobscript_ExpAgricultural_None6.job'
+sbatch jobscript_ExpAgricultural_None6.job
+echo 'Submitting jobscript_ExpAgricultural_None7.job'
+sbatch jobscript_ExpAgricultural_None7.job
+echo 'Submitting jobscript_ExpAgricultural_None8.job'
+sbatch jobscript_ExpAgricultural_None8.job
+echo 'Submitting jobscript_ExpAgricultural_None9.job'
+sbatch jobscript_ExpAgricultural_None9.job
+echo 'Submitting jobscript_ExpAgricultural_None10.job'
+sbatch jobscript_ExpAgricultural_None10.job

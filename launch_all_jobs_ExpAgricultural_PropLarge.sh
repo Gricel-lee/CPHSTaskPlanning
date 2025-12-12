@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+echo 'Submitting jobscript_ExpAgricultural_PropLarge1.job'
+sbatch jobscript_ExpAgricultural_PropLarge1.job
+echo 'Submitting jobscript_ExpAgricultural_PropLarge2.job'
+sbatch jobscript_ExpAgricultural_PropLarge2.job
+echo 'Submitting jobscript_ExpAgricultural_PropLarge3.job'
+sbatch jobscript_ExpAgricultural_PropLarge3.job
+echo 'Submitting jobscript_ExpAgricultural_PropLarge4.job'
+sbatch jobscript_ExpAgricultural_PropLarge4.job
+echo 'Submitting jobscript_ExpAgricultural_PropLarge5.job'
+sbatch jobscript_ExpAgricultural_PropLarge5.job
+echo 'Submitting jobscript_ExpAgricultural_PropLarge6.job'
+sbatch jobscript_ExpAgricultural_PropLarge6.job
+echo 'Submitting jobscript_ExpAgricultural_PropLarge7.job'
+sbatch jobscript_ExpAgricultural_PropLarge7.job
+echo 'Submitting jobscript_ExpAgricultural_PropLarge8.job'
+sbatch jobscript_ExpAgricultural_PropLarge8.job
+echo 'Submitting jobscript_ExpAgricultural_PropLarge9.job'
+sbatch jobscript_ExpAgricultural_PropLarge9.job
+echo 'Submitting jobscript_ExpAgricultural_PropLarge10.job'
+sbatch jobscript_ExpAgricultural_PropLarge10.job

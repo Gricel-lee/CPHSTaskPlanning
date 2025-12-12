@@ -12,7 +12,6 @@ evolve int r1_maxRetry_t2l5 [1..10];
 evolve int r1_maxRetry_t2l8a [1..10];
 evolve int r1_maxRetry_t2l8b [1..10];
 
-
 const double p_worker2_t1l4_ORIGINAL=0.71;
 const double p_worker2_t3l4_ORIGINAL=0.85;
 const double p_worker2_t1l7_ORIGINAL=0.63;
@@ -37,6 +36,8 @@ formula p_worker2_t1l6a = 2 * (1 - p_worker2_t1l6a_ORIGINAL) * (1 / (1 + 1/pow(e
 formula p_r1_t2l5       = 2 * (1 - p_r1_t2l5_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l5 * steepnessr1))))       + (2 * p_r1_t2l5_ORIGINAL -1);
 formula p_r1_t2l8a      = 2 * (1 - p_r1_t2l8a_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l8a * steepnessr1))))      + (2 * p_r1_t2l8a_ORIGINAL -1);
 formula p_r1_t2l8b      = 2 * (1 - p_r1_t2l8b_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l8b * steepnessr1))))      + (2 * p_r1_t2l8b_ORIGINAL -1);
+
+
 
 const int worker2Final = 12;
 const int worker2Fail = 13;
@@ -103,38 +104,50 @@ formula r_r1_t2l5_ORIGINAL = 31;
 formula r_r1_t2l8a_ORIGINAL = 11;
 formula r_r1_t2l8b_ORIGINAL = 15;
 
-formula r_worker2_t1l4 = r_worker2_t1l4_ORIGINAL * (worker2retry_t1l4+1);
-formula r_worker2_t3l4 =r_worker2_t3l4_ORIGINAL * (worker2retry_t3l4+1);    
-formula r_worker2_t1l7 =r_worker2_t1l7_ORIGINAL * (worker2retry_t1l7+1);    
-formula r_worker2_t3l7 =r_worker2_t3l7_ORIGINAL * (worker2retry_t3l7+1);    
-formula r_worker2_t3l9 =r_worker2_t3l9_ORIGINAL * (worker2retry_t3l9+1);  
-formula r_worker2_t1l6b =r_worker2_t1l6b_ORIGINAL * (worker2retry_t1l6b+1);  
-formula r_worker2_t1l6a =r_worker2_t1l6a_ORIGINAL * (worker2retry_t1l6a+1);
-formula r_r1_t2l5       =r_r1_t2l5_ORIGINAL * (r1retry_t2l5 +1);
-formula r_r1_t2l8a      =r_r1_t2l8a_ORIGINAL * (r1retry_t2l8a +1);
-formula r_r1_t2l8b      =r_r1_t2l8b_ORIGINAL * (r1retry_t2l8b +1);
+
+formula r_worker2_t1l4 = 2 * (1 - r_worker2_t1l4_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l4 * steepnessw1)))) + (2 * r_worker2_t1l4_ORIGINAL - 1);
+formula r_worker2_t3l4 = 2 * (1 - r_worker2_t3l4_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t3l4 * steepnessw1)))) + (2 * r_worker2_t3l4_ORIGINAL -1);
+formula r_worker2_t1l7 = 2 * (1 - r_worker2_t1l7_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l7 * steepnessw1)))) + (2 * r_worker2_t1l7_ORIGINAL -1);
+formula r_worker2_t3l7 = 2 * (1 - r_worker2_t3l7_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t3l7 * steepnessw1)))) + (2 * r_worker2_t3l7_ORIGINAL -1);
+formula r_worker2_t3l9 = 2 * (1 - r_worker2_t3l9_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t3l9 * steepnessw1)))) + (2 * r_worker2_t3l9_ORIGINAL -1);
+formula r_worker2_t1l6b = 2 * (1 - r_worker2_t1l6b_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l6b * steepnessw1)))) + (2 * r_worker2_t1l6b_ORIGINAL -1);
+formula r_worker2_t1l6a = 2 * (1 - r_worker2_t1l6a_ORIGINAL) * (1 / (1 + 1/pow(e,(worker2retry_t1l6a * steepnessw1)))) + (2 * r_worker2_t1l6a_ORIGINAL -1);
+formula r_r1_t2l5       = 2 * (1 - r_r1_t2l5_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l5 * steepnessr1))))       + (2 * r_r1_t2l5_ORIGINAL -1);
+formula r_r1_t2l8a      = 2 * (1 - r_r1_t2l8a_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l8a * steepnessr1))))      + (2 * r_r1_t2l8a_ORIGINAL -1);
+formula r_r1_t2l8b      = 2 * (1 - r_r1_t2l8b_ORIGINAL) * (1 / (1 + 1/pow(e,(r1retry_t2l8b * steepnessr1))))      + (2 * r_r1_t2l8b_ORIGINAL -1);
 
 
 rewards "cost"
  [worker2movel4] true:1;
+ [worker2dot1l4] true:r_worker2_t1l4;
+ [worker2dot1l4Retry] true:r_worker2_t1l4;
+ [worker2dot3l4] true:r_worker2_t3l4;
+ [worker2dot3l4Retry] true:r_worker2_t3l4;
  [worker2movel7] true:1;
+ [worker2dot1l7] true:r_worker2_t1l7;
+ [worker2dot1l7Retry] true:r_worker2_t1l7;
+ [worker2dot3l7] true:r_worker2_t3l7;
+ [worker2dot3l7Retry] true:r_worker2_t3l7;
  [worker2movel8] true:1;
  [worker2movel9] true:1;
+ [worker2dot3l9] true:r_worker2_t3l9;
+ [worker2dot3l9Retry] true:r_worker2_t3l9;
  [worker2movel6] true:1;
+ [worker2dot1l6b] true:r_worker2_t1l6b;
+ [worker2dot1l6bRetry] true:r_worker2_t1l6b;
+ [worker2dot1l6a] true:r_worker2_t1l6a;
+ [worker2dot1l6aRetry] true:r_worker2_t1l6a;
  [r1movel4] true:1;
  [r1movel5] true:1;
- [r1movel8] true:1;
- [worker2dot1l4Retry] true:r_worker2_t1l4;
- [worker2dot3l4Retry] true:r_worker2_t3l4;
- [worker2dot1l7Retry] true:r_worker2_t1l7;
- [worker2dot3l7Retry] true:r_worker2_t3l7;
- [worker2dot3l9Retry] true:r_worker2_t3l9;
- [worker2dot1l6bRetry] true:r_worker2_t1l6b;
- [worker2dot1l6aRetry] true:r_worker2_t1l6a;
+ [r1dot2l5] true:r_r1_t2l5;
  [r1dot2l5Retry] true:r_r1_t2l5;
+ [r1movel8] true:1;
+ [r1dot2l8a] true:r_r1_t2l8a;
  [r1dot2l8aRetry] true:r_r1_t2l8a;
+ [r1dot2l8b] true:r_r1_t2l8b;
  [r1dot2l8bRetry] true:r_r1_t2l8b;
 endrewards
+
 
 
 
