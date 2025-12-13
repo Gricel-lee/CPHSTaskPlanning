@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 
-echo 'Submitting jobscript_ExpConstruction_None1.job'
-sbatch jobscript_ExpConstruction_None1.job
-echo 'Submitting jobscript_ExpConstruction_None2.job'
-sbatch jobscript_ExpConstruction_None2.job
-echo 'Submitting jobscript_ExpConstruction_None3.job'
-sbatch jobscript_ExpConstruction_None3.job
-echo 'Submitting jobscript_ExpConstruction_None4.job'
-sbatch jobscript_ExpConstruction_None4.job
-echo 'Submitting jobscript_ExpConstruction_None5.job'
-sbatch jobscript_ExpConstruction_None5.job
-echo 'Submitting jobscript_ExpConstruction_None6.job'
-sbatch jobscript_ExpConstruction_None6.job
-echo 'Submitting jobscript_ExpConstruction_None7.job'
-sbatch jobscript_ExpConstruction_None7.job
-echo 'Submitting jobscript_ExpConstruction_None8.job'
-sbatch jobscript_ExpConstruction_None8.job
-echo 'Submitting jobscript_ExpConstruction_None9.job'
-sbatch jobscript_ExpConstruction_None9.job
-echo 'Submitting jobscript_ExpConstruction_None10.job'
-sbatch jobscript_ExpConstruction_None10.job
+echo 'Submitting jobscript_ExpConstruction_None11.job'
+sbatch jobscript_ExpConstruction_None11.job
+echo 'Submitting jobscript_ExpConstruction_None12.job'
+sbatch jobscript_ExpConstruction_None12.job
+echo 'Submitting jobscript_ExpConstruction_None13.job'
+sbatch jobscript_ExpConstruction_None13.job
+echo 'Submitting jobscript_ExpConstruction_None14.job'
+sbatch jobscript_ExpConstruction_None14.job
+echo 'Submitting jobscript_ExpConstruction_None15.job'
+sbatch jobscript_ExpConstruction_None15.job
+echo 'Submitting jobscript_ExpConstruction_None16.job'
+sbatch jobscript_ExpConstruction_None16.job
+echo 'Submitting jobscript_ExpConstruction_None17.job'
+sbatch jobscript_ExpConstruction_None17.job
+echo 'Submitting jobscript_ExpConstruction_None18.job'
+sbatch jobscript_ExpConstruction_None18.job
+echo 'Submitting jobscript_ExpConstruction_None19.job'
+sbatch jobscript_ExpConstruction_None19.job
+echo 'Submitting jobscript_ExpConstruction_None20.job'
+sbatch jobscript_ExpConstruction_None20.job

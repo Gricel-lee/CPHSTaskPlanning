@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=ExpConstruction_Model15               # Job name
+#SBATCH --partition=nodes               # What partition the job should run on
+#SBATCH --time=0-40:15:00               # Time limit (DD-HH:MM:SS)
+#SBATCH --ntasks=1                      # Number of MPI tasks to request
+#SBATCH --cpus-per-task=9               # Number of CPU cores per MPI task
+#SBATCH --mem=40G                       # Total memory to request
+#SBATCH --account=cs-ai4work-2025       # Project account to use
+#SBATCH --mail-type=END,FAIL,ALL        # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=gricel.vazquez@york.ac.uk   # Where to send mail
+#SBATCH --output=%x-%j.log              # Standard output log
+#SBATCH --error=%x-%j.err               # Standard error log
+
+# Abort if any command fails
+set -e
+
+# Purge any previously loaded modules
+module purge
+
+# Load modules
+module load Python/3.11.3-GCCcore-12.3.0
+module load Java/11.0.20
+#module load compiler/GCC/8.2.0-2.31.1
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/users/gnvf500/scratch/CPHSTaskPlanning/EvoChecker/libs/runtime
+export LD_LIBRARY_PATH
+echo "$LD_LIBRARY_PATH"
+#java -jar EvoChecker.jar config.properties
+
+
+# Commands to run
+pip3 install pandas
+pip3 install pymoo
+
+# 1 experiments for agricultural model
+python3 ./src/run.py --csv "assets/RQ3/Construction/experiment_files/experiments_iter_25_50.csv" --model "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.prism" --properties "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.props" --output "output_Construct_Model/exp15" --optimisation "assets/RQ3/Construction/experiment_files/optimisationList_construction.txt" --changes "assets/RQ3/Construction/experiment_files/changes_injected_in_model.txt"

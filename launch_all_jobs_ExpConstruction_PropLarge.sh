@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 
-echo 'Submitting jobscript_ExpConstruction_PropLarge1.job'
-sbatch jobscript_ExpConstruction_PropLarge1.job
-echo 'Submitting jobscript_ExpConstruction_PropLarge2.job'
-sbatch jobscript_ExpConstruction_PropLarge2.job
-echo 'Submitting jobscript_ExpConstruction_PropLarge3.job'
-sbatch jobscript_ExpConstruction_PropLarge3.job
-echo 'Submitting jobscript_ExpConstruction_PropLarge4.job'
-sbatch jobscript_ExpConstruction_PropLarge4.job
-echo 'Submitting jobscript_ExpConstruction_PropLarge5.job'
-sbatch jobscript_ExpConstruction_PropLarge5.job
-echo 'Submitting jobscript_ExpConstruction_PropLarge6.job'
-sbatch jobscript_ExpConstruction_PropLarge6.job
-echo 'Submitting jobscript_ExpConstruction_PropLarge7.job'
-sbatch jobscript_ExpConstruction_PropLarge7.job
-echo 'Submitting jobscript_ExpConstruction_PropLarge8.job'
-sbatch jobscript_ExpConstruction_PropLarge8.job
-echo 'Submitting jobscript_ExpConstruction_PropLarge9.job'
-sbatch jobscript_ExpConstruction_PropLarge9.job
-echo 'Submitting jobscript_ExpConstruction_PropLarge10.job'
-sbatch jobscript_ExpConstruction_PropLarge10.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge11.job'
+sbatch jobscript_ExpConstruction_PropLarge11.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge12.job'
+sbatch jobscript_ExpConstruction_PropLarge12.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge13.job'
+sbatch jobscript_ExpConstruction_PropLarge13.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge14.job'
+sbatch jobscript_ExpConstruction_PropLarge14.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge15.job'
+sbatch jobscript_ExpConstruction_PropLarge15.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge16.job'
+sbatch jobscript_ExpConstruction_PropLarge16.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge17.job'
+sbatch jobscript_ExpConstruction_PropLarge17.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge18.job'
+sbatch jobscript_ExpConstruction_PropLarge18.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge19.job'
+sbatch jobscript_ExpConstruction_PropLarge19.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge20.job'
+sbatch jobscript_ExpConstruction_PropLarge20.job

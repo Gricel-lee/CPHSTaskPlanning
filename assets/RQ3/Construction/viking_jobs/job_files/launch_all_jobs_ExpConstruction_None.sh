@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+echo 'Submitting jobscript_ExpConstruction_None1.job'
+sbatch jobscript_ExpConstruction_None1.job
+echo 'Submitting jobscript_ExpConstruction_None2.job'
+sbatch jobscript_ExpConstruction_None2.job
+echo 'Submitting jobscript_ExpConstruction_None3.job'
+sbatch jobscript_ExpConstruction_None3.job
+echo 'Submitting jobscript_ExpConstruction_None4.job'
+sbatch jobscript_ExpConstruction_None4.job
+echo 'Submitting jobscript_ExpConstruction_None5.job'
+sbatch jobscript_ExpConstruction_None5.job
+echo 'Submitting jobscript_ExpConstruction_None6.job'
+sbatch jobscript_ExpConstruction_None6.job
+echo 'Submitting jobscript_ExpConstruction_None7.job'
+sbatch jobscript_ExpConstruction_None7.job
+echo 'Submitting jobscript_ExpConstruction_None8.job'
+sbatch jobscript_ExpConstruction_None8.job
+echo 'Submitting jobscript_ExpConstruction_None9.job'
+sbatch jobscript_ExpConstruction_None9.job
+echo 'Submitting jobscript_ExpConstruction_None10.job'
+sbatch jobscript_ExpConstruction_None10.job

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+echo 'Submitting jobscript_ExpConstruction_PropLarge1.job'
+sbatch jobscript_ExpConstruction_PropLarge1.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge2.job'
+sbatch jobscript_ExpConstruction_PropLarge2.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge3.job'
+sbatch jobscript_ExpConstruction_PropLarge3.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge4.job'
+sbatch jobscript_ExpConstruction_PropLarge4.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge5.job'
+sbatch jobscript_ExpConstruction_PropLarge5.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge6.job'
+sbatch jobscript_ExpConstruction_PropLarge6.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge7.job'
+sbatch jobscript_ExpConstruction_PropLarge7.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge8.job'
+sbatch jobscript_ExpConstruction_PropLarge8.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge9.job'
+sbatch jobscript_ExpConstruction_PropLarge9.job
+echo 'Submitting jobscript_ExpConstruction_PropLarge10.job'
+sbatch jobscript_ExpConstruction_PropLarge10.job

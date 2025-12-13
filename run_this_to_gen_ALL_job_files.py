@@ -45,7 +45,7 @@ python3 ./src/run.py --csv "<REPLACE_CSV_FILE>" --model "<REPLACE_MODEL_FILE>" -
 # ===========================================================================================
 
 def create_job_files():
-    numbering_experiments = [1,2,3,4,5,6,7,8,9,10]               #,11,12,13,14,15,16,17,18,19,20]
+    numbering_experiments = [11,12,13,14,15,16,17,18,19,20]
 
     # read from sys arguments
     csv_file = sys.argv[2]

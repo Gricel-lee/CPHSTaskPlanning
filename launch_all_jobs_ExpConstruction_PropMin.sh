@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 
-echo 'Submitting jobscript_ExpConstruction_PropMin1.job'
-sbatch jobscript_ExpConstruction_PropMin1.job
-echo 'Submitting jobscript_ExpConstruction_PropMin2.job'
-sbatch jobscript_ExpConstruction_PropMin2.job
-echo 'Submitting jobscript_ExpConstruction_PropMin3.job'
-sbatch jobscript_ExpConstruction_PropMin3.job
-echo 'Submitting jobscript_ExpConstruction_PropMin4.job'
-sbatch jobscript_ExpConstruction_PropMin4.job
-echo 'Submitting jobscript_ExpConstruction_PropMin5.job'
-sbatch jobscript_ExpConstruction_PropMin5.job
-echo 'Submitting jobscript_ExpConstruction_PropMin6.job'
-sbatch jobscript_ExpConstruction_PropMin6.job
-echo 'Submitting jobscript_ExpConstruction_PropMin7.job'
-sbatch jobscript_ExpConstruction_PropMin7.job
-echo 'Submitting jobscript_ExpConstruction_PropMin8.job'
-sbatch jobscript_ExpConstruction_PropMin8.job
-echo 'Submitting jobscript_ExpConstruction_PropMin9.job'
-sbatch jobscript_ExpConstruction_PropMin9.job
-echo 'Submitting jobscript_ExpConstruction_PropMin10.job'
-sbatch jobscript_ExpConstruction_PropMin10.job
+echo 'Submitting jobscript_ExpConstruction_PropMin11.job'
+sbatch jobscript_ExpConstruction_PropMin11.job
+echo 'Submitting jobscript_ExpConstruction_PropMin12.job'
+sbatch jobscript_ExpConstruction_PropMin12.job
+echo 'Submitting jobscript_ExpConstruction_PropMin13.job'
+sbatch jobscript_ExpConstruction_PropMin13.job
+echo 'Submitting jobscript_ExpConstruction_PropMin14.job'
+sbatch jobscript_ExpConstruction_PropMin14.job
+echo 'Submitting jobscript_ExpConstruction_PropMin15.job'
+sbatch jobscript_ExpConstruction_PropMin15.job
+echo 'Submitting jobscript_ExpConstruction_PropMin16.job'
+sbatch jobscript_ExpConstruction_PropMin16.job
+echo 'Submitting jobscript_ExpConstruction_PropMin17.job'
+sbatch jobscript_ExpConstruction_PropMin17.job
+echo 'Submitting jobscript_ExpConstruction_PropMin18.job'
+sbatch jobscript_ExpConstruction_PropMin18.job
+echo 'Submitting jobscript_ExpConstruction_PropMin19.job'
+sbatch jobscript_ExpConstruction_PropMin19.job
+echo 'Submitting jobscript_ExpConstruction_PropMin20.job'
+sbatch jobscript_ExpConstruction_PropMin20.job
