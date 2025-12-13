@@ -8,14 +8,30 @@ evolve int r2_maxRetry_t1_msb [1..8];
 evolve int r3_maxRetry_t4_se1 [1..5];
 evolve int r3_maxRetry_t3_bzb [1..5];
 
-const double p_h1_t2_ip1=0.84;
-const double p_h1_t2_ip2=0.77;
-const double p_h1_t3_bza=0.98;
-const double p_r1_t1_msa=1;
-const double p_r2_t4_wcp1=0.66;
-const double p_r2_t1_msb=0.83;
-const double p_r3_t4_se1=0.79;
-const double p_r3_t3_bzb=0.85;
+const double p_h1_t2_ip1_ORIGINAL=0.84;
+const double p_h1_t2_ip2_ORIGINAL=0.77;
+const double p_h1_t3_bza_ORIGINAL=0.98;
+const double p_r1_t1_msa_ORIGINAL=1;
+const double p_r2_t4_wcp1_ORIGINAL=0.66;
+const double p_r2_t1_msb_ORIGINAL=0.83;
+const double p_r3_t4_se1_ORIGINAL=0.79;
+const double p_r3_t3_bzb_ORIGINAL=0.85;
+
+const double e = 2.718281828459045;
+const double steepnessh1 = 3;
+const double steepnessr1 = 0.1;
+const double steepnessr2 = 0.1;
+const double steepnessr3 = 0.1;
+
+formula p_h1_t2_ip1=2*(1-p_h1_t2_ip1_ORIGINAL)*(1/(1+1/pow(e,(h1retry_t2_ip1*steepnessh1))))+(2*p_h1_t2_ip1_ORIGINAL-1);
+formula p_h1_t2_ip2=2*(1-p_h1_t2_ip2_ORIGINAL)*(1/(1+1/pow(e,(h1retry_t2_ip2*steepnessh1))))+(2*p_h1_t2_ip2_ORIGINAL-1);
+formula p_h1_t3_bza=2*(1-p_h1_t3_bza_ORIGINAL)*(1/(1+1/pow(e,(h1retry_t3_bza*steepnessh1))))+(2*p_h1_t3_bza_ORIGINAL-1);
+formula p_r1_t1_msa=2*(1-p_r1_t1_msa_ORIGINAL)*(1/(1+1/pow(e,(r1retry_t1_msa*steepnessr1))))+(2*p_r1_t1_msa_ORIGINAL-1);
+formula p_r2_t4_wcp1=2*(1-p_r2_t4_wcp1_ORIGINAL)*(1/(1+1/pow(e,(r2retry_t4_wcp1*steepnessr2))))+(2*p_r2_t4_wcp1_ORIGINAL-1);
+formula p_r2_t1_msb=2*(1-p_r2_t1_msb_ORIGINAL)*(1/(1+1/pow(e,(r2retry_t1_msb*steepnessr2))))+(2*p_r2_t1_msb_ORIGINAL-1);
+formula p_r3_t4_se1=2*(1-p_r3_t4_se1_ORIGINAL)*(1/(1+1/pow(e,(r3retry_t4_se1*steepnessr3))))+(2*p_r3_t4_se1_ORIGINAL-1);
+formula p_r3_t3_bzb=2*(1-p_r3_t3_bzb_ORIGINAL)*(1/(1+1/pow(e,(r3retry_t3_bzb*steepnessr3))))+(2*p_r3_t3_bzb_ORIGINAL-1);
+
 const int h1Final = 4;
 const int h1Fail = 5;
 const int r1Final = 2;
@@ -75,27 +91,42 @@ module _r3
   [r3dot3_bzb] r3=2 & r3retry_t3_bzb >= r3_maxRetry_t3_bzb -> 1:(r3'=r3Fail);
 endmodule
 
+
+formula r_h1_t2_ip1_ORIGINAL=8;
+formula r_h1_t2_ip2_ORIGINAL=8;
+formula r_h1_t3_bza_ORIGINAL=10;
+formula r_r1_t1_msa_ORIGINAL=2;
+formula r_r2_t4_wcp1_ORIGINAL=1;
+formula r_r2_t1_msb_ORIGINAL=3;
+formula r_r3_t4_se1_ORIGINAL=2;
+formula r_r3_t3_bzb_ORIGINAL=14;
+
+formula r_h1_t2_ip1=r_h1_t2_ip1_ORIGINAL * (h1retry_t2_ip1+1);
+formula r_h1_t2_ip2=r_h1_t2_ip2_ORIGINAL * (h1retry_t2_ip2+1);
+formula r_h1_t3_bza=r_h1_t3_bza_ORIGINAL * (h1retry_t3_bza+1);
+formula r_r1_t1_msa=r_r1_t1_msa_ORIGINAL * (r1retry_t1_msa+1);
+formula r_r2_t4_wcp1=r_r2_t4_wcp1_ORIGINAL * (r2retry_t4_wcp1+1);
+formula r_r2_t1_msb=r_r2_t1_msb_ORIGINAL * (r2retry_t1_msb+1);
+formula r_r3_t4_se1=r_r3_t4_se1_ORIGINAL * (r3retry_t4_se1+1);
+formula r_r3_t3_bzb=r_r3_t3_bzb_ORIGINAL * (r3retry_t3_bzb+1);
+
+
 rewards "cost"
-  [h1dot2_ip1] true:8;
-  [h1dot2_ip1Retry] true:8;
-  [h1dot2_ip2] true:8;
-  [h1dot2_ip2Retry] true:8;
+  [h1dot2_ip1Retry] true:r_h1_t2_ip1;
+  [h1dot2_ip2Retry] true:r_h1_t2_ip2;
   [h1movel4] true:1;
-  [h1dot3_bza] true:10;
-  [h1dot3_bzaRetry] true:10;
+  [h1dot3_bzaRetry] true:r_h1_t3_bza;
   [r1movel6] true:1;
-  [r1dot1_msa] true:2;
-  [r1dot1_msaRetry] true:2;
+  [r1dot1_msaRetry] true:r_r1_t1_msa;
   [r2movel1] true:1;
   [r2movel9] true:1;
-  [r2dot4_wcp1] true:1;
-  [r2dot4_wcp1Retry] true:1;
+  [r2dot4_wcp1Retry] true:r_r2_t4_wcp1;
   [r2movel7] true:1;
-  [r2dot1_msb] true:3;
-  [r2dot1_msbRetry] true:3;
-  [r3dot4_se1] true:2;
-  [r3dot4_se1Retry] true:2;
+  [r2dot1_msbRetry] true:r_r2_t1_msb;
+  [r3dot4_se1Retry] true:r_r3_t4_se1;
   [r3movel5] true:1;
-  [r3dot3_bzb] true:14;
-  [r3dot3_bzbRetry] true:14;
+  [r3dot3_bzbRetry] true:r_r3_t3_bzb;
 endrewards
+
+
+
