@@ -1,0 +1,3 @@
+iteration1	503.925
+iteration2	516.532
+iteration3	530.192
