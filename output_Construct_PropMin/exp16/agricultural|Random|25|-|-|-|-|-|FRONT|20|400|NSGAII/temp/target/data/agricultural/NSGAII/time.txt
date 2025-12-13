@@ -1,0 +1,4 @@
+iteration1	164.122
+iteration2	175.73
+iteration3	195.051
+iteration4	206.651
