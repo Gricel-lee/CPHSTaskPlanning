@@ -86,8 +86,9 @@ def create_job_files():
     
 
 
-# ========= Select experiment batch to create job files ==========
+# ===================== Set experiments to create job files ===========================
 
+#======================== Agricultural model experiments ========================
 # Input:
 name_job_file = "ExpDummy"
 sys.argv = [
@@ -112,7 +113,7 @@ sys.argv = [
             "--optimisation", "assets/RQ1/Agricultural/experiment_files/optimisationList_agricultural.txt",
             "--changes", "assets/RQ1/Agricultural/experiment_files/changes_injected/agricultural_changes_injected_NONE.txt"#<<<
         ]
-create_job_files()
+# create_job_files()
 
 # Input:
 name_job_file = "ExpAgricultural_PropMin"
@@ -125,7 +126,7 @@ sys.argv = [
             "--optimisation", "assets/RQ1/Agricultural/experiment_files/optimisationList_agricultural.txt",
             "--changes", "assets/RQ1/Agricultural/experiment_files/changes_injected/agricultural_changes_injected_in_prop_minimum.txt"#<<<
         ]
-create_job_files()
+# create_job_files()
 
 # Input:
 name_job_file = "ExpAgricultural_PropLarge"
@@ -138,7 +139,7 @@ sys.argv = [
             "--optimisation", "assets/RQ1/Agricultural/experiment_files/optimisationList_agricultural.txt",
             "--changes", "assets/RQ1/Agricultural/experiment_files/changes_injected/agricultural_changes_injected_in_prop.txt"#<<<
         ]
-create_job_files()
+# create_job_files()
 
 # Input:
 name_job_file = "ExpAgricultural_Model"
@@ -151,7 +152,7 @@ sys.argv = [
             "--optimisation", "assets/RQ1/Agricultural/experiment_files/optimisationList_agricultural.txt",
             "--changes", "assets/RQ1/Agricultural/experiment_files/changes_injected/agricultural_changes_injected_in_model.txt"#<<<
         ]
-create_job_files()
+# create_job_files()
 
 
 # Input:
@@ -165,7 +166,68 @@ sys.argv = [
             "--optimisation", "assets/RQ1/Agricultural/experiment_files/optimisationList_agricultural.txt",
             "--changes", "assets/RQ1/Agricultural/experiment_files/changes_injected/agricultural_changes_injected_both.txt"#<<<
         ]
+# create_job_files()
+
+
+
+#======================== Construction model experiments ========================
+name_job_file = "ExpConstruction_None"
+sys.argv = [
+            "run.py",  # script name
+            "--csv", "assets/RQ3/Construction/experiment_files/experiments_iter_25_50.csv",
+            "--model", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.prism",
+            "--properties", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.props",
+            "--output", f"output_Construct_None/exp",   #---->>>> ***Select output folder name (without experiment number)***
+            "--optimisation", "assets/RQ3/Construction/experiment_files/optimisationList_construction.txt",
+            "--changes", "assets/RQ3/Construction/experiment_files/changes_injected_NONE.txt"#<<<
+        ]
+create_job_files()
+
+name_job_file = "ExpConstruction_PropMin"
+sys.argv = [
+            "run.py",  # script name
+            "--csv", "assets/RQ3/Construction/experiment_files/experiments_iter_25_50.csv",
+            "--model", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.prism",
+            "--properties", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.props",
+            "--output", f"output_Construct_PropMin/exp",   #---->>>> ***Select output folder name (without experiment number)***
+            "--optimisation", "assets/RQ3/Construction/experiment_files/optimisationList_construction.txt",
+            "--changes", "assets/RQ3/Construction/experiment_files/change_injected_in_propMin.txt"#<<<
+        ]
+create_job_files()
+
+name_job_file = "ExpConstruction_PropLarge"
+sys.argv = [
+            "run.py",  # script name
+            "--csv", "assets/RQ3/Construction/experiment_files/experiments_iter_25_50.csv",
+            "--model", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.prism",
+            "--properties", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.props",
+            "--output", f"output_Construct_PropLarge/exp",   #---->>>> ***Select output folder name (without experiment number)***
+            "--optimisation", "assets/RQ3/Construction/experiment_files/optimisationList_construction.txt",
+            "--changes", "assets/RQ3/Construction/experiment_files/changes_injected_in_propLarge.txt"#<<<
+        ]
 create_job_files()
 
 
+name_job_file = "ExpConstruction_Model"
+sys.argv = [
+            "run.py",  # script name
+            "--csv", "assets/RQ3/Construction/experiment_files/experiments_iter_25_50.csv",
+            "--model", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.prism",
+            "--properties", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.props",
+            "--output", f"output_Construct_Model/exp",   #---->>>> ***Select output folder name (without experiment number)***
+            "--optimisation", "assets/RQ3/Construction/experiment_files/optimisationList_construction.txt",
+            "--changes", "assets/RQ3/Construction/experiment_files/changes_injected_in_model.txt"#<<<
+        ]
+create_job_files()
 
+name_job_file = "ExpConstruction_Both"
+sys.argv = [
+            "run.py",  # script name
+            "--csv", "assets/RQ3/Construction/experiment_files/experiments_iter_25_50.csv",
+            "--model", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.prism",
+            "--properties", "assets/RQ3/Construction/ARCH_input/evomodel/datamodelEvo.props",
+            "--output", f"output_Construct_Both/exp",   #---->>>> ***Select output folder name (without experiment number)***
+            "--optimisation", "assets/RQ3/Construction/experiment_files/optimisationList_construction.txt",
+            "--changes", "assets/RQ3/Construction/experiment_files/changes_injected_both.txt"#<<<
+        ]
+create_job_files()
