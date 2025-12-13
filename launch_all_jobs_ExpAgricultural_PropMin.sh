@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 
-echo 'Submitting jobscript_ExpAgricultural_PropMin1.job'
-sbatch jobscript_ExpAgricultural_PropMin1.job
-echo 'Submitting jobscript_ExpAgricultural_PropMin2.job'
-sbatch jobscript_ExpAgricultural_PropMin2.job
-echo 'Submitting jobscript_ExpAgricultural_PropMin3.job'
-sbatch jobscript_ExpAgricultural_PropMin3.job
-echo 'Submitting jobscript_ExpAgricultural_PropMin4.job'
-sbatch jobscript_ExpAgricultural_PropMin4.job
-echo 'Submitting jobscript_ExpAgricultural_PropMin5.job'
-sbatch jobscript_ExpAgricultural_PropMin5.job
-echo 'Submitting jobscript_ExpAgricultural_PropMin6.job'
-sbatch jobscript_ExpAgricultural_PropMin6.job
-echo 'Submitting jobscript_ExpAgricultural_PropMin7.job'
-sbatch jobscript_ExpAgricultural_PropMin7.job
-echo 'Submitting jobscript_ExpAgricultural_PropMin8.job'
-sbatch jobscript_ExpAgricultural_PropMin8.job
-echo 'Submitting jobscript_ExpAgricultural_PropMin9.job'
-sbatch jobscript_ExpAgricultural_PropMin9.job
-echo 'Submitting jobscript_ExpAgricultural_PropMin10.job'
-sbatch jobscript_ExpAgricultural_PropMin10.job
+echo 'Submitting jobscript_ExpAgricultural_PropMin11.job'
+sbatch jobscript_ExpAgricultural_PropMin11.job
+echo 'Submitting jobscript_ExpAgricultural_PropMin12.job'
+sbatch jobscript_ExpAgricultural_PropMin12.job
+echo 'Submitting jobscript_ExpAgricultural_PropMin13.job'
+sbatch jobscript_ExpAgricultural_PropMin13.job
+echo 'Submitting jobscript_ExpAgricultural_PropMin14.job'
+sbatch jobscript_ExpAgricultural_PropMin14.job
+echo 'Submitting jobscript_ExpAgricultural_PropMin15.job'
+sbatch jobscript_ExpAgricultural_PropMin15.job
+echo 'Submitting jobscript_ExpAgricultural_PropMin16.job'
+sbatch jobscript_ExpAgricultural_PropMin16.job
+echo 'Submitting jobscript_ExpAgricultural_PropMin17.job'
+sbatch jobscript_ExpAgricultural_PropMin17.job
+echo 'Submitting jobscript_ExpAgricultural_PropMin18.job'
+sbatch jobscript_ExpAgricultural_PropMin18.job
+echo 'Submitting jobscript_ExpAgricultural_PropMin19.job'
+sbatch jobscript_ExpAgricultural_PropMin19.job
+echo 'Submitting jobscript_ExpAgricultural_PropMin20.job'
+sbatch jobscript_ExpAgricultural_PropMin20.job
