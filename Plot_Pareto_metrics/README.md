@@ -8,7 +8,7 @@ In order to generate a new set of statistical plot for an experiment:
 
 2. Wait for the job to be completed, make sure all results are available in the output file set in the .job file.
 
-3. Push into Github the following results:
+3. Push into Github all output folder or *at least* the following results:
 
 a) the Pareto front metrics summary
 ```
@@ -26,10 +26,11 @@ for example ```git add outputHumanNonL/agricultural*/agricultural*/results/time.
 
 4. In the local device, ```git pull``` the new results.
 
-5. From the CPHSTaskPlanning folder, run
-```
-python3 Plot_Pareto_metrics/plot-avr-std-results.py {viking_output_folder} {folder_to_save_results}
-```
-for example ```python3 Plot_Pareto_metrics/plot-avr-std-results.py outputHumanNonL Plot_Pareto_metrics/output_outputHumanNonL```
+5. From the CPHSTaskPlanning folder, first set ``{viking_output_folder} {folder_to_save_results}" in ```Plot_Pareto_metrics/plot-avr-std-results.py ```, for example ```outputExpAgri_None``` and ```plot_output_outputHumanNonL```.
 
-6. The plots and statistics summary will be saved.
+6. Run
+```
+python3 Plot_Pareto_metrics/plot-avr-std-results.py 
+```
+
+7. The plots and statistics summary will be saved.
