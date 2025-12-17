@@ -1,5 +1,0 @@
-null
-java.lang.NullPointerException
-	at org.spg.prismexecutor.PrismParamExecutor.analyse(PrismParamExecutor.java:179)
-	at org.spg.prismexecutor.PrismParamExecutor.start(PrismParamExecutor.java:75)
-	at org.spg.prismexecutor.PrismParamExecutor.main(PrismParamExecutor.java:31)
