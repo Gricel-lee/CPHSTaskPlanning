@@ -13,16 +13,16 @@ evolve int r1_maxRetry_t2l8a [1..10];
 evolve int r1_maxRetry_t2l8b [1..10];
 
 
-const double p_worker2_t1l4_ORIGINAL=0.91;
+const double p_worker2_t1l4_ORIGINAL=0.71;
 const double p_worker2_t3l4_ORIGINAL=0.85;
-const double p_worker2_t1l7_ORIGINAL=0.53;
+const double p_worker2_t1l7_ORIGINAL=0.63;
 const double p_worker2_t3l7_ORIGINAL=0.84;
 const double p_worker2_t3l9_ORIGINAL=0.95;
 const double p_worker2_t1l6b_ORIGINAL=0.76;
-const double p_worker2_t1l6a_ORIGINAL=0.57;
-const double p_r1_t2l5_ORIGINAL=0.65;
-const double p_r1_t2l8a_ORIGINAL=0.85;
-const double p_r1_t2l8b_ORIGINAL=0.72;
+const double p_worker2_t1l6a_ORIGINAL=0.67;
+const double p_r1_t2l5_ORIGINAL=0.8;
+const double p_r1_t2l8a_ORIGINAL=0.9;
+const double p_r1_t2l8b_ORIGINAL=0.99;
 
 const double e = 2.718281828459045;
 const double steepnessw1 = 3;
@@ -92,16 +92,16 @@ module _r1
 endmodule
 
 
-formula r_worker2_t1l4_ORIGINAL = 14;
+formula r_worker2_t1l4_ORIGINAL = 13;
 formula r_worker2_t3l4_ORIGINAL = 5;
 formula r_worker2_t1l7_ORIGINAL = 23;
-formula r_worker2_t3l7_ORIGINAL = 30;
-formula r_worker2_t3l9_ORIGINAL = 18;
-formula r_worker2_t1l6b_ORIGINAL = 10;
-formula r_worker2_t1l6a_ORIGINAL = 16;
-formula r_r1_t2l5_ORIGINAL = 29;
-formula r_r1_t2l8a_ORIGINAL = 9;
-formula r_r1_t2l8b_ORIGINAL = 3;
+formula r_worker2_t3l7_ORIGINAL = 5;
+formula r_worker2_t3l9_ORIGINAL = 15;
+formula r_worker2_t1l6b_ORIGINAL = 1;
+formula r_worker2_t1l6a_ORIGINAL = 21;
+formula r_r1_t2l5_ORIGINAL = 31;
+formula r_r1_t2l8a_ORIGINAL = 11;
+formula r_r1_t2l8b_ORIGINAL = 15;
 
 formula r_worker2_t1l4 = r_worker2_t1l4_ORIGINAL * (worker2retry_t1l4+1);
 formula r_worker2_t3l4 =r_worker2_t3l4_ORIGINAL * (worker2retry_t3l4+1);    

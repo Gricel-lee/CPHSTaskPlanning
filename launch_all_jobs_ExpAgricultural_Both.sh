@@ -21,8 +21,6 @@ echo 'Submitting jobscript_ExpAgricultural_Both9.job'
 sbatch jobscript_ExpAgricultural_Both9.job
 echo 'Submitting jobscript_ExpAgricultural_Both10.job'
 sbatch jobscript_ExpAgricultural_Both10.job
-
-
 echo 'Submitting jobscript_ExpAgricultural_Both11.job'
 sbatch jobscript_ExpAgricultural_Both11.job
 echo 'Submitting jobscript_ExpAgricultural_Both12.job'
