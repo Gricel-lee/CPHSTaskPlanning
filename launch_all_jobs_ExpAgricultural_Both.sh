@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 echo 'Submitting jobscript_ExpAgricultural_Both1.job'
 sbatch jobscript_ExpAgricultural_Both1.job
 echo 'Submitting jobscript_ExpAgricultural_Both2.job'

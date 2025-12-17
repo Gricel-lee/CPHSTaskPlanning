@@ -1,26 +1,25 @@
 #!/usr/bin/env bash
 
-
-echo 'Submitting jobscript_ExpAgricultural_Model1.job'
-sbatch jobscript_ExpAgricultural_Model1.job
-echo 'Submitting jobscript_ExpAgricultural_Model2.job'
-sbatch jobscript_ExpAgricultural_Model2.job
-echo 'Submitting jobscript_ExpAgricultural_Model3.job'
-sbatch jobscript_ExpAgricultural_Model3.job
-echo 'Submitting jobscript_ExpAgricultural_Model4.job'
-sbatch jobscript_ExpAgricultural_Model4.job
-echo 'Submitting jobscript_ExpAgricultural_Model5.job'
-sbatch jobscript_ExpAgricultural_Model5.job
-echo 'Submitting jobscript_ExpAgricultural_Model6.job'
-sbatch jobscript_ExpAgricultural_Model6.job
-echo 'Submitting jobscript_ExpAgricultural_Model7.job'
-sbatch jobscript_ExpAgricultural_Model7.job
-echo 'Submitting jobscript_ExpAgricultural_Model8.job'
-sbatch jobscript_ExpAgricultural_Model8.job
-echo 'Submitting jobscript_ExpAgricultural_Model9.job'
-sbatch jobscript_ExpAgricultural_Model9.job
-echo 'Submitting jobscript_ExpAgricultural_Model10.job'
-sbatch jobscript_ExpAgricultural_Model10.job
+echo 'Submitting jobscript_ExpAgricultural_None1.job'
+sbatch jobscript_ExpAgricultural_None1.job
+echo 'Submitting jobscript_ExpAgricultural_None2.job'
+sbatch jobscript_ExpAgricultural_None2.job
+echo 'Submitting jobscript_ExpAgricultural_None3.job'
+sbatch jobscript_ExpAgricultural_None3.job
+echo 'Submitting jobscript_ExpAgricultural_None4.job'
+sbatch jobscript_ExpAgricultural_None4.job
+echo 'Submitting jobscript_ExpAgricultural_None5.job'
+sbatch jobscript_ExpAgricultural_None5.job
+echo 'Submitting jobscript_ExpAgricultural_None6.job'
+sbatch jobscript_ExpAgricultural_None6.job
+echo 'Submitting jobscript_ExpAgricultural_None7.job'
+sbatch jobscript_ExpAgricultural_None7.job
+echo 'Submitting jobscript_ExpAgricultural_None8.job'
+sbatch jobscript_ExpAgricultural_None8.job
+echo 'Submitting jobscript_ExpAgricultural_None9.job'
+sbatch jobscript_ExpAgricultural_None9.job
+echo 'Submitting jobscript_ExpAgricultural_None10.job'
+sbatch jobscript_ExpAgricultural_None10.job
 echo 'Submitting jobscript_ExpAgricultural_None11.job'
 sbatch jobscript_ExpAgricultural_None11.job
 echo 'Submitting jobscript_ExpAgricultural_None12.job'
