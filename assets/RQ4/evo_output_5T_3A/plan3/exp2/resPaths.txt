@@ -1,6 +1,0 @@
-/home/gnvf500/Gricel-Documents/GithubGris/CPHSTaskPlanning/assets/RQ4/evo_output_5T_3A/plan3/exp2/agricultural|NONE|0|-|-|-|-|-|FRONT|10|30|NSGAII/results/AGRICULTURAL_NSGAII_181225_23295815588925351787436172_1_Front
-/home/gnvf500/Gricel-Documents/GithubGris/CPHSTaskPlanning/assets/RQ4/evo_output_5T_3A/plan3/exp2/agricultural|NONE|0|-|-|-|-|-|FRONT|10|30|NSGAII/results/AGRICULTURAL_NSGAII_181225_23295813879166809204870255_2_Front
-/home/gnvf500/Gricel-Documents/GithubGris/CPHSTaskPlanning/assets/RQ4/evo_output_5T_3A/plan3/exp2/agricultural|NONE|0|-|-|-|-|-|FRONT|10|30|NSGAII/results/AGRICULTURAL_NSGAII_181225_23295814682240466985991156_3_Front
-/home/gnvf500/Gricel-Documents/GithubGris/CPHSTaskPlanning/assets/RQ4/evo_output_5T_3A/plan3/exp2/agricultural|Random|25|-|-|-|-|-|FRONT|10|30|NSGAII/results/AGRICULTURAL_NSGAII_181225_2330014374109720261153287_1_Front
-/home/gnvf500/Gricel-Documents/GithubGris/CPHSTaskPlanning/assets/RQ4/evo_output_5T_3A/plan3/exp2/agricultural|Random|25|-|-|-|-|-|FRONT|10|30|NSGAII/results/AGRICULTURAL_NSGAII_181225_23300213950282445011776964_2_Front
-/home/gnvf500/Gricel-Documents/GithubGris/CPHSTaskPlanning/assets/RQ4/evo_output_5T_3A/plan3/exp2/agricultural|Random|25|-|-|-|-|-|FRONT|10|30|NSGAII/results/AGRICULTURAL_NSGAII_181225_2330029613444479656672504_3_Front

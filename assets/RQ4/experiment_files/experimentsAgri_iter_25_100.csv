@@ -1,3 +1,0 @@
-case,seeding,percentage,kMeanIterations,Distance,fuzziness,epsilon,nMinPerCluster,dataPareto,population,Evaluations,MOGA
-agricultural,NONE,0,-,-,-,-,-,FRONT,10,30,NSGAII
-agricultural,Random,25,-,-,-,-,-,FRONT,10,30,NSGAII
