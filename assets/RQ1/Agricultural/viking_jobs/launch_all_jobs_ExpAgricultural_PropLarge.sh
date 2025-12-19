@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-#add from 1 to 10:
 echo 'Submitting jobscript_ExpAgricultural_PropLarge1.job'
 sbatch jobscript_ExpAgricultural_PropLarge1.job
 echo 'Submitting jobscript_ExpAgricultural_PropLarge2.job'

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 echo 'Submitting jobscript_ExpAgricultural_PropMin1.job'
 sbatch jobscript_ExpAgricultural_PropMin1.job
 echo 'Submitting jobscript_ExpAgricultural_PropMin2.job'
