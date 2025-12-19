@@ -1,0 +1,4 @@
+iteration1	1.88
+iteration2	2.077
+iteration3	2.265
+end	2.266
